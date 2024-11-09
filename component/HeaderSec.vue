@@ -13,7 +13,7 @@
       <nav class="menu">
         <ul class="menu-links">
           <li>
-            <router-link to="/home">
+            <router-link to="/home" id="">
               <span class="icon">
                 <UIcon class="icon-link" name="material-symbols-home"/>
               </span>
@@ -21,7 +21,7 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/about">
+            <router-link to="/about" id="about-sec">
               <span class="icon">
                 <UIcon class="icon-link" name="material-symbols-info"/>
               </span>
@@ -44,7 +44,7 @@
 
 <style scoped>
 .header-section {
-  background-color: var(--main-font-color);
+  background-color: #eeeeee;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
 }
@@ -88,7 +88,6 @@
 
 .menu-links li {
   margin-right: 1.2rem;
-  color: var(--main-color);
 }
 
 .menu-links li:last-child {
@@ -97,7 +96,6 @@
 
 .icon-link {
   margin-right: 0.5rem;
-  color: var(--main-color);
 }
 
 .menu-links li:hover,

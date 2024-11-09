@@ -26,7 +26,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: linear-gradient(120deg, var(--main-color),var(--main-color), #264a70);
+  background: linear-gradient( 130deg,var(--main-hovor-color) 25%, var(--main-color) 75%);
 }
 
 .container {
@@ -35,10 +35,12 @@
   align-items: center;
   text-align: center;
   margin: auto 5rem;
+  padding:5rem ;
   max-width: 1200px;
   width: 100%;
   gap: 2rem;
   color: white;
+
 }
 
 @media (max-width: 1200px) {

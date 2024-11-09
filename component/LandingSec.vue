@@ -8,8 +8,8 @@
         <h1 class="name">Adnan Madi</h1>
         <p class="title">Web Developer</p>
         <p class="description">
-          Passionate about crafting interactive web experiences and building
-          responsive, modern websites.
+          I am a Front-end developer and mostly I am passionate on web coding. I am an expert on web programming
+          and the developing world.
         </p>
         <button class="cta-button">Contact Me</button>
       </div>
@@ -26,12 +26,12 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: linear-gradient(120deg, var(--main-color), var(--main-hovor-color));
+  background-image: linear-gradient(120deg, var(--main-color),var(--main-color), #264a70);
 }
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   text-align: center;
   margin: auto 5rem;
@@ -72,7 +72,7 @@
 .cta-button {
   padding: 0.75rem 1.5rem;
   border: none;
-  background-color: var(--font-hovor-color);
+  background-color: var(--main-color);
   color: var(--main-font-color);
   border-radius: 0.5rem;
   cursor: pointer;
@@ -81,6 +81,7 @@
 
 .cta-button:hover {
   background-color: var(--font-hovor-color);
+  transition: .4s ease-in-out ;
 }
 
 .image-content {

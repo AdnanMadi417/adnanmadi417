@@ -11,7 +11,14 @@
           I am a Front-end developer and mostly I am passionate on web coding. I am an expert on web programming
           and the developing world.
         </p>
-        <button class="cta-button">Contact Me</button>
+        <a class="cta-button" target="_blank" href="https://drive.google.com/drive/folders/1KPjUYgA2UoKv1pRXHVTwPJIvJZ6b1f00?usp=sharing">To Review my CV
+          <span>
+            <UIcon
+                class="icon"
+                name="maki-arrow"
+            />
+          </span>
+        </a>
       </div>
       <div class="image-content">
         <img src="/images/adnan%20photo%203%20.jpg" alt="Adnan Madi" class="profile-image"/>
@@ -67,7 +74,7 @@
 
 .description {
   font-size: 1rem;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   line-height: 1.5;
 }
 
@@ -75,7 +82,7 @@
   padding: 0.75rem 1.5rem;
   border: none;
   background-color: var(--main-color);
-  color: var(--main-font-color);
+  color: var(--main-hovor-color);
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -84,6 +91,10 @@
 .cta-button:hover {
   background-color: var(--font-hovor-color);
   transition: .4s ease-in-out ;
+}
+
+.icon{
+  padding: 0.5rem ;
 }
 
 .image-content {

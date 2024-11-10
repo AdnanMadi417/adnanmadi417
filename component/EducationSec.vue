@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const information = [
+const projects = [
   {
     title: " AIU | Hostel Management System",
     description: "Final Year Project",
@@ -57,21 +57,21 @@ const information = [
   <div class="education-sec">
     <h2>Relevant Projects</h2>
     <div class="container">
-      <div class="card" v-for="info in information" :key="info.title">
+      <div class="card" v-for="project in projects" :key="project.title">
         <h2>
           <span>
             <UIcon
                 name="tabler-augmented-reality-2"
             />
           </span>
-          {{ info.title }}
+          {{ project.title }}
         </h2>
-        <h3>{{ info.description }}</h3>
+        <h3>{{ project.description }}</h3>
         <ul>
-          <li v-for="(description, index) in info.descriptions" :key="index">{{ description }}</li>
+          <li v-for="(description, index) in project.descriptions" :key="index">{{ description }}</li>
         </ul>
         <div class="links">
-          <a v-for="(link, linkIndex) in info.links" :key="linkIndex" :href="link.buttonLink" class="card-button"
+          <a v-for="(link, linkIndex) in project.links" :key="linkIndex" :href="link.buttonLink" class="card-button"
              target="_blank">
             {{ link.buttonText }}
           </a>
@@ -90,11 +90,19 @@ const information = [
 
 .education-sec h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: capitalize;
   font-weight: bold;
   margin: 2rem 0;
   color: var(--main-color);
+}
+
+@media (max-width: 1200px) {
+  .education-sec h2 {
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
 }
 
 .container {

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+import {computed, ref} from "vue";
+
 const skills = [
   {
     title: "Front-End Development",
@@ -57,13 +59,28 @@ const skills = [
   }
 ];
 
+const currentIndex = ref(0);
+const itemsPerPage = 4;
+
+const visibleSkills = computed(() =>
+    skills.slice(currentIndex.value, currentIndex.value + itemsPerPage)
+);
+
+function nextPage() {
+  currentIndex.value = (currentIndex.value + itemsPerPage) % skills.length;
+}
+
+function prevPage() {
+  currentIndex.value = (currentIndex.value - itemsPerPage + skills.length) % skills.length;
+}
+
 </script>
 
 <template>
   <div class="skills-sec">
     <h1>TECHNICAL SKILLS</h1>
     <div class="container">
-      <div class="card" v-for="skill in skills" :key="skill.title">
+      <div class="card" v-for="skill in visibleSkills" :key="skill.title">
         <div class="card-body">
           <span>
           <UIcon
@@ -76,6 +93,18 @@ const skills = [
           <p>{{ skill.description }}</p>
         </div>
       </div>
+    </div>
+    <div class="buttons">
+      <button @click="prevPage">
+        <UIcon
+            name="uil-arrow"
+        />
+      </button>
+      <button @click="nextPage">
+        <UIcon
+            name="uil-arrow"
+        />
+      </button>
     </div>
   </div>
 </template>
@@ -120,5 +149,27 @@ const skills = [
 .card h2 {
   font-size: 1.2rem;
   margin: 1rem 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.buttons button {
+  padding: 0 1rem;
+  margin: 0 2rem;
+  font-size: 2rem;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: .5rem 0;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid var(--main-hovor-color);
+  color: var(--main-hovor-color);
+  transition: .3s ease-in-out;
 }
 </style>

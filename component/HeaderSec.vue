@@ -12,9 +12,15 @@
       <div class="title"></div>
       <nav class="menu">
         <ul class="menu-links">
-          <li><router-link to="/home" id="">Home</router-link></li>
-          <li><router-link to="/about" id="about-sec">About</router-link></li>
-          <li><router-link to="/contact">Projects</router-link></li>
+          <li>
+            <router-link to="/home" id="">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/about" id="about-sec">About</router-link>
+          </li>
+          <li>
+            <router-link to="/contact">Projects</router-link>
+          </li>
         </ul>
       </nav>
       <button class="contact-btn">Contact me</button>
@@ -74,8 +80,7 @@
   margin-right: 0;
 }
 
-.menu-links li:hover,
-.menu-links span:hover {
+.menu-links li:hover {
   color: var(--main-hovor-color);
   transition: .3s ease-in-out;
 }

@@ -12,32 +12,12 @@
       <div class="title"></div>
       <nav class="menu">
         <ul class="menu-links">
-          <li>
-            <router-link to="/home" id="">
-              <span class="icon">
-                <UIcon class="icon-link" name="material-symbols-home"/>
-              </span>
-              Home
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/about" id="about-sec">
-              <span class="icon">
-                <UIcon class="icon-link" name="material-symbols-info"/>
-              </span>
-              About
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/contact">
-              <span class="icon">
-                <UIcon class="icon-link" name="material-symbols-contact-mail"/>
-              </span>
-              Contact
-            </router-link>
-          </li>
+          <li><router-link to="/home" id="">Home</router-link></li>
+          <li><router-link to="/about" id="about-sec">About</router-link></li>
+          <li><router-link to="/contact">Projects</router-link></li>
         </ul>
       </nav>
+      <button class="contact-btn">Contact me</button>
     </div>
   </header>
 </template>
@@ -94,10 +74,6 @@
   margin-right: 0;
 }
 
-.icon-link {
-  margin-right: 0.5rem;
-}
-
 .menu-links li:hover,
 .menu-links span:hover {
   color: var(--main-hovor-color);
@@ -119,6 +95,22 @@
     gap: 0.5rem;
     margin-top: 1rem;
   }
+}
+
+.contact-btn {
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  padding: .5rem 1rem;
+  background-color: var(--main-color);
+  color: var(--main-font-color);
+  border-radius: 0.5rem;
+}
+
+.contact-btn:hover {
+  background-color: var(--main-hovor-color);
+  color: var(--font-hovor-color);
+  transition: .3s ease-in-out;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

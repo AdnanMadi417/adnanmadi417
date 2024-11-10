@@ -21,6 +21,9 @@
           <li>
             <router-link to="/contact">Projects</router-link>
           </li>
+          <li>
+            <router-link to="/contact">Certificates</router-link>
+          </li>
         </ul>
       </nav>
       <button class="contact-btn">Contact me</button>

@@ -5,55 +5,55 @@ const skills = [
     title: "Front-End Development",
     experienceLevel: "Advanced",
     description: "Skilled in building user-friendly and responsive web interfaces.",
-    icon: "mdi:web" // Material Design icon for "web"
+    icon: "mdi:web"
   },
   {
     title: "HTML",
     experienceLevel: "Advanced",
     description: "Proficient in creating semantic and accessible HTML structures.",
-    icon: "mdi:language-html5" // Material Design HTML5 icon
+    icon: "mdi:language-html5"
   },
   {
     title: "CSS",
     experienceLevel: "Advanced",
     description: "Experienced in styling web pages with modern CSS techniques.",
-    icon: "mdi:language-css3" // Material Design CSS3 icon
+    icon: "mdi:language-css3"
   },
   {
     title: "SASS",
     experienceLevel: "Intermediate",
     description: "Proficient in using SASS for modular and maintainable stylesheets.",
-    icon: "mdi:sass" // Material Design SASS icon
+    icon: "mdi:sass"
   },
   {
     title: "Bootstrap",
     experienceLevel: "Intermediate",
     description: "Experienced in utilizing Bootstrap for responsive design and layout.",
-    icon: "simple-icons:bootstrap" // Bootstrap icon from Simple Icons
+    icon: "simple-icons:bootstrap"
   },
   {
     title: "JavaScript",
     experienceLevel: "Advanced",
     description: "Experienced in JavaScript for dynamic functionality and interactivity.",
-    icon: "mdi:language-javascript" // Material Design JavaScript icon
+    icon: "mdi:language-javascript"
   },
   {
     title: "Java",
     experienceLevel: "Intermediate",
     description: "Knowledgeable in Java for building applications with object-oriented principles.",
-    icon: "mdi:language-java" // Material Design Java icon
+    icon: "mdi:language-java"
   },
   {
     title: "Vue.js",
     experienceLevel: "Advanced",
     description: "Skilled in building interactive and efficient UIs with Vue.js.",
-    icon: "mdi:vuejs" // Material Design Vue.js icon
+    icon: "mdi:vuejs"
   },
   {
     title: "Nuxt.js",
     experienceLevel: "Intermediate",
     description: "Experienced in using Nuxt.js for server-side rendering and optimized performance.",
-    icon: "simple-icons:nuxtdotjs" // Nuxt.js icon from Simple Icons
+    icon: "simple-icons:nuxtdotjs"
   }
 ];
 

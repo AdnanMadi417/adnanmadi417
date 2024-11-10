@@ -11,7 +11,8 @@
           I am a Front-end developer and mostly I am passionate on web coding. I am an expert on web programming
           and the developing world.
         </p>
-        <a class="cta-button" target="_blank" href="https://drive.google.com/drive/folders/1KPjUYgA2UoKv1pRXHVTwPJIvJZ6b1f00?usp=sharing">To Review my CV
+        <a class="cta-button" target="_blank"
+           href="https://drive.google.com/drive/folders/1KPjUYgA2UoKv1pRXHVTwPJIvJZ6b1f00?usp=sharing">To Review my CV
           <span>
             <UIcon
                 class="icon"
@@ -33,7 +34,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient( 130deg,var(--main-hovor-color) 25%, var(--main-color) 75%);
+  background: linear-gradient(130deg, var(--main-hovor-color) 25%, var(--main-color) 75%);
 }
 
 .container {
@@ -42,18 +43,11 @@
   align-items: center;
   text-align: center;
   margin: auto 5rem;
-  padding:5rem ;
+  padding: 5rem;
   max-width: 1200px;
   width: 100%;
   gap: 2rem;
   color: white;
-
-}
-
-@media (max-width: 1200px) {
-  .container {
-    margin: auto 1rem;
-  }
 }
 
 .text-content {
@@ -90,11 +84,21 @@
 
 .cta-button:hover {
   background-color: var(--font-hovor-color);
-  transition: .4s ease-in-out ;
+  transition: .4s ease-in-out;
 }
 
-.icon{
-  padding: 0.5rem ;
+.icon {
+  padding: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+
+  .container {
+    flex-direction: column;
+    margin: 5rem 0;
+    padding: 1rem;
+    gap: 5rem;
+  }
 }
 
 .image-content {

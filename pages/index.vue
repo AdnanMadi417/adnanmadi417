@@ -2,11 +2,23 @@
 
 import LandingSec from "~/component/LandingSec.vue";
 import HeaderSec from "~/component/HeaderSec.vue";
+import AboutSec from "~/component/AboutSec.vue";
+import SkillsSec from "~/component/SkillsSec.vue";
+import ProjectsSec from "~/component/ProjectsSec.vue";
+import EducationSec from "~/component/EducationSec.vue";
+import CertificatesSec from "~/component/CertificatesSec.vue";
+import ContactSec from "~/component/ContactSec.vue";
 </script>
 
 <template>
-  <HeaderSec/>
+  <HeaderSec />
   <LandingSec/>
+  <AboutSec/>
+  <ProjectsSec/>
+  <EducationSec/>
+  <SkillsSec/>
+  <CertificatesSec/>
+  <ContactSec/>
 </template>
 
 <style scoped>

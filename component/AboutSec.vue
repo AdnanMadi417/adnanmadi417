@@ -32,7 +32,6 @@
 .about-sec {
   width: 100%;
   padding: 2rem 1rem;
-  background-color: #f9f9f9;
 }
 
 .about-sec h2 {
@@ -47,6 +46,7 @@
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
+  padding: 2rem;
   margin: 0 auto;
   gap: 2rem;
 }

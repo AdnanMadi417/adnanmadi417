@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {computed, ref} from 'vue';
 
 const certificates = [
   {
@@ -35,24 +36,33 @@ const certificates = [
     date: "2022",
     description: "An introductory course to core programming concepts, algorithms, and problem-solving skills applicable across various languages.",
     from: "Corsesara"
-  }
+  },
 ];
 
+const currentIndex = ref(0);
+const itemsPerPage = 4;
 
+const visibleCertificates = computed(() =>
+    certificates.slice(currentIndex.value, currentIndex.value + itemsPerPage)
+);
+
+function nextPage() {
+  currentIndex.value = (currentIndex.value + itemsPerPage) % certificates.length;
+}
+
+function prevPage() {
+  currentIndex.value = (currentIndex.value - itemsPerPage + certificates.length) % certificates.length;
+}
 </script>
 
 <template>
   <div class="certificate-sec">
-    <h1>
-      Online Certifications
-    </h1>
+    <h1>Online Certifications</h1>
     <div class="container">
-      <div class="card" v-for="certificate in certificates" :key="certificate.title">
+      <div class="card" v-for="certificate in visibleCertificates" :key="certificate.title">
         <h2>
           <span>
-            <UIcon
-                :name="certificate.icon"
-            />
+            <UIcon :name="certificate.icon"/>
           </span>
           {{ certificate.title }}
         </h2>
@@ -60,21 +70,32 @@ const certificates = [
         <p>{{ certificate.description }}</p>
       </div>
     </div>
+    <div class="buttons">
+      <button @click="prevPage">
+        <UIcon
+            name="uil-arrow"
+        />
+      </button>
+      <button @click="nextPage">
+        <UIcon
+            name="uil-arrow"
+        />
+      </button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-
 .certificate-sec h1 {
   font-size: 2rem;
   text-align: center;
   margin: 1rem 0;
+  color: var(--main-color);
 }
 
 .container {
   max-width: 1200px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
@@ -83,10 +104,7 @@ const certificates = [
 
 .container .card {
   flex: 1 1 250px;
-  width: 100%;
   max-width: 250px;
-  height: 250px;
-  max-height: 250px;
   padding: 1rem;
   color: var(--main-color);
   border: 2px solid var(--main-color);
@@ -94,14 +112,34 @@ const certificates = [
   border-radius: 1rem 0;
 }
 
-.card h2{
+.card h2 {
   font-size: 1rem;
   margin: 1rem 0;
 }
 
 .card p {
-  text-align:justify;
-  margin: .5rem 0;
+  text-align: justify;
+  margin: 0.5rem 0;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.buttons button {
+  padding: 0 1rem;
+  margin: 0 2rem;
+  font-size: 2rem;
+  color: var(--font-hovor-color);
+  background-color: var(--main-color);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--main-hovor-color);
+  transition: .3s ease-in-out;
+}
 </style>

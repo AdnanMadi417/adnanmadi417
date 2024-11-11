@@ -3,7 +3,7 @@ const contactInfo = [
   {
     platformName: "Email",
     platformIcon: "mdi:email",
-    platformAddress: "mailto:your-email@example.com",
+    platformAddress: "mailto:adnanmadi417@gmail.com",
     displayText: "Email Address"
   },
   {
@@ -15,7 +15,7 @@ const contactInfo = [
   {
     platformName: "GitHub",
     platformIcon: "mdi:github",
-    platformAddress: "mailto:adnanmadi417@gmail.com",
+    platformAddress: "https://github.com/Adnanmadi417",
     displayText: "GitHub Profile"
   },
   {

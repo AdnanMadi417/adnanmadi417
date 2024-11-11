@@ -1,19 +1,46 @@
 <script setup lang="ts">
+import {onMounted, ref} from 'vue';
+
+const isLinksVisible = ref(false);
+
+// Toggle the visibility of menu links when the "next" button is clicked
+function toggleLinksVisibility() {
+  isLinksVisible.value = !isLinksVisible.value;
+  console.log("Links visibility toggled:", isLinksVisible.value);
+}
+
+const isMobile = ref(false);
+
+// Check screen size on mount
+onMounted(() => {
+  isMobile.value = window.innerWidth <= 1200; // Adjust for mobile screen size
+  window.addEventListener('resize', () => {
+    isMobile.value = window.innerWidth <= 1200;
+  });
+});
 </script>
 
 <template>
   <header class="header-section">
     <div class="container">
-      <div class="logo">
-        <a href="/">
-          <span>Adnan Madi</span>
-        </a>
+
+      <div class="container-box">
+        <div class="logo">
+          <a href="/">
+            <span>Adnan Madi</span>
+          </a>
+          <button @click="toggleLinksVisibility" class="bar-btn" v-if="isMobile">
+            <UIcon
+                name="uil-bars"
+            />
+          </button>
+        </div>
       </div>
-      <div class="title"></div>
-      <nav class="menu">
+
+      <nav class="menu" v-if="isLinksVisible || !isMobile">
         <ul class="menu-links">
           <li>
-            <router-link to="/home" id="">Home</router-link>
+            <router-link to="/home">Home</router-link>
           </li>
           <li>
             <router-link to="/about" id="about-sec">About</router-link>
@@ -26,7 +53,9 @@
           </li>
         </ul>
       </nav>
-      <button class="contact-btn">Contact me</button>
+      <div>
+        <a class="contact-btn" href="https://wa.me/+601170064361" target="_blank">Contact me</a>
+      </div>
     </div>
   </header>
 </template>
@@ -38,96 +67,76 @@
   padding: 1rem 2rem;
 }
 
+.container-box > button {
+  display: none;
+}
+
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.logo a {
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: var(--main-font-color);
-  text-decoration: none;
-}
-
-.title h2 {
-  font-size: 1.5rem;
-  color: var(--main-font-color);
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  font-size: 1.4rem;
-  color: var(--main-font-color);
+  padding: .5rem 0;
+  color: var(--font-hovor-color);
 }
 
 .menu-links {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  display: inline-flex;
 }
 
-.menu-links li {
-  margin-right: 1.2rem;
+.menu-links li a {
+  font-size: 1.2rem;
+  margin: 0 .5rem;
+  color: var(--main-font-color);
 }
 
-.menu-links li:last-child {
-  margin-right: 0;
-}
-
-.menu-links li:hover {
-  color: var(--main-hovor-color);
-  transition: .3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .title h2 {
-    display: none;
-  }
-
-  .menu-links {
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
+.menu-links li a:hover {
+  color: var(--font-hovor-color);
 }
 
 .contact-btn {
   font-size: 1.2rem;
   border: none;
   outline: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--main-font-color);
   color: var(--main-color);
   border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
 .contact-btn:hover {
   background-color: var(--main-hovor-color);
   color: var(--font-hovor-color);
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .title h2 {
-    font-size: 1.2rem;
+@media (max-width: 1200px ) {
+
+  .container {
+    display: block;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .container-box div {
+    display: flex;
+    justify-content: space-between;
   }
 
   .menu-links {
-    text-align: start;
+    display: block;
+    margin: 1rem 0;
   }
+
+  .menu-links li {
+    margin-left: .5rem;
+    border-bottom: 2px solid var(--font-hovor-color);
+  }
+
 }
+
 </style>

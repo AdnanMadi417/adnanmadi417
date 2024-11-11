@@ -1,4 +1,10 @@
 <script setup lang="ts">
+
+import {ref} from 'vue';
+import CVPopup from "~/component/CVPopup.vue";
+
+const showPopup = ref(false);
+
 </script>
 
 <template>
@@ -11,15 +17,15 @@
           I am a Front-end developer and mostly I am passionate on web coding. I am an expert on web programming
           and the developing world.
         </p>
-        <a class="cta-button" target="_blank"
-           href="https://drive.google.com/drive/folders/1KPjUYgA2UoKv1pRXHVTwPJIvJZ6b1f00?usp=sharing">To Review my CV
+        <button @click="showPopup = true" class="cta-button" id="cvButton">To Review my CV
           <span>
             <UIcon
                 class="icon"
                 name="maki-arrow"
             />
           </span>
-        </a>
+        </button>
+        <CVPopup v-model:show="showPopup"></CVPopup>
       </div>
       <div class="image-content">
         <img src="/images/adnan%20photo%203%20.jpg" alt="Adnan Madi" class="profile-image"/>

@@ -31,8 +31,9 @@
 
 <style scoped>
 .education-sec {
-  padding: 2rem 1rem;
+  padding: 5rem 1rem;
 }
+
 
 .container {
   max-width: 1200px;
@@ -42,7 +43,7 @@
   justify-content: center;
   gap: 2rem;
   margin: 0 auto;
-  background-color: var(--font-hovor-color);
+  background-color: #f5f5f5;
   padding: 1rem;
   border-radius: 2rem;
 }

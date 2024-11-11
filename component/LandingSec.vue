@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(130deg, var(--main-hovor-color) 25%, var(--main-color) 75%);
+  background-color: var(--font-hovor-color);
 }
 
 .container {
@@ -46,8 +46,7 @@
   padding: 5rem;
   max-width: 1200px;
   width: 100%;
-  gap: 2rem;
-  color: white;
+  color: var(--main-color);
 }
 
 .text-content {
@@ -63,7 +62,7 @@
 .title {
   font-size: 3rem;
   margin: 0.5rem 0;
-  color: var(--main-font-color);
+  color: var(--main-color);
 }
 
 .description {
@@ -76,15 +75,16 @@
   padding: 0.75rem 1.5rem;
   border: none;
   background-color: var(--main-color);
-  color: var(--main-hovor-color);
+  color: var(--main-font-color);
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-  background-color: var(--font-hovor-color);
-  transition: .4s ease-in-out;
+  background-color: var(--main-hovor-color);
+  color: var(--font-hovor-color);
+  transition: .3s ease-in-out;
 }
 
 .icon {

@@ -33,7 +33,7 @@
 
 <style scoped>
 .header-section {
-  background-color: #eeeeee;
+  background-color: var(--main-color);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
 }
@@ -50,13 +50,13 @@
 .logo a {
   font-size: 1.5rem;
   font-weight: normal;
-  color: var(--main-color);
+  color: var(--main-font-color);
   text-decoration: none;
 }
 
 .title h2 {
   font-size: 1.5rem;
-  color: var(--main-color);
+  color: var(--main-font-color);
   text-transform: uppercase;
   text-align: center;
 }
@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   font-size: 1.4rem;
-  color: var(--main-color);
+  color: var(--main-font-color);
 }
 
 .menu-links {
@@ -110,8 +110,8 @@
   border: none;
   outline: none;
   padding: .5rem 1rem;
-  background-color: var(--main-color);
-  color: var(--main-font-color);
+  background-color: var(--main-font-color);
+  color: var(--main-color);
   border-radius: 0.5rem;
 }
 

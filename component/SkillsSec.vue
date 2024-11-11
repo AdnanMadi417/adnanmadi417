@@ -111,10 +111,17 @@ function prevPage() {
 
 <style scoped>
 
+.skills-sec{
+  padding: 5rem 1rem;
+  background-color: var(--font-hovor-color);
+}
+
 .skills-sec > h1 {
   text-align: center;
-  margin: 2rem 0;
-  font-size: 3rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 2rem ;
   color: var(--main-color);
 }
 
@@ -136,7 +143,7 @@ function prevPage() {
   margin: 1rem 0;
   transition: trasform .3s;
   background-color: var(--main-color);
-  color: var(--main-font-color);
+  color: var(--font-hovor-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 

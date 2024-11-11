@@ -86,10 +86,17 @@ function prevPage() {
 </template>
 
 <style scoped>
+
+.certificate-sec{
+  padding: 5rem 1rem;
+}
+
 .certificate-sec h1 {
-  font-size: 2rem;
   text-align: center;
-  margin: 1rem 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 4rem ;
   color: var(--main-color);
 }
 

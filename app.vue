@@ -5,9 +5,9 @@
 
 <style>
 :root {
-  --main-color: #16423C;
-  --main-hovor-color: #6A9C89;
-  --main-font-color: #C4DAD2;
-  --font-hovor-color: #E2F1E7;
+  --main-color: #1E201E;
+  --main-hovor-color: #3C3D37;
+  --main-font-color: #DDDDDD;
+  --font-hovor-color: #EEEEEE;
 }
 </style>

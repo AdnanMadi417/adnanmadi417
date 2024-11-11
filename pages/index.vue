@@ -7,6 +7,7 @@ import SkillsSec from "~/component/SkillsSec.vue";
 import ProjectsSec from "~/component/ProjectsSec.vue";
 import EducationSec from "~/component/EducationSec.vue";
 import CertificatesSec from "~/component/CertificatesSec.vue";
+import FooterSec from "~/component/FooterSec.vue";
 import ContactSec from "~/component/ContactSec.vue";
 </script>
 
@@ -19,6 +20,7 @@ import ContactSec from "~/component/ContactSec.vue";
   <SkillsSec/>
   <CertificatesSec/>
   <ContactSec/>
+  <FooterSec/>
 </template>
 
 <style scoped>

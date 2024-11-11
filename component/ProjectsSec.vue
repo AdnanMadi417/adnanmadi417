@@ -55,7 +55,7 @@ const projects = [
 
 <template>
   <div class="education-sec">
-    <h2>Relevant Projects</h2>
+    <h1>Relevant Projects</h1>
     <div class="container">
       <div class="card" v-for="project in projects" :key="project.title">
         <h2>
@@ -84,16 +84,16 @@ const projects = [
 <style scoped>
 .education-sec {
   width: 100%;
-  padding: 2rem 1rem;
-  background-color: #f9f9f9;
+  padding: 5rem 1rem;
+  background-color: var(--main-font-color);
 }
 
-.education-sec h2 {
+.education-sec h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-transform: capitalize;
   font-weight: bold;
-  margin: 2rem 0;
+  margin-bottom: 4rem ;
   color: var(--main-color);
 }
 
@@ -118,7 +118,7 @@ const projects = [
   flex: 1 1 350px;
   max-width: 350px;
   text-align: center;
-  background-color: var(--main-font-color);
+  background-color: var(--font-hovor-color);
   padding: 2rem 1rem;
   box-shadow: rgba(99, 99, 99, 0.5) 0 2px 8px 0;
 }

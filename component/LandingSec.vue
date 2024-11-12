@@ -8,7 +8,7 @@ const showPopup = ref(false);
 </script>
 
 <template>
-  <section class="landing-section">
+  <section class="landing-sec" id="landing-sec">
     <div class="container">
       <div class="text-content">
         <h1 class="name">Adnan Madi</h1>
@@ -35,7 +35,7 @@ const showPopup = ref(false);
 </template>
 
 <style scoped>
-.landing-section {
+.landing-sec {
   display: flex;
   align-items: center;
   justify-content: center;

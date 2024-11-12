@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="education-sec">
+  <div class="education-sec" id="education-sec">
     <div class="container">
       <div class="box-content">
         <h3>Bachelor of Computer Science</h3>

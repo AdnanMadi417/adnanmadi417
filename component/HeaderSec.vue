@@ -3,7 +3,6 @@ import {onMounted, ref} from 'vue';
 
 const isLinksVisible = ref(false);
 
-// Toggle the visibility of menu links when the "next" button is clicked
 function toggleLinksVisibility() {
   isLinksVisible.value = !isLinksVisible.value;
   console.log("Links visibility toggled:", isLinksVisible.value);
@@ -11,9 +10,8 @@ function toggleLinksVisibility() {
 
 const isMobile = ref(false);
 
-// Check screen size on mount
 onMounted(() => {
-  isMobile.value = window.innerWidth <= 1200; // Adjust for mobile screen size
+  isMobile.value = window.innerWidth <= 1200;
   window.addEventListener('resize', () => {
     isMobile.value = window.innerWidth <= 1200;
   });
@@ -40,16 +38,22 @@ onMounted(() => {
       <nav class="menu" v-if="isLinksVisible || !isMobile">
         <ul class="menu-links">
           <li>
-            <router-link to="/home">Home</router-link>
+            <router-link to="#landing-sec">Home</router-link>
           </li>
           <li>
-            <router-link to="/about" id="about-sec">About</router-link>
+            <router-link to="#about-sec">About</router-link>
           </li>
           <li>
-            <router-link to="/contact">Projects</router-link>
+            <router-link to="#projects-sec">Projects</router-link>
           </li>
           <li>
-            <router-link to="/contact">Certificates</router-link>
+            <router-link to="#education-sec">Education</router-link>
+          </li>
+          <li>
+            <router-link to="#skills-sec">Skills</router-link>
+          </li>
+          <li>
+            <router-link to="#certificate-sec">Certificates</router-link>
           </li>
         </ul>
       </nav>

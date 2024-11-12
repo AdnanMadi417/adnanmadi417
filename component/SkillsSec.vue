@@ -77,7 +77,7 @@ function prevPage() {
 </script>
 
 <template>
-  <div class="skills-sec">
+  <div class="skills-sec" id="skills-sec">
     <h1>TECHNICAL SKILLS</h1>
     <div class="container">
       <div class="card" v-for="skill in visibleSkills" :key="skill.title">

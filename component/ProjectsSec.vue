@@ -54,7 +54,7 @@ const projects = [
 </script>
 
 <template>
-  <div class="education-sec">
+  <div class="projects-sec" id="projects-sec">
     <h1>Relevant Projects</h1>
     <div class="container">
       <div class="card" v-for="project in projects" :key="project.title">
@@ -82,13 +82,13 @@ const projects = [
 </template>
 
 <style scoped>
-.education-sec {
+.projects-sec {
   width: 100%;
   padding: 5rem 1rem;
   background-color: var(--main-font-color);
 }
 
-.education-sec h1 {
+.projects-sec h1 {
   text-align: center;
   font-size: 2rem;
   text-transform: capitalize;
@@ -98,7 +98,7 @@ const projects = [
 }
 
 @media (max-width: 1200px) {
-  .education-sec h2 {
+  .projects-sec h2 {
     font-size: 2rem;
     margin: 3rem 0;
   }

@@ -22,5 +22,7 @@ import FooterSec from "~/component/FooterSec.vue";
 </template>
 
 <style scoped>
-
+html {
+  scroll-behavior: smooth;
+}
 </style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const projects = [
   {
-    title: " AIU | Hostel Management System",
+    title: "AIU Hostel Management System",
     description: "Final Year Project",
     descriptions: [
       "Developed and implemented a Hostel Management System, streamlining room allocation, maintenance requests, and billing, leading to a 50% reduction in manual administrative tasks.",
@@ -19,7 +19,7 @@ const projects = [
     ]
   },
   {
-    title: "IESCO | Web Developer",
+    title: "IESCO Scholarship Application",
     description: "Freelancer",
     descriptions: [
       "Developed a Scholarship Registration System that streamlined application processes, reducing submission time by 40% and decreasing application processing by 30%.",
@@ -27,7 +27,7 @@ const projects = [
     ],
     links: [
       {
-        buttonText: "Apply Now ",
+        buttonText: "Live Demo",
         buttonLink: "https://application.iesco.my",
       },
       {
@@ -37,7 +37,7 @@ const projects = [
     ]
   },
   {
-    title: "E-commerce | Front End Developer",
+    title: "E-commerce Front End Developer",
     description: "Experience",
     descriptions: [
       " Developed responsive layouts with modern CSS frameworks, enhancing accessibility and performance across devices, and optimizing the shopping experience.",
@@ -58,19 +58,23 @@ const projects = [
     <h1>Relevant Projects</h1>
     <div class="container">
       <div class="card" v-for="project in projects" :key="project.title">
-        <h2>
-          <span>
+        <div class="card-header">
+        <span>
             <UIcon
                 name="tabler-augmented-reality-2"
             />
           </span>
-          {{ project.title }}
-        </h2>
-        <h3>{{ project.description }}</h3>
-        <ul>
-          <li v-for="(description, index) in project.descriptions" :key="index">{{ description }}</li>
-        </ul>
-        <div class="links">
+          <div>
+            <h2> {{ project.title }}</h2>
+            <h2>{{ project.description }}</h2>
+          </div>
+        </div>
+        <div class="card-content">
+          <ul>
+            <li v-for="(description, index) in project.descriptions" :key="index">{{ description }}</li>
+          </ul>
+        </div>
+        <div class="card-footer">
           <a v-for="(link, linkIndex) in project.links" :key="linkIndex" :href="link.buttonLink" class="card-button"
              target="_blank">
             {{ link.buttonText }}
@@ -93,71 +97,79 @@ const projects = [
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: bold;
-  margin-bottom: 4rem ;
+  margin-bottom: 4rem;
   color: var(--main-color);
 }
 
-@media (max-width: 1200px) {
-  .projects-sec h2 {
-    font-size: 2rem;
-    margin: 3rem 0;
-  }
-
-}
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 2rem 0;
 }
 
 .card {
   flex: 1 1 350px;
-  max-width: 350px;
+  display: block;
+  max-width: 370px;
   text-align: center;
   background-color: var(--font-hovor-color);
   padding: 2rem 1rem;
   box-shadow: rgba(99, 99, 99, 0.5) 0 2px 8px 0;
 }
 
-.card h2 {
-  font-size: 1.4rem;
-  text-align: start;
-  margin: .5rem 0;
-  font-weight: bold;
+
+.card-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2rem;
   color: var(--main-color);
 }
 
-.card h3 {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-top: -1rem;
-  color: var(--main-color);
+.card-header span{
+  font-size: 3rem;
 }
 
-.card ul li {
+@media (max-width:1200px ) {
+  .card-header {
+    font-size: 1rem;
+    padding: 0;
+    margin:0 ;
+  }
+
+  .card-header span{
+    font-size: 2rem;
+  }
+
+}
+
+.card-content {
+  height: 280px;
+}
+
+.card-content ul li {
   text-align: justify;
   font-size: 1rem;
   padding: 1rem 0.5rem 0;
 }
 
-.links {
+.card-footer {
   display: flex;
   justify-content: space-around;
   margin-top: 1rem;
 }
 
-.links a {
+.card-footer a {
   padding: .5rem 1rem;
   background-color: var(--main-color);
   border-radius: 1rem;
   color: var(--main-font-color);
 }
 
-.links a:hover {
+.card-footer a:hover {
   background-color: var(--main-hovor-color);
   transition: .3s ease-in-out;
 }

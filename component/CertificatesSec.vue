@@ -57,7 +57,7 @@ function prevPage() {
 
 <template>
   <div class="certificate-sec" id="certificate-sec">
-    <h1>Online Certifications</h1>
+    <h1>Certifications</h1>
     <div class="container">
       <div class="card" v-for="certificate in visibleCertificates" :key="certificate.title">
         <h2>

@@ -37,8 +37,8 @@ const projects = [
     ]
   },
   {
-    title: "E-commerce Front End Developer",
-    description: "Experience",
+    title: "E-commerce",
+    description: "Front End Developer",
     descriptions: [
       " Developed responsive layouts with modern CSS frameworks, enhancing accessibility and performance across devices, and optimizing the shopping experience.",
       "Designed and implemented user-friendly interfaces,and improved the overall user experience for buying documents.",
@@ -64,7 +64,7 @@ const projects = [
                 name="tabler-augmented-reality-2"
             />
           </span>
-          <div>
+          <div class="box">
             <h2> {{ project.title }}</h2>
             <h2>{{ project.description }}</h2>
           </div>
@@ -114,7 +114,6 @@ const projects = [
   flex: 1 1 350px;
   display: block;
   max-width: 370px;
-  text-align: center;
   background-color: var(--font-hovor-color);
   padding: 2rem 1rem;
   box-shadow: rgba(99, 99, 99, 0.5) 0 2px 8px 0;
@@ -124,9 +123,13 @@ const projects = [
 .card-header {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   font-size: 1.2rem;
   color: var(--main-color);
+}
+
+.box{
+  align-items: center;
+  font-size: 1.2rem;
 }
 
 .card-header span{

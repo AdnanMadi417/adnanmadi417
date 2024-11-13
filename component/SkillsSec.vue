@@ -80,17 +80,24 @@ function prevPage() {
   <div class="skills-sec" id="skills-sec">
     <h1>TECHNICAL SKILLS</h1>
     <div class="container">
+
       <div class="card" v-for="skill in visibleSkills" :key="skill.title">
-        <div class="card-body">
-          <span>
-          <UIcon
-              class="icon"
-              :name="skill.icon"
-          />
-        </span>
-          <h2>{{ skill.title }}</h2>
-          <h3>{{ skill.experienceLevel }}</h3>
+        <div class="card-header">
+        <span>
+            <UIcon
+                :name="skill.icon"
+            />
+          </span>
+          <div class="box">
+            <h2> {{ skill.title }}</h2>
+            <h2>{{ skill.experienceLevel }}</h2>
+          </div>
+        </div>
+        <div class="card-content">
           <p>{{ skill.description }}</p>
+        </div>
+        <div class="card-footer">
+
         </div>
       </div>
     </div>
@@ -111,17 +118,17 @@ function prevPage() {
 
 <style scoped>
 
-.skills-sec{
+.skills-sec {
   padding: 5rem 1rem;
+  margin: auto;
   background-color: var(--font-hovor-color);
 }
 
 .skills-sec > h1 {
   text-align: center;
   font-size: 2rem;
-  text-transform: capitalize;
   font-weight: bold;
-  margin-bottom: 2rem ;
+  margin-bottom: 2rem;
   color: var(--main-color);
 }
 
@@ -135,27 +142,48 @@ function prevPage() {
   gap: 0 1rem;
 }
 
-.container .card {
+.card {
   flex: 1 1 250px;
-  width: 100%;
+  display: block;
   max-width: 250px;
-  padding: 1.5rem;
-  margin: 1rem 0;
-  transition: trasform .3s;
-  background-color: var(--main-color);
-  color: var(--font-hovor-color);
-  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  padding: 2rem 1rem;
+  border: 2px solid var(--main-color);
+  box-shadow: rgba(99, 99, 99, 0.5) 0 2px 8px 0;
+  border-radius: 2rem 0;
 }
 
-.container .card .icon {
+
+.card-header {
+  display: flex;
+  justify-content: space-around;
+  color: var(--main-color);
+}
+
+.box {
+  align-items: center;
+  font-size: 1rem;
+  margin: .5rem 0;
+}
+
+.card-header span {
   font-size: 3rem;
-  margin: 0 auto;
-  color: var(--main-font-color);
 }
 
-.card h2 {
-  font-size: 1.2rem;
-  margin: 1rem 0;
+@media (max-width: 1200px ) {
+  .card-header {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-header span {
+    font-size: 2rem;
+  }
+
+}
+
+.card-content {
+  height: 50px;
 }
 
 .buttons {
@@ -168,14 +196,15 @@ function prevPage() {
   padding: 0 1rem;
   margin: 0 2rem;
   font-size: 2rem;
+  background-color: var(--main-color);
   border: 2px solid var(--main-color);
-  color: var(--main-color);
-  border-radius: .5rem 0;
+  color: var(--font-hovor-color);
+  border-radius: 0 1rem ;
   cursor: pointer;
 }
 
 button:hover {
-  border: 2px solid var(--main-hovor-color);
+  border: 2px solid var(--font-hovor-color);
   color: var(--main-hovor-color);
   transition: .3s ease-in-out;
 }

@@ -16,7 +16,8 @@ onMounted(() => {
     isMobile.value = window.innerWidth <= 1200;
   });
 });
-</script>
+
+  </script>
 
 <template>
   <header class="header-section">
@@ -35,28 +36,31 @@ onMounted(() => {
         </div>
       </div>
 
-      <nav class="menu" v-if="isLinksVisible || !isMobile">
-        <ul class="menu-links">
-          <li>
-            <router-link to="#landing-sec">Home</router-link>
-          </li>
-          <li>
-            <router-link to="#about-sec">About</router-link>
-          </li>
-          <li>
-            <router-link to="#projects-sec">Projects</router-link>
-          </li>
-          <li>
-            <router-link to="#education-sec">Education</router-link>
-          </li>
-          <li>
-            <router-link to="#skills-sec">Skills</router-link>
-          </li>
-          <li>
-            <router-link to="#certificate-sec">Certificates</router-link>
-          </li>
-        </ul>
-      </nav>
+      <Transition>
+        <nav class="menu" v-if="isLinksVisible || !isMobile">
+          <ul class="menu-links">
+            <li>
+              <router-link to="#landing-sec">Home</router-link>
+            </li>
+            <li>
+              <router-link to="#about-sec">About</router-link>
+            </li>
+            <li>
+              <router-link to="#projects-sec">Projects</router-link>
+            </li>
+            <li>
+              <router-link to="#education-sec">Education</router-link>
+            </li>
+            <li>
+              <router-link to="#skills-sec">Skills</router-link>
+            </li>
+            <li>
+              <router-link to="#certificate-sec">Certificates</router-link>
+            </li>
+          </ul>
+        </nav>
+
+      </Transition>
       <div>
         <a class="contact-btn" href="https://wa.me/+601170064361" target="_blank">Contact me</a>
       </div>
@@ -70,6 +74,7 @@ onMounted(() => {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
 }
+
 
 .container-box > button {
   display: none;

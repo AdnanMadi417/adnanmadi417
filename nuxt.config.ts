@@ -4,7 +4,5 @@ export default defineNuxtConfig({
   devtools: {enabled: true},
   pages: true,
   modules: ['@nuxt/ui'],
-  app: {
-    baseURL: process.env.NODE_ENV === 'production' ? '/adnanmadi417/' : '/',
-  },
+    ssr: false, // Disable SSR if you want a fully static site, set to true for SSR.
 })

@@ -4,12 +4,6 @@ import {computed, ref} from "vue";
 
 const skills = [
   {
-    title: "Front-End Development",
-    experienceLevel: "Advanced",
-    description: "Skilled in building user-friendly and responsive web interfaces.",
-    icon: "mdi:web"
-  },
-  {
     title: "HTML",
     experienceLevel: "Advanced",
     description: "Proficient in creating semantic and accessible HTML structures.",
@@ -197,15 +191,14 @@ function prevPage() {
   margin: 0 2rem;
   font-size: 2rem;
   background-color: var(--main-color);
-  border: 2px solid var(--main-color);
   color: var(--font-hovor-color);
   border-radius: 0 1rem ;
   cursor: pointer;
 }
 
 button:hover {
-  border: 2px solid var(--font-hovor-color);
-  color: var(--main-hovor-color);
+  background-color: var(--main-hovor-color);
+  color: var(--font-hovor-color);
   transition: .3s ease-in-out;
 }
 </style>

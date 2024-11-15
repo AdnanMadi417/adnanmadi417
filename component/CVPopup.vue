@@ -39,16 +39,36 @@ function closePopup() {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 1000;
 }
 
 .popup-content {
   background-color: var(--main-font-color);
   width: 80%;
-  max-width: 900px;
+  max-width: 800px;
   position: relative;
-  padding: .5rem;
-  border-radius: 1rem;
+  padding: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-20px);
+  animation: slideUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff6b6b;
 }
 
 @media (max-width: 1200px) {
@@ -60,18 +80,25 @@ function closePopup() {
 @media (max-width: 768px) {
   .popup-content {
     width: 95%;
-    max-width: 100%;
+    padding: 0.5rem;
   }
+
   iframe {
     height: 400px;
   }
+
+  .close {
+    font-size: 1.2rem;
+  }
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>

@@ -1,23 +1,21 @@
 <script setup lang="ts">
-
-import {ref} from 'vue';
+import { ref } from 'vue';
 import CVPopup from "~/component/CVPopup.vue";
 
 const showPopup = ref(false);
-
 </script>
 
 <template>
   <section class="landing-sec" id="landing-sec">
     <div class="container">
       <div class="text-content">
-        <h1 class="name">Adnan Madi</h1>
-        <p class="title">Web Developer</p>
-        <p class="description">
-          I am a Front-end developer and mostly I am passionate on web coding. I am an expert on web programming
-          and the developing world.
+        <h1 class="name slide-up">Adnan Madi</h1>
+        <p class="title fade-in">Web Developer</p>
+        <p class="description fade-in">
+          I am a Front-end developer, and mostly I am passionate about web coding. I am an expert in web programming
+          and the development world.
         </p>
-        <button @click="showPopup = true" class="cta-button" id="cvButton">To Review my CV
+        <button @click="showPopup = true" class="cta-button fade-in" id="cvButton">To Review my CV
           <span>
             <UIcon
                 class="icon"
@@ -28,7 +26,7 @@ const showPopup = ref(false);
         <CVPopup v-model:show="showPopup"></CVPopup>
       </div>
       <div class="image-content">
-        <img src="/images/adnan%20photo%203%20.jpg" alt="Adnan Madi" class="profile-image"/>
+        <img src="/images/adnan%20photo%203%20.jpg" alt="Adnan Madi" class="profile-image image-fade"/>
       </div>
     </div>
   </section>
@@ -40,7 +38,7 @@ const showPopup = ref(false);
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: var(--font-hovor-color);
+  background-image: linear-gradient(135deg, rgba(22, 66, 60, 0.9), rgba(106, 156, 137, 0.9));
 }
 
 .container {
@@ -52,7 +50,7 @@ const showPopup = ref(false);
   padding: 5rem;
   max-width: 1200px;
   width: 100%;
-  color: var(--main-color);
+  color: var(--font-hovor-color);
 }
 
 .text-content {
@@ -63,48 +61,43 @@ const showPopup = ref(false);
   font-size: 5rem;
   font-weight: bold;
   margin: 0;
+  opacity: 0;
+  animation: slideUp 1.2s ease forwards;
 }
 
 .title {
   font-size: 3rem;
   margin: 0.5rem 0;
-  color: var(--main-color);
+  color: var(--font-hovor-color);
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
 }
 
 .description {
   font-size: 1rem;
   margin: 1rem 0 2rem 0;
   line-height: 1.5;
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
 }
 
 .cta-button {
   padding: 0.75rem 1.5rem;
   border: none;
   background-color: var(--main-color);
-  color: var(--main-font-color);
+  color: var(--font-hovor-color);
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: var(--main-hovor-color);
-  color: var(--font-hovor-color);
-  transition: .3s ease-in-out;
+  transform: scale(1.05);
 }
 
 .icon {
   padding: 0.5rem;
-}
-
-@media (max-width: 1200px) {
-
-  .container {
-    flex-direction: column;
-    margin: 5rem 0;
-    padding: 1rem;
-    gap: 5rem;
-  }
 }
 
 .image-content {
@@ -120,21 +113,28 @@ const showPopup = ref(false);
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    flex-direction: row;
-    text-align: left;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-  .text-content {
-    text-align: left;
-    padding-right: 2rem;
-  }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    margin: 5rem 0;
+    padding: 1rem;
+    gap: 3rem;
+  }
+
   .name {
     font-size: 3rem;
   }
@@ -144,5 +144,4 @@ const showPopup = ref(false);
     color: var(--main-font-color);
   }
 }
-
 </style>

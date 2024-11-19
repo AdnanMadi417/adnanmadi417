@@ -17,7 +17,7 @@ onMounted(() => {
   });
 });
 
-  </script>
+</script>
 
 <template>
   <header class="header-section">
@@ -70,7 +70,7 @@ onMounted(() => {
 
 <style scoped>
 .header-section {
-  background-color: var(--main-color);
+  background-color: var(--main-font-color);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   padding: 1rem 2rem;
 }
@@ -87,7 +87,12 @@ onMounted(() => {
   max-width: 1200px;
   margin: 0 auto;
   padding: .5rem 0;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .menu-links {
@@ -97,11 +102,11 @@ onMounted(() => {
 .menu-links li a {
   font-size: 1.2rem;
   margin: 0 .5rem;
-  color: var(--main-font-color);
 }
 
 .menu-links li a:hover {
-  color: var(--font-hovor-color);
+  color: var(--main-hovor-color);
+  transition: .3s ease-in-out;
 }
 
 .contact-btn {
@@ -109,8 +114,8 @@ onMounted(() => {
   border: none;
   outline: none;
   padding: 0.5rem 1rem;
-  background-color: var(--main-font-color);
-  color: var(--main-color);
+  background-color: var(--main-color);
+  color: var(--main-font-color);
   border-radius: 0.5rem;
   margin-top: 1rem;
 }

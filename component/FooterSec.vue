@@ -50,7 +50,7 @@ const contactInfo = [
 
 <style scoped>
 .footer-sec {
-  background-image: linear-gradient(120deg, var(--main-color) 50%, var(--main-hovor-color) 100%);
+  background-image: linear-gradient(160deg, #16423C 50%, #6A9C89);
   padding: 2rem 1rem;
   margin-top: 5rem;
 }

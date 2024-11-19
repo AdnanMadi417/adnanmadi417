@@ -146,6 +146,12 @@ function prevPage() {
   border-radius: 2rem 0;
 }
 
+@media (max-width: 1200px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
 
 .card-header {
   display: flex;
@@ -192,7 +198,7 @@ function prevPage() {
   font-size: 2rem;
   background-color: var(--main-color);
   color: var(--font-hovor-color);
-  border-radius: 0 1rem ;
+  border-radius: 0 1rem;
   cursor: pointer;
 }
 

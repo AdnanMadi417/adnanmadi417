@@ -25,7 +25,7 @@ onMounted(() => {
 
       <div class="container-box">
         <div class="logo">
-          <a href="/">
+          <a href="/https://adnanmadi-417.vercel.app/">
             <span>Adnan Madi</span>
           </a>
           <button @click="toggleLinksVisibility" class="bar-btn" v-if="isMobile">

@@ -38,7 +38,7 @@ const showPopup = ref(false);
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: linear-gradient(135deg, rgba(22, 66, 60, 0.9), rgba(106, 156, 137, 0.9));
+  background-image: linear-gradient(-225deg, rgba(7, 25, 82, 1)0%, #074173 51%, #074173 100%);
 }
 
 .container {

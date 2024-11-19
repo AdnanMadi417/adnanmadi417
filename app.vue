@@ -5,8 +5,8 @@
 
 <style>
 :root {
-  --main-color: #16423C;
-  --main-hovor-color: #6A9C89;
+  --main-color: #071952;
+  --main-hovor-color: #088395;
   --main-font-color: #EEEEEE;
   --font-hovor-color: #E9EFEC;
 }
@@ -14,7 +14,6 @@
 
 <script setup>
 onMounted(() => {
-  // Ensure the light mode is the default when no theme is set
   const theme = localStorage.getItem('theme') || 'light';
   if (theme === 'dark') {
     document.documentElement.classList.add('dark');

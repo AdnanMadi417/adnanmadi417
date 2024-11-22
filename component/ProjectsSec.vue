@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {computed, ref} from "vue";
+
 const projects = [
   {
     title: "AIU Hostel Management System",
@@ -37,6 +39,24 @@ const projects = [
     ]
   },
   {
+    title: "File Management System",
+    description: "Front End Developer",
+    descriptions: [
+      "Developed a File Management System dashboard enabling administrators to efficiently add, delete, update, and view files, improving file accessibility and reducing management time by 20%.",
+      "Designed a responsive and user-friendly interface, enhancing usability and boosting task completion rates by 30%, while ensuring secure and organized file storage.",
+    ],
+    links: [
+      {
+        buttonText: "Live Demo",
+        buttonLink: "https://serious-iv71dtqjq-adnanmadi417s-projects.vercel.app/",
+      },
+      {
+        buttonText: "Github Link ",
+        buttonLink: "https://github.com/AdnanMadi417/file-managment-system.git",
+      }
+    ]
+  },
+  {
     title: "E-commerce",
     description: "Front End Developer",
     descriptions: [
@@ -51,13 +71,28 @@ const projects = [
     ]
   },
 ]
+
+const currentIndex = ref(0);
+const itemsPerPage = 3;
+
+const visibleProjects = computed(() =>
+    projects.slice(currentIndex.value, currentIndex.value + itemsPerPage)
+);
+
+function nextPage() {
+  currentIndex.value = (currentIndex.value + itemsPerPage) % projects.length;
+}
+
+function prevPage() {
+  currentIndex.value = (currentIndex.value - itemsPerPage + projects.length) % projects.length;
+}
 </script>
 
 <template>
   <div class="projects-sec" id="projects-sec">
     <h1>Relevant Projects</h1>
     <div class="container">
-      <div class="card" v-for="project in projects" :key="project.title">
+      <div class="card" v-for="project in visibleProjects" :key="project.title">
         <div class="card-header">
         <span>
             <UIcon
@@ -82,6 +117,19 @@ const projects = [
         </div>
       </div>
     </div>
+    <div class="buttons">
+      <button @click="prevPage">
+        <UIcon
+            name="uil-arrow"
+        />
+      </button>
+      <button @click="nextPage">
+        <UIcon
+            name="uil-arrow"
+        />
+      </button>
+    </div>
+
   </div>
 </template>
 
@@ -181,5 +229,42 @@ const projects = [
   .container {
     justify-content: space-between;
   }
+}
+
+@media (max-width: 1200px ) {
+
+  .card-header {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-header span {
+    font-size: 2rem;
+  }
+
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.buttons button {
+  padding: 0 1rem;
+  margin: 0 2rem;
+  font-size: 2rem;
+  background-color: var(--main-color);
+  color: var(--font-hovor-color);
+  border-radius: 0 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--main-hovor-color);
+  color: var(--font-hovor-color);
+  transition: .3s ease-in-out;
 }
 </style>

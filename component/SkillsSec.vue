@@ -50,7 +50,13 @@ const skills = [
     experienceLevel: "Intermediate",
     description: "Experienced in using Nuxt.js for server-side rendering and optimized performance.",
     icon: "simple-icons:nuxtdotjs"
-  }
+  },
+  {
+    title: "API",
+    experienceLevel: "Intermediate",
+    description: "Skilled in working with RESTful APIs, handling requests, and integrating third-party services.",
+    icon: "mdi:api"
+  },
 ];
 
 const currentIndex = ref(0);
@@ -84,7 +90,7 @@ function prevPage() {
           </span>
           <div class="box">
             <h2> {{ skill.title }}</h2>
-            <h2>{{ skill.experienceLevel }}</h2>
+            <p>{{ skill.experienceLevel }}</p>
           </div>
         </div>
         <div class="card-content">
@@ -144,6 +150,7 @@ function prevPage() {
   border: 2px solid var(--main-color);
   box-shadow: rgba(99, 99, 99, 0.5) 0 2px 8px 0;
   border-radius: 2rem 0;
+  min-height: 15rem;
 }
 
 @media (max-width: 1200px) {
@@ -151,7 +158,6 @@ function prevPage() {
     margin-bottom: 1rem;
   }
 }
-
 
 .card-header {
   display: flex;
@@ -170,6 +176,7 @@ function prevPage() {
 }
 
 @media (max-width: 1200px ) {
+
   .card-header {
     font-size: 1rem;
     padding: 0;

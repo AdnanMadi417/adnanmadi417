@@ -3,24 +3,6 @@ import {computed, ref} from "vue";
 
 const projects = [
   {
-    title: "AIU Hostel Management System",
-    description: "Final Year Project",
-    descriptions: [
-      "Developed and implemented a Hostel Management System, streamlining room allocation, maintenance requests, and billing, leading to a 50% reduction in manual administrative tasks.",
-      "Optimized user interfaces for staff and residents, resulting in a 30% increase in user satisfaction and a 25% faster response time for issue resolution.",
-    ],
-    links: [
-      {
-        buttonText: "Learn more",
-        buttonLink: "https://github.com/AdnanMadi417/aiu-hostel-frontend",
-      },
-      {
-        buttonText: "Github Link ",
-        buttonLink: "https://example.com/education-journey",
-      }
-    ]
-  },
-  {
     title: "IESCO Scholarship Application",
     description: "Freelancer",
     descriptions: [
@@ -53,6 +35,24 @@ const projects = [
       {
         buttonText: "Github Link ",
         buttonLink: "https://github.com/AdnanMadi417/file-managment-system.git",
+      }
+    ]
+  },
+  {
+    title: "AIU Hostel Management System",
+    description: "Final Year Project",
+    descriptions: [
+      "Developed and implemented a Hostel Management System, streamlining room allocation, maintenance requests, and billing, leading to a 50% reduction in manual administrative tasks.",
+      "Optimized user interfaces for staff and residents, resulting in a 30% increase in user satisfaction and a 25% faster response time for issue resolution.",
+    ],
+    links: [
+      {
+        buttonText: "Learn more",
+        buttonLink: "https://github.com/AdnanMadi417/aiu-hostel-frontend",
+      },
+      {
+        buttonText: "Github Link ",
+        buttonLink: "https://example.com/education-journey",
       }
     ]
   },

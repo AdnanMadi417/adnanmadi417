@@ -48,7 +48,7 @@ const projects = [
     links: [
       {
         buttonText: "Live Demo",
-        buttonLink: "https://serious-iv71dtqjq-adnanmadi417s-projects.vercel.app/",
+        buttonLink: "https://serious-two.vercel.app/",
       },
       {
         buttonText: "Github Link ",

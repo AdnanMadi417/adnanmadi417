@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue';
 import CVPopup from "~/component/CVPopup.vue";
 
 const showPopup = ref(false);
@@ -12,8 +12,7 @@ const showPopup = ref(false);
         <h1 class="name slide-up">Adnan Madi</h1>
         <p class="title fade-in">Web Developer</p>
         <p class="description fade-in">
-          I am a Front-end developer, and mostly I am passionate about web coding. I am an expert in web programming
-          and the development world.
+
         </p>
         <button @click="showPopup = true" class="cta-button fade-in" id="cvButton">To Review my CV
           <span>
@@ -38,7 +37,7 @@ const showPopup = ref(false);
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: linear-gradient(-225deg, rgba(7, 25, 82, 1)0%, #074173 51%, #074173 100%);
+  background-image: linear-gradient(-225deg, rgba(7, 25, 82, 1) 0%, #074173 51%, #074173 100%);
 }
 
 .container {
@@ -78,6 +77,7 @@ const showPopup = ref(false);
   margin: 1rem 0 2rem 0;
   line-height: 1.5;
   opacity: 0;
+  min-width: 600px;
   animation: fadeIn 1.8s ease forwards;
 }
 
@@ -118,13 +118,23 @@ const showPopup = ref(false);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1200px) {
@@ -142,6 +152,11 @@ const showPopup = ref(false);
   .title {
     font-size: 2rem;
     color: var(--main-font-color);
+  }
+
+  .description {
+    width: 100%;
+    min-width: 100%;
   }
 }
 </style>

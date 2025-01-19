@@ -10,7 +10,7 @@ const showPopup = ref(false);
     <div class="container">
       <div class="text-content">
         <h1 class="name slide-up">Adnan Madi</h1>
-        <p class="title fade-in">Web Developer</p>
+        <p class="title fade-in">Front End Developer</p>
         <p class="description fade-in">
 
         </p>

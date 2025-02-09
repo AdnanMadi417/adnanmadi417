@@ -56,20 +56,6 @@ const projects = [
       }
     ]
   },
-  {
-    title: "E-commerce",
-    description: "Front End Developer",
-    descriptions: [
-      " Developed responsive layouts with modern CSS frameworks, enhancing accessibility and performance across devices, and optimizing the shopping experience.",
-      "Designed and implemented user-friendly interfaces,and improved the overall user experience for buying documents.",
-    ],
-    links: [
-      {
-        buttonText: "Github Link ",
-        buttonLink: "https://github.com/AdnanMadi417/Shop-s-front-end-website-",
-      }
-    ]
-  },
 ]
 
 const currentIndex = ref(0);

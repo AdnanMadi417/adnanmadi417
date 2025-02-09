@@ -3,6 +3,7 @@
     <div class="popup-content">
       <span class="close" @click.prevent="closePopup">&times;</span>
       <iframe src="/Adnan%20CV.pdf" width="100%" height="500px"></iframe>
+
     </div>
   </div>
 </template>

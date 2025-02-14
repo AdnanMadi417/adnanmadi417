@@ -42,9 +42,7 @@ const projects = [
     title: "Muchild Website",
     description: "Front End Developer",
     descriptions: [
-      "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement",
-      "Implemented multi-language support (Malay & English), ensuring accessibility for a diverse audience and expanding outreach",
-      "Integrated a volunteer registration system, allowing admin review and approval of submissions, improving recruitment efficiency",
+      "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement. Implemented multi-language support (Malay & English)",
       "Developed a seamless donation system with Stripe integration and manual payment options, increasing fundraising efficiency"
     ],
     links: [

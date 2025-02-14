@@ -39,20 +39,22 @@ const projects = [
     ]
   },
   {
-    title: "File Management System",
+    title: "Muchild Website",
     description: "Front End Developer",
     descriptions: [
-      "Developed a File Management System dashboard enabling administrators to efficiently add, delete, update, and view files, improving file accessibility and reducing management time by 20%.",
-      "Designed a responsive and user-friendly interface, enhancing usability and boosting task completion rates by 30%, while ensuring secure and organized file storage.",
+      "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement",
+      "Implemented multi-language support (Malay & English), ensuring accessibility for a diverse audience and expanding outreach",
+      "Integrated a volunteer registration system, allowing admin review and approval of submissions, improving recruitment efficiency",
+      "Developed a seamless donation system with Stripe integration and manual payment options, increasing fundraising efficiency"
     ],
     links: [
       {
         buttonText: "Live Demo",
-        buttonLink: "https://serious-two.vercel.app/",
+        buttonLink: "https://sideprojectngo.github.io/FrontEnd/home",
       },
       {
         buttonText: "Github Link ",
-        buttonLink: "https://github.com/AdnanMadi417/file-managment-system.git",
+        buttonLink: "https://github.com/AdnanMadi417/FrontEnd.git",
       }
     ]
   },
@@ -161,23 +163,23 @@ function prevPage() {
   color: var(--main-color);
 }
 
-.box{
+.box {
   align-items: center;
   font-size: 1.2rem;
 }
 
-.card-header span{
+.card-header span {
   font-size: 3rem;
 }
 
-@media (max-width:1200px ) {
+@media (max-width: 1200px ) {
   .card-header {
     font-size: 1rem;
     padding: 0;
-    margin:0 ;
+    margin: 0;
   }
 
-  .card-header span{
+  .card-header span {
     font-size: 2rem;
   }
 

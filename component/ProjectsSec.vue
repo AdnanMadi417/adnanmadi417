@@ -39,7 +39,7 @@ const projects = [
     ]
   },
   {
-    title: "Muchild Website",
+    title: "Mychild Website",
     description: "Front End Developer",
     descriptions: [
       "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement. Implemented multi-language support (Malay & English)",

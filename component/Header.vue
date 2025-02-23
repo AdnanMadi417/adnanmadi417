@@ -121,9 +121,9 @@ onMounted(() => {
 }
 
 .contact-btn:hover {
-  background-color: var(--main-hovor-color);
+  background: linear-gradient(45deg, var(--main-color), var(--main-hovor-color));
   color: var(--font-hovor-color);
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 @media (max-width: 1200px ) {

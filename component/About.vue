@@ -9,7 +9,7 @@
     <div class="main-container">
       <div class="content">
         <p>
-          Welcome to my profile! I'm a Front-End Web Developer passionate about web development and programming.
+          Welcome to my profile! I'm a Web Developer passionate about web development and programming.
           With a strong foundation in coding, I aim to create efficient, user-friendly websites.
         </p>
         <p>

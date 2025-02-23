@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref} from 'vue';
+import { ref } from 'vue';
 import CVPopup from "~/component/CVPopup.vue";
 
 const showPopup = ref(false);
@@ -10,22 +10,21 @@ const showPopup = ref(false);
     <div class="container">
       <div class="text-content">
         <h1 class="name slide-up">Adnan Madi</h1>
-        <p class="title fade-in">Front End Developer</p>
+        <p class="title fade-in">Web Developer</p>
         <p class="description fade-in">
-
+          <!-- Add your description here -->
         </p>
         <button @click="showPopup = true" class="cta-button fade-in" id="cvButton">To Review my CV
           <span>
-            <UIcon
-                class="icon"
-                name="maki-arrow"
-            />
+            <UIcon class="icon" name="maki-arrow" />
           </span>
         </button>
         <CVPopup v-model:show="showPopup"></CVPopup>
       </div>
       <div class="image-content">
-        <img src="/images/adnan%20photo%203%20.jpg" alt="Adnan Madi" class="profile-image image-fade"/>
+        <div class="image-wrapper">
+          <img src="/images/adndn%20bg%20(2).png" alt="Adnan Madi" class="profile-image image-fade" />
+        </div>
       </div>
     </div>
   </section>
@@ -37,6 +36,7 @@ const showPopup = ref(false);
   align-items: center;
   justify-content: center;
   min-height: 90vh;
+  background: var(--background);
 }
 
 .container {
@@ -49,6 +49,7 @@ const showPopup = ref(false);
   max-width: 1200px;
   width: 100%;
   color: var(--main-color);
+  z-index: 1001;
 }
 
 .text-content {
@@ -91,7 +92,7 @@ const showPopup = ref(false);
 }
 
 .cta-button:hover {
-  background-color: var(--main-hovor-color);
+  background: linear-gradient(45deg, var(--main-color), var(--main-hovor-color));
   transform: scale(1.05);
 }
 
@@ -104,16 +105,37 @@ const showPopup = ref(false);
   align-items: center;
   justify-content: center;
   flex: 1;
-  max-width: 400px;
+  max-width: 500px;
+  align-content: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+  background: linear-gradient(45deg, var(--main-color), var(--main-hovor-color));
+  border-radius: 30% 60% 20px 90%;
+  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
 .profile-image {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   animation: fadeIn 2s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -136,6 +158,15 @@ const showPopup = ref(false);
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
@@ -150,12 +181,18 @@ const showPopup = ref(false);
 
   .title {
     font-size: 2rem;
-    color: var(--main-font-color);
   }
 
   .description {
     width: 100%;
     min-width: 100%;
+  }
+
+  .image-wrapper::before {
+    top: 50px;
+    left: 30px;
+    width: 80%;
+    height: 70%;
   }
 }
 </style>

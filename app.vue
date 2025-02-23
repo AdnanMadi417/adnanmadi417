@@ -9,6 +9,7 @@
   --main-hovor-color: #088395;
   --main-font-color: #EEEEEE;
   --font-hovor-color: #E9EFEC;
+  --background: #e0e0e0;
 }
 </style>
 

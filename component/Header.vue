@@ -8,6 +8,35 @@ function toggleLinksVisibility() {
   console.log("Links visibility toggled:", isLinksVisible.value);
 }
 
+
+const links = [
+  {
+    link: "landing",
+    label: "Home",
+  },
+  {
+    link: "about",
+    label: "About",
+  },
+  {
+    link: "projects",
+    label: "Projects",
+  },
+  {
+    link: "education",
+    label: "Education",
+  },
+  {
+    link: "skills",
+    label: "Skills",
+  },
+  {
+    link: "certificates",
+    label: "Certificates",
+  },
+
+]
+
 const isMobile = ref(false);
 
 onMounted(() => {
@@ -39,23 +68,8 @@ onMounted(() => {
       <Transition>
         <nav class="menu" v-if="isLinksVisible || !isMobile">
           <ul class="menu-links">
-            <li>
-              <router-link to="#landing">Home</router-link>
-            </li>
-            <li>
-              <router-link to="#about">About</router-link>
-            </li>
-            <li>
-              <router-link to="#projects">Projects</router-link>
-            </li>
-            <li>
-              <router-link to="#education">Education</router-link>
-            </li>
-            <li>
-              <router-link to="#skills">Skills</router-link>
-            </li>
-            <li>
-              <router-link to="#certificate">Certificates</router-link>
+            <li v-for="link in links" :key="link.link" class="menu-item">
+              <a :href="`#${link.link}`">{{ link.label }}</a>
             </li>
           </ul>
         </nav>

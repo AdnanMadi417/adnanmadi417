@@ -56,7 +56,7 @@ function prevPage() {
 </script>
 
 <template>
-  <div class="certificate-sec" id="certificate">
+  <div class="certificate" id="certificate">
     <h1>Certifications</h1>
     <div class="container">
       <div class="card" v-for="certificate in visibleCertificates" :key="certificate.title">
@@ -87,11 +87,11 @@ function prevPage() {
 
 <style scoped>
 
-.certificate-sec{
+.certificate{
   padding: 5rem 1rem;
 }
 
-.certificate-sec h1 {
+.certificate h1 {
   text-align: center;
   font-size: 2rem;
   text-transform: capitalize;

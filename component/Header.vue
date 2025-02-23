@@ -19,19 +19,19 @@ const links = [
     label: "About",
   },
   {
-    link: "projects",
-    label: "Projects",
-  },
-  {
     link: "education",
     label: "Education",
+  },
+  {
+    link: "projects",
+    label: "Projects",
   },
   {
     link: "skills",
     label: "Skills",
   },
   {
-    link: "certificates",
+    link: "certificate",
     label: "Certificates",
   },
 

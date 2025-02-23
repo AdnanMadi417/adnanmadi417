@@ -14,8 +14,8 @@ import Footer from "~/component/Footer.vue";
   <Header />
   <Landing/>
   <About/>
-  <Projects/>
   <Education/>
+  <Projects/>
   <Skills/>
   <Certificates/>
   <Footer/>

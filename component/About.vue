@@ -22,7 +22,7 @@
         </p>
       </div>
       <div class="image-content">
-        <img src="/images/web-dev.avif" alt="Portrait of Adnan Madi, a front-end web developer" />
+        <img src="/images/cs.png" alt="web developer" />
       </div>
     </div>
   </section>
@@ -64,8 +64,9 @@
 
 .image-content img {
   width: 100%;
-  max-width: 450px;
-  border-radius: 8px;
+  max-width: 350px;
+  max-height: 350px;
+  margin: auto;
 }
 
 @media (min-width: 768px) {

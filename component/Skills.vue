@@ -77,7 +77,7 @@ function prevPage() {
 </script>
 
 <template>
-  <div class="skills-sec" id="skills">
+  <div class="skills" id="skills">
     <h1>TECHNICAL SKILLS</h1>
     <div class="container">
 
@@ -118,13 +118,13 @@ function prevPage() {
 
 <style scoped>
 
-.skills-sec {
+.skills {
   padding: 5rem 1rem;
   margin: auto;
   background-color: var(--font-hovor-color);
 }
 
-.skills-sec > h1 {
+.skills > h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;

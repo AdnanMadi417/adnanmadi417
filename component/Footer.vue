@@ -42,7 +42,7 @@ const contactInfo = [
         </ul>
       </div>
       <div class="image-content">
-        <img src="/images/web-dev.avif" alt="web">
+        <img src="../public/images/cs.png" alt="computer scientists" />
       </div>
     </div>
   </div>
@@ -114,7 +114,6 @@ const contactInfo = [
   width: 100%;
   max-width: 300px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

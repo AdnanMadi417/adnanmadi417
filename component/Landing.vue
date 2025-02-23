@@ -36,8 +36,7 @@ const showPopup = ref(false);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-image: linear-gradient(-225deg, rgba(7, 25, 82, 1) 0%, #074173 51%, #074173 100%);
+  min-height: 90vh;
 }
 
 .container {
@@ -49,7 +48,7 @@ const showPopup = ref(false);
   padding: 5rem;
   max-width: 1200px;
   width: 100%;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
 }
 
 .text-content {
@@ -67,7 +66,7 @@ const showPopup = ref(false);
 .title {
   font-size: 3rem;
   margin: 0.5rem 0;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   opacity: 0;
   animation: fadeIn 1.5s ease forwards;
 }

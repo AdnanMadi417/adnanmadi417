@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue';
 import CVPopup from "~/component/CVPopup.vue";
 
 const showPopup = ref(false);
@@ -16,14 +16,14 @@ const showPopup = ref(false);
         </p>
         <button @click="showPopup = true" class="cta-button fade-in" id="cvButton">To Review my CV
           <span>
-            <UIcon class="icon" name="maki-arrow" />
+            <UIcon class="icon" name="maki-arrow"/>
           </span>
         </button>
         <CVPopup v-model:show="showPopup"></CVPopup>
       </div>
       <div class="image-content">
         <div class="image-wrapper">
-          <img src="/images/adndn%20bg%20(2).png" alt="Adnan Madi" class="profile-image image-fade" />
+          <img src="/images/adndn%20bg%20(2).png" alt="Adnan Madi" class="profile-image image-fade"/>
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@ const showPopup = ref(false);
 }
 
 .cta-button:hover {
-  background: linear-gradient(45deg, var(--main-color), var(--main-hovor-color));
+  background: var(--linear-gradient);
   transform: scale(1.05);
 }
 

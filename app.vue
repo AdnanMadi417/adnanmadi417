@@ -10,6 +10,7 @@
   --main-font-color: #EEEEEE;
   --font-hovor-color: #E9EFEC;
   --background: #e0e0e0;
+  --linear-gradient: 45deg, #071952, #088395;
 }
 </style>
 

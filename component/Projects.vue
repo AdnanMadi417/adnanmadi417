@@ -151,7 +151,7 @@ function prevPage() {
   max-width: 370px;
   background-color: var(--font-hovor-color);
   padding: 2rem 1rem;
-  box-shadow: rgba(99, 99, 99, 0.5) 0 2px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 8px 0;
 }
 
 
@@ -208,8 +208,8 @@ function prevPage() {
 }
 
 .card-footer a:hover {
-  background-color: var(--main-hovor-color);
-  transition: .3s ease-in-out;
+  background-image: linear-gradient(-20deg, var(--main-hovor-color), var(--main-color));
+  transition: background-image 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {

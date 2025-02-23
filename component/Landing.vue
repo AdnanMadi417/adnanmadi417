@@ -6,7 +6,7 @@ const showPopup = ref(false);
 </script>
 
 <template>
-  <section class="landing-sec" id="landing-sec">
+  <section class="landing-sec" id="landing">
     <div class="container">
       <div class="text-content">
         <h1 class="name slide-up">Adnan Madi</h1>

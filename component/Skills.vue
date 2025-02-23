@@ -77,7 +77,7 @@ function prevPage() {
 </script>
 
 <template>
-  <div class="skills-sec" id="skills-sec">
+  <div class="skills-sec" id="skills">
     <h1>TECHNICAL SKILLS</h1>
     <div class="container">
 

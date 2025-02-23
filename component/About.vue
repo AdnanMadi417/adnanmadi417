@@ -4,7 +4,7 @@
 
 
 <template>
-  <section class="about-sec" id="about-sec">
+  <section class="about-sec" id="about">
     <h2>About Me</h2>
     <div class="main-container">
       <div class="content">

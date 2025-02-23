@@ -40,22 +40,22 @@ onMounted(() => {
         <nav class="menu" v-if="isLinksVisible || !isMobile">
           <ul class="menu-links">
             <li>
-              <router-link to="#landing-sec">Home</router-link>
+              <router-link to="#landing">Home</router-link>
             </li>
             <li>
-              <router-link to="#about-sec">About</router-link>
+              <router-link to="#about">About</router-link>
             </li>
             <li>
-              <router-link to="#projects-sec">Projects</router-link>
+              <router-link to="#projects">Projects</router-link>
             </li>
             <li>
-              <router-link to="#education-sec">Education</router-link>
+              <router-link to="#education">Education</router-link>
             </li>
             <li>
-              <router-link to="#skills-sec">Skills</router-link>
+              <router-link to="#skills">Skills</router-link>
             </li>
             <li>
-              <router-link to="#certificate-sec">Certificates</router-link>
+              <router-link to="#certificate">Certificates</router-link>
             </li>
           </ul>
         </nav>

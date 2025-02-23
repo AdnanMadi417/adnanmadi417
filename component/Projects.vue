@@ -39,7 +39,7 @@ const projects = [
     ]
   },
   {
-    title: "Mychild Website",
+    title: "MyChild Website",
     description: "Front End Developer",
     descriptions: [
       "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement. Implemented multi-language support (Malay & English)",
@@ -72,10 +72,11 @@ function nextPage() {
 function prevPage() {
   currentIndex.value = (currentIndex.value - itemsPerPage + projects.length) % projects.length;
 }
+
 </script>
 
 <template>
-  <div class="projects-sec" id="projects-sec">
+  <div class="projects-sec" id="projects">
     <h1>Relevant Projects</h1>
     <div class="container">
       <div class="card" v-for="project in visibleProjects" :key="project.title">

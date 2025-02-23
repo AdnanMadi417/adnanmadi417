@@ -1,24 +1,24 @@
 <script setup lang="ts">
 
-import LandingSec from "~/component/LandingSec.vue";
-import HeaderSec from "~/component/HeaderSec.vue";
-import AboutSec from "~/component/AboutSec.vue";
-import SkillsSec from "~/component/SkillsSec.vue";
-import ProjectsSec from "~/component/ProjectsSec.vue";
-import EducationSec from "~/component/EducationSec.vue";
-import CertificatesSec from "~/component/CertificatesSec.vue";
-import FooterSec from "~/component/FooterSec.vue";
+import Landing from "~/component/Landing.vue";
+import Header from "~/component/Header.vue";
+import About from "~/component/About.vue";
+import Skills from "~/component/Skills.vue";
+import Projects from "~/component/Projects.vue";
+import Education from "~/component/Education.vue";
+import Certificates from "~/component/Certificates.vue";
+import Footer from "~/component/Footer.vue";
 </script>
 
 <template>
-  <HeaderSec />
-  <LandingSec/>
-  <AboutSec/>
-  <ProjectsSec/>
-  <EducationSec/>
-  <SkillsSec/>
-  <CertificatesSec/>
-  <FooterSec/>
+  <Header />
+  <Landing/>
+  <About/>
+  <Projects/>
+  <Education/>
+  <Skills/>
+  <Certificates/>
+  <Footer/>
 </template>
 
 <style scoped>

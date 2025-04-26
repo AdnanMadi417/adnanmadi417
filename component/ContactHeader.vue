@@ -1,12 +1,6 @@
 <script setup lang="ts">
 const contactInfo = [
   {
-    platformName: "Email",
-    platformIcon: "mdi:email",
-    platformAddress: "mailto:adnanmadi417@gmail.com",
-    displayText: "Email Address"
-  },
-  {
     platformName: "LinkedIn",
     platformIcon: "mdi:linkedin",
     platformAddress: "https://www.linkedin.com/in/adnan-madi417",
@@ -17,6 +11,12 @@ const contactInfo = [
     platformIcon: "mdi:github",
     platformAddress: "https://github.com/Adnanmadi417",
     displayText: "GitHub Profile"
+  },
+  {
+    platformName: "Email",
+    platformIcon: "mdi:email",
+    platformAddress: "mailto:adnanmadi417@gmail.com",
+    displayText: "Email Address"
   },
   {
     platformName: "Phone",
@@ -58,7 +58,7 @@ const contactInfo = [
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
   gap: 1rem;
@@ -95,10 +95,36 @@ const contactInfo = [
     font-size: 1rem;
   }
 
-  .icon {
-    font-size: 1.2rem;
-    margin-right: 0.4rem;
+
+  .contact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    justify-content: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+  }
+
+  .contact-list li {
+    flex: 1 1 200px;
+    max-width: 200px;
+    text-align: start;
+  }
+
+  .contact-item {
+    justify-content: start;
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0;
   }
 }
 
+
+@media (max-width: 480px) {
+  .contact-list li {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
 </style>

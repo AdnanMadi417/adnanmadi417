@@ -7,9 +7,11 @@ import Projects from "~/component/Projects.vue";
 import Education from "~/component/Education.vue";
 import Certificates from "~/component/Certificates.vue";
 import Footer from "~/component/Footer.vue";
+import ContactHeader from "~/component/ContactHeader.vue";
 </script>
 
 <template>
+  <ContactHeader/>
   <Landing/>
   <About/>
   <Education/>

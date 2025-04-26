@@ -179,24 +179,6 @@ onMounted(() => {
   width: 100%;
 }
 
-.contact-btn {
-  font-size: 1.1rem;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  background-color: var(--main-color);
-  color: var(--main-font-color);
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.contact-btn:hover {
-  background: linear-gradient(45deg, var(--main-color), var(--main-hovor-color));
-  color: var(--font-hovor-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .landing-sec {
   display: flex;
   align-items: center;
@@ -227,7 +209,6 @@ onMounted(() => {
   text-align: center;
   padding: 2rem;
   border-radius: 1rem;
-  backdrop-filter: blur(5px);
 }
 
 .name {
@@ -291,7 +272,6 @@ onMounted(() => {
   transform: translateY(-1px);
 }
 
-/* ===== Animations ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -312,18 +292,6 @@ onMounted(() => {
   }
 }
 
-.menu-fade-enter-active,
-.menu-fade-leave-active {
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.menu-fade-enter-from,
-.menu-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-/* ===== Responsive Styles ===== */
 @media (max-width: 1200px) {
   .header-container {
     flex-direction: column;
@@ -358,10 +326,6 @@ onMounted(() => {
   .menu-item a {
     display: block;
     width: 100%;
-  }
-
-  .contact-container {
-    display: none;
   }
 
   .menu-links .menu-item:last-child {

@@ -12,8 +12,8 @@ function toggleLinksVisibility() {
 
 const links = [
   { link: "landing", label: "Home" },
-  { link: "about", label: "About" },
   { link: "education", label: "Education" },
+  { link: "about", label: "About" },
   { link: "projects", label: "Projects" },
   { link: "skills", label: "Skills" },
   { link: "certificate", label: "Certificates" },

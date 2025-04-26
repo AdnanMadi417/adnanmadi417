@@ -13,8 +13,8 @@ import ContactHeader from "~/component/ContactHeader.vue";
 <template>
   <ContactHeader/>
   <Landing/>
-  <About/>
   <Education/>
+  <About/>
   <Projects/>
   <Skills/>
   <Certificates/>

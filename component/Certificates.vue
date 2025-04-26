@@ -59,7 +59,7 @@ function prevPage() {
   <div class="certificate" id="certificate">
     <h1>Certifications</h1>
     <div class="container">
-      <div class="card" v-for="certificate in visibleCertificates" :key="certificate.title">
+      <div class="card fade-in" v-for="certificate in visibleCertificates" :key="certificate.title">
         <h2>
           <span>
             <UIcon :name="certificate.icon"/>
@@ -70,15 +70,15 @@ function prevPage() {
         <p>{{ certificate.description }}</p>
       </div>
     </div>
-    <div class="buttons">
+    <div class="certificate-control-buttons">
       <button @click="prevPage">
         <UIcon
-            name="uil-arrow"
+            name="mdi-arrow-left-circle"
         />
       </button>
       <button @click="nextPage">
         <UIcon
-            name="uil-arrow"
+            name="mdi-arrow-right-circle"
         />
       </button>
     </div>
@@ -87,7 +87,49 @@ function prevPage() {
 
 <style scoped>
 
-.certificate{
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.certificate {
   padding: 5rem 1rem;
 }
 
@@ -96,8 +138,9 @@ function prevPage() {
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: bold;
-  margin-bottom: 4rem ;
+  margin-bottom: 4rem;
   color: var(--main-color);
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .container {
@@ -117,6 +160,12 @@ function prevPage() {
   border: 2px solid var(--main-color);
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   border-radius: 1rem 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards, slideInFromLeft 0.5s ease-out forwards;
+}
+
+.card:nth-child(even) {
+  animation: fadeIn 1s ease-out forwards, slideInFromRight 0.5s ease-out forwards;
 }
 
 .card h2 {
@@ -129,24 +178,26 @@ function prevPage() {
   margin: 0.5rem 0;
 }
 
-.buttons {
+.certificate-control-buttons {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
 
-.buttons button {
+.certificate-control-buttons button {
   padding: 0 1rem;
   margin: 0 2rem;
   font-size: 2rem;
-  color: var(--font-hovor-color);
-  background-color: var(--main-color);
+  color: var(--main-color);
   border-radius: .5rem;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
 }
 
-button:hover {
-  background-color: var(--main-hovor-color);
-  transition: .3s ease-in-out;
+.certificate-control-buttons button:hover {
+  transform: scale(1.1);
+  color: var(--main-color);
 }
+
 </style>

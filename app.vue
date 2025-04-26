@@ -7,8 +7,8 @@
 :root {
   --main-color: #141d57;
   --main-hovor-color: #1439e1;
-  --main-font-color: #EEEEEE;
-  --font-hovor-color: #E9EFEC;
+  --main-font-color: #f5f5f5;
+  --font-hovor-color: #eeeeee;
 }
 </style>
 

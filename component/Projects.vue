@@ -196,7 +196,7 @@ section h2 {
 
 .project-description {
   text-align: justify;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--main-hovor-color);
   margin-bottom: 1.5rem;

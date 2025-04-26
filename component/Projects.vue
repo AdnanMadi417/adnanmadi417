@@ -95,7 +95,7 @@ const projects = [
                 class="icon"
             />
             {{ project.location }}
-             | {{ project.description }}
+            | {{ project.description }}
           </p>
           <ul class="project-description">
             <li v-for="(desc, i) in project.descriptions" :key="i">{{ desc }}</li>
@@ -134,8 +134,7 @@ const projects = [
             />
 
             {{ project.location }}
-             | {{ project.description }}
-
+            | {{ project.description }}
           </p>
           <ul class="project-description">
             <li v-for="(desc, i) in project.descriptions" :key="i">{{ desc }}</li>
@@ -185,20 +184,13 @@ section h2 {
   margin-bottom: 1rem;
 }
 
-.project-role {
-  font-size: 1.2rem;
-  color: var(--main-color);
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
 .project-location {
-  font-size: 1.1rem;
   color: var(--main-color);
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+
   .icon {
     color: var(--main-color);
-    margin-right: 1rem;
+    margin-right: .2rem;
   }
 }
 
@@ -207,7 +199,6 @@ section h2 {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--main-hovor-color);
-  padding-left: 1.2rem;
   margin-bottom: 1.5rem;
 }
 

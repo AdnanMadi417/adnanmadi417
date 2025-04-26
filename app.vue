@@ -5,12 +5,10 @@
 
 <style>
 :root {
-  --main-color: #071952;
-  --main-hovor-color: #088395;
+  --main-color: #141d57;
+  --main-hovor-color: #1439e1;
   --main-font-color: #EEEEEE;
   --font-hovor-color: #E9EFEC;
-  --background: #e0e0e0;
-  --linear-gradient: 45deg, #071952, #088395;
 }
 </style>
 

@@ -8,7 +8,6 @@ function toggleLinksVisibility() {
   console.log("Links visibility toggled:", isLinksVisible.value);
 }
 
-
 const links = [
   {
     link: "landing",
@@ -85,8 +84,9 @@ onMounted(() => {
 <style scoped>
 .header-section {
   background-color: var(--main-font-color);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius:  1rem;
 }
 
 

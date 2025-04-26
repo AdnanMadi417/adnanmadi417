@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
 import Landing from "~/component/Landing.vue";
-import Header from "~/component/Header.vue";
 import About from "~/component/About.vue";
 import Skills from "~/component/Skills.vue";
 import Projects from "~/component/Projects.vue";
@@ -11,7 +10,6 @@ import Footer from "~/component/Footer.vue";
 </script>
 
 <template>
-  <Header />
   <Landing/>
   <About/>
   <Education/>

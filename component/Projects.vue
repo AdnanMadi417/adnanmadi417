@@ -4,7 +4,7 @@ const projects = [
   {
     title: "Masjid Albukhary KL Website",
     description: "Full Stack Developer",
-    location: "Commerce Dot Com",
+    location: "Side Project",
     image: "./images/Masjid_Albukhary_KL_Website.png",
     descriptions: [
       "Built the official website for Masjid Albukhary KL from scratch, focusing on responsive design, digital engagement, and community service.",
@@ -15,7 +15,7 @@ const projects = [
     links: [
       {
         buttonText: "Live Demo",
-        buttonLink: "http://www.masjidalbukharykl.com/",
+        buttonLink: "https://masjid-albukhary.github.io/masjid-albukhary-frontened/",
       }
     ]
   },

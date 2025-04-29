@@ -91,11 +91,9 @@ onMounted(() => {
   top: 0;
   z-index: 1000;
   width: 100%;
-  max-width: 1000px;
   padding: 0.5rem;
   margin: 0 auto;
   backdrop-filter: blur(10px);
-  border-radius: 1rem;
   transition: all 0.3s ease;
 }
 
@@ -103,6 +101,7 @@ onMounted(() => {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 0.3rem 0.5rem;
   background: #fff;
+  width: 100%;
 }
 
 .header-container {
@@ -320,7 +319,7 @@ onMounted(() => {
   .menu-item {
     width: 100%;
     border-bottom: 1px solid rgba(var(--main-color-rgb, 0, 0, 0), 0.1);
-    padding: 0.8rem 0;
+    padding: 0.3rem 0;
   }
 
   .menu-item a {

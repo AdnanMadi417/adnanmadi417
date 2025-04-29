@@ -2,7 +2,7 @@
 
 const projects = [
   {
-    title: "Masjid Albukhary KL Website",
+    title: "Masjid Website",
     description: "Full Stack Developer",
     location: "Side Project",
     image: "./images/Masjid_Albukhary_KL_Website.png",

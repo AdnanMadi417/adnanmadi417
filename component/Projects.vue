@@ -15,7 +15,7 @@ const projects = [
     links: [
       {
         buttonText: "Live Demo",
-        buttonLink: "https://masjid-albukhary.github.io/masjid-albukhary-frontened/",
+        buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/",
       }
     ]
   },

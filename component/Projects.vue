@@ -15,15 +15,15 @@ const projects = [
     links: [
       {
         buttonText: "Live Demo",
-        buttonLink: "https://al-awda-mosque.github.io/masjid-frontend/",
+        buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/",
       },
       {
         buttonText: "GitHub Repository",
-        buttonLink: "https://github.com/al-awda-mosque/masjid-frontend.git",
+        buttonLink: "https://github.com/masjid-albukhary/masjid-frontend.git",
       },
       {
         buttonText: "GitHub Repository",
-        buttonLink: "https://github.com/al-awda-mosque/masjid-backend.git",
+        buttonLink: "https://github.com/masjid-albukhary/masjid-backend.git",
       }
     ]
   },
@@ -81,10 +81,10 @@ const projects = [
         buttonText: "Live Demo",
         buttonLink: "https://sideprojectngo.github.io/FrontEnd/home",
       },
-      // {
-      //   buttonText: "Github Link",
-      //   buttonLink: "https://github.com/AdnanMadi417/FrontEnd.git",
-      // }
+      {
+        buttonText: "GitHub Repository",
+        buttonLink: "https://github.com/SideProjectNGO/FrontEnd.git",
+      }
     ]
   },
 ]

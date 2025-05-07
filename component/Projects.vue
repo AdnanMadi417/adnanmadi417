@@ -2,20 +2,28 @@
 
 const projects = [
   {
-    title: "Masjid Website",
+    title: "Al Awda Mosque Website",
     description: "Full Stack Developer",
     location: "Side Project",
-    image: "./images/Masjid_Albukhary_KL_Website.png",
+    image: "./images/Masjid_Awda_Website.png.png",
     descriptions: [
-      "Built the official website for Masjid Albukhary KL from scratch, focusing on responsive design, digital engagement, and community service.",
-      "Integrated dynamic prayer times, multi-language support (English & Malay), and video gallery with YouTube integration.",
-      "Implemented admin dashboard using Django for announcements, event management, and content updates with secure authentication.",
-      "Developed venue rental request system with filtering, PDF generation by booking status (Pending, In Progress, Completed, Rejected), and improved communication flow.",
+      "Built the official website for Al Awda Mosque in Gaza, Rafah from scratch, focusing on responsive design, digital engagement, and community involvement.",
+      "Integrated dynamic prayer times, multi-language support (Malay & English), and a video gallery with YouTube integration.",
+      "Implemented an admin dashboard using Django for announcements, event management, and content updates with secure authentication.",
+      "Developed a venue rental request system with filtering, PDF generation by booking status (Pending, In Progress, Completed, Rejected), and improved communication flow.",
     ],
     links: [
       {
         buttonText: "Live Demo",
-        buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/",
+        buttonLink: "https://al-awda-mosque.github.io/masjid-frontend/",
+      },
+      {
+        buttonText: "GitHub Repository",
+        buttonLink: "https://github.com/al-awda-mosque/masjid-frontend.git",
+      },
+      {
+        buttonText: "GitHub Repository",
+        buttonLink: "https://github.com/al-awda-mosque/masjid-backend.git",
       }
     ]
   },
@@ -83,7 +91,7 @@ const projects = [
 </script>
 
 <template>
-  <section class="project-section">
+  <section class="project-section" id="projects">
     <h2>Relevant Projects</h2>
     <div class="project-grid" v-for="(project, index) in projects" :key="project.title">
       <template v-if="index % 2 === 0">

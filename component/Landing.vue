@@ -11,12 +11,13 @@ function toggleLinksVisibility() {
 }
 
 const links = [
-  { link: "landing", label: "Home" },
-  { link: "education", label: "Education" },
-  { link: "about", label: "About" },
-  { link: "projects", label: "Projects" },
-  { link: "skills", label: "Skills" },
-  { link: "certificate", label: "Certificates" },
+  {link: "landing", label: "Home"},
+  {link: "education", label: "Education"},
+  {link: "about", label: "About"},
+  {link: "projects", label: "Projects"},
+  {link: "wpProjects", label: "WP Projects"},
+  {link: "skills", label: "Skills"},
+  {link: "certificate", label: "Certificates"},
 ];
 
 const isMobile = ref(false);
@@ -47,7 +48,7 @@ onMounted(() => {
           </a>
         </div>
         <button @click="toggleLinksVisibility" class="menu-toggle" v-if="isMobile" aria-label="Toggle menu">
-          <UIcon name="uil-bars" />
+          <UIcon name="uil-bars"/>
         </button>
       </div>
 
@@ -149,6 +150,12 @@ onMounted(() => {
   margin: 0;
   padding: 0;
   gap: 1rem;
+  min-width: fit-content !important;
+}
+
+.menu-item {
+  width: fit-content;
+  min-width: 95px;
 }
 
 .menu-item a {
@@ -166,7 +173,6 @@ onMounted(() => {
 .menu-item a::after {
   content: '';
   position: absolute;
-  width: 0;
   height: 2px;
   bottom: 0;
   left: 0;

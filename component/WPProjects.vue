@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const projects = [
+const wpProjects = [
   {
     title: "Masjid masjid Albukhary kl Website",
     description: "WordPress Developer",
@@ -23,9 +23,9 @@ const projects = [
 </script>
 
 <template>
-  <section class="project-section">
+  <section class="project-section" id="wpProjects">
     <h2>Relevant WordPress Projects</h2>
-    <div class="project-grid" v-for="(project, index) in projects" :key="project.title">
+    <div class="project-grid" v-for="(project, index) in wpProjects" :key="project.title">
       <template v-if="index % 2 === 0">
         <div class="text-content">
           <h3 class="project-title">{{ project.title }}</h3>

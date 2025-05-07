@@ -46,6 +46,11 @@ const skills = [
     title: "Django",
     icon: "simple-icons:django",
     color: "#092E20"
+  },
+  {
+    title: "WordPress",
+    icon: "simple-icons:wordpress",
+    color: "#21759B"
   }
 ];
 

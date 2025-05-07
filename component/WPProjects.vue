@@ -9,7 +9,6 @@ const wpProjects = [
     descriptions: [
       "Developed the official website for Masjid Albukhary KL using WordPress, focusing on responsive design and community engagement.",
       "Built essential pages, including Home, About, Contact Us, Services, Facilities, and Gallery, with multi-language support.",
-      "Implemented a dynamic Booking form with venue rental requests, status filtering, and PDF generation.",
       "Integrated multimedia content through a Gallery page with YouTube video support.",
     ],
     links: [

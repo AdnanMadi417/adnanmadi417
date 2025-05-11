@@ -5,8 +5,8 @@
 
 <style>
 :root {
-  --main-color: #141d57;
-  --main-hovor-color: #1439e1;
+  --main-color: #0a3a48;
+  --main-hovor-color: #11667f;
   --main-font-color: #f5f5f5;
   --font-hovor-color: #eeeeee;
 }

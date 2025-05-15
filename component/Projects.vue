@@ -1,177 +1,352 @@
 <script setup lang="ts">
+import {ref, computed} from 'vue';
 
 const projects = [
   {
-    title: "Al Awda Mosque Website",
-    description: "Full Stack Developer",
-    location: "Side Project",
-    image: "./images/Masjid_Awda_Website.png.png",
-    descriptions: [
-      "Built the official website for Al Awda Mosque in Gaza, Rafah from scratch, focusing on responsive design, digital engagement, and community involvement.",
-      "Integrated dynamic prayer times, multi-language support (Malay & English), and a video gallery with YouTube integration.",
-      "Implemented an admin dashboard using Django for announcements, event management, and content updates with secure authentication.",
-      "Developed a venue rental request system with filtering, PDF generation by booking status (Pending, In Progress, Completed, Rejected), and improved communication flow.",
-    ],
-    links: [
+    title: "Frontend Projects",
+    items: [
       {
-        buttonText: "Live Demo",
-        buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/",
+        title: "AIU Hostel Management System",
+        description: "Frontend Developer",
+        location: "Albukhary International University",
+        image: "./images/AIU_Hostel_Management_System.png",
+        descriptions: [
+          "Developed and implemented a Hostel Management System, streamlining room allocation, maintenance requests, and billing, leading to a 50% reduction in manual administrative tasks.",
+          "Optimized user interfaces for staff and residents, resulting in a 30% increase in user satisfaction and a 25% faster response time for issue resolution."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://aiu-fyp.github.io/fyp-frontend2/home/"
+          }
+        ]
       },
       {
-        buttonText: "GitHub Repository",
-        buttonLink: "https://github.com/masjid-albukhary/masjid-frontend.git",
+        title: "IESCO Scholarship Application",
+        description: "Frontend Developer",
+        location: "The International Educational Scientific and Cultural Organization",
+        image: "./images/IESCO_Scholarship_Application.png",
+        descriptions: [
+          "Developed a Scholarship Registration System that streamlined application processes, reducing submission time by 40% and decreasing application processing by 30%.",
+          "Designed and implemented user-friendly interfaces, resulting in a 25% increase in successful applicant registrations and improved the overall user experience for submitting documents."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://application.iesco.my"
+          }
+        ]
       },
       {
-        buttonText: "GitHub Repository",
-        buttonLink: "https://github.com/masjid-albukhary/masjid-backend.git",
+        title: "MyChild Website",
+        description: "Frontend Developer",
+        location: "Side Project",
+        image: "./images/MyChild_Website.png",
+        descriptions: [
+          "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement.",
+          "Implemented multi-language support (Malay & English).",
+          "Developed a seamless donation system with Stripe integration and manual payment options, increasing fundraising efficiency."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://sideprojectngo.github.io/FrontEnd/home"
+          },
+          {
+            buttonText: "GitHub Repository",
+            buttonLink: "https://github.com/SideProjectNGO/FrontEnd.git"
+          }
+        ]
       }
     ]
   },
   {
-    title: "AIU Hostel Management System",
-    description: "Frontend Developer",
-    location: "Albukhary International University",
-    image: "./images/AIU_Hostel_Management_System.png",
-    descriptions: [
-      "Developed and implemented a Hostel Management System, streamlining room allocation, maintenance requests, and billing, leading to a 50% reduction in manual administrative tasks.",
-      "Optimized user interfaces for staff and residents, resulting in a 30% increase in user satisfaction and a 25% faster response time for issue resolution.",
-    ],
-    links: [
+    title: "Backend Projects",
+    items: [
       {
-        buttonText: "Live Demo",
-        buttonLink: "https://aiu-fyp.github.io/fyp-frontend2/home/",
-      },
-      // {
-      //   buttonText: "Github Link",
-      //   buttonLink: "https://example.com/education-journey",
-      // }
-    ]
-  },
-  {
-    title: "IESCO Scholarship Application",
-    description: "Frontend Developer",
-    location: "The International Educational Scientific and Cultural Organization",
-    image: "./images/IESCO_Scholarship_Application.png",
-    descriptions: [
-      "Developed a Scholarship Registration System that streamlined application processes, reducing submission time by 40% and decreasing application processing by 30%.",
-      "Designed and implemented user-friendly interfaces, resulting in a 25% increase in successful applicant registrations and improved the overall user experience for submitting documents.",
-    ],
-    links: [
-      {
-        buttonText: "Live Demo",
-        buttonLink: "https://application.iesco.my",
-      },
-      // {
-      //   buttonText: "Github Link",
-      //   buttonLink: "https://github.com/AdnanMadi417/iesco-frontend",
-      // }
-    ]
-  },
-  {
-    title: "MyChild Website",
-    description: "Frontend Developer",
-    image: "./images/MyChild_Website.png",
-    location: "Side Project",
-    descriptions: [
-      "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement. Implemented multi-language support (Malay & English).",
-      "Developed a seamless donation system with Stripe integration and manual payment options, increasing fundraising efficiency."
-    ],
-    links: [
-      {
-        buttonText: "Live Demo",
-        buttonLink: "https://sideprojectngo.github.io/FrontEnd/home",
-      },
-      {
-        buttonText: "GitHub Repository",
-        buttonLink: "https://github.com/SideProjectNGO/FrontEnd.git",
+        title: "Al Awda Mosque Website",
+        description: "Full Stack Developer",
+        location: "Side Project",
+        image: "./images/Masjid_Awda_Website.png.png",
+        descriptions: [
+          "Built the official website for Al Awda Mosque in Gaza, Rafah from scratch, focusing on responsive design, digital engagement, and community involvement.",
+          "Integrated dynamic prayer times, multi-language support (Malay & English), and a video gallery with YouTube integration.",
+          "Implemented an admin dashboard using Django for announcements, event management, and content updates with secure authentication.",
+          "Developed a venue rental request system with filtering, PDF generation by booking status (Pending, In Progress, Completed, Rejected), and improved communication flow."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/"
+          },
+          {
+            buttonText: "GitHub Repository",
+            buttonLink: "https://github.com/masjid-albukhary/masjid-frontend.git"
+          },
+          {
+            buttonText: "GitHub Repository",
+            buttonLink: "https://github.com/masjid-albukhary/masjid-backend.git"
+          }
+        ]
       }
     ]
   },
-]
+  {
+    title: "WordPress Projects",
+    items: [
+      {
+        title: "Masjid Albukhary KL Website",
+        description: "WordPress Developer",
+        location: "commerce dot com _ CDC",
+        image: "/images/masjid_albukhary_kl_WP.png",
+        descriptions: [
+          "Developed the official website for Masjid Albukhary KL using WordPress, focusing on responsive design and community engagement.",
+          "Built essential pages, including Home, About, Contact Us, Services, Facilities, and Gallery, with multi-language support.",
+          "Integrated multimedia content through a Gallery page with YouTube video support."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://masjidalbukharykl.com/"
+          }
+        ]
+      },
+      {
+        title: "Mapim Website",
+        description: "WordPress Developer",
+        location: "MAPIM ",
+        image: "/images/mapim_website_WP.png",
+        descriptions: [
+          "Redesigned and improved the official website for MAPIM using WordPress, enhancing user experience and visual appeal.",
+          "Implemented a modern, responsive design while maintaining multi-language support for broader accessibility.",
+          "Revamped essential pages, including Home, About, Contact Us, Programs, Events, and Gallery, with enhanced multimedia content and improved navigation.",
+          "Organized content into relevant categories: Articles, Blogs, Charity, Donations, Latest Updates, Media Statements, News, Press Releases, Quotes, Uncategorized, and Videos."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://mapim.com.my/"
+          }
+        ]
+      },
+    ],
+  }
+];
+
+const currentCategoryIndex = ref(0);
+const currentProjectIndex = ref(0);
+const isAnimating = ref(false);
+const animationDirection = ref('right');
+
+const changeCategory = (direction: number) => {
+  if (isAnimating.value) return;
+
+  isAnimating.value = true;
+  animationDirection.value = direction > 0 ? 'right' : 'left';
+
+  setTimeout(() => {
+    if (direction > 0) {
+      currentCategoryIndex.value = (currentCategoryIndex.value + 1) % projects.length;
+    } else {
+      currentCategoryIndex.value = (currentCategoryIndex.value - 1 + projects.length) % projects.length;
+    }
+    currentProjectIndex.value = 0;
+    isAnimating.value = false;
+  }, 300);
+};
+
+const changeProject = (direction: number) => {
+  if (isAnimating.value) return;
+
+  isAnimating.value = true;
+  animationDirection.value = direction > 0 ? 'right' : 'left';
+
+  setTimeout(() => {
+    const currentProjects = projects[currentCategoryIndex.value].items;
+
+    if (direction > 0) {
+      if (currentProjectIndex.value === currentProjects.length - 1) {
+        changeCategory(1);
+      } else {
+        currentProjectIndex.value++;
+      }
+    } else {
+      if (currentProjectIndex.value === 0) {
+        changeCategory(-1);
+        currentProjectIndex.value = projects[currentCategoryIndex.value].items.length - 1;
+      } else {
+        currentProjectIndex.value--;
+      }
+    }
+    isAnimating.value = false;
+  }, 300);
+};
+
+const currentCategory = computed(() => projects[currentCategoryIndex.value]);
+
+const currentProject = computed(() => currentCategory.value.items[currentProjectIndex.value]);
+
+const hasMultipleProjects = computed(() => currentCategory.value.items.length > 1);
+
 </script>
 
 <template>
   <section class="project-section" id="projects">
-    <h2>Relevant Projects</h2>
-    <div class="project-grid" v-for="(project, index) in projects" :key="project.title">
-      <template v-if="index % 2 === 0">
-        <div class="text-content">
-          <h3 class="project-title">{{ project.title }}</h3>
-          <p class="project-location">
-            <UIcon
-                name="mdi-users"
-                class="icon"
+
+    <div class="project-section-container">
+      <div class="carousel-controls top-controls">
+        <h2>{{ currentCategory.title }}</h2>
+      </div>
+
+      <div class="carousel-indicators">
+        <div
+            v-for="(category, index) in projects"
+            :key="category.title"
+            :class="['indicator', { active: index === currentCategoryIndex }]"
+            @click="currentCategoryIndex = index; currentProjectIndex = 0;"
+        ></div>
+      </div>
+
+      <div class="project-carousel">
+        <div class="project-grid" :class="[animationDirection, { animating: isAnimating }]">
+          <div class="text-content">
+            <h3 class="project-title">{{ currentProject.title }}</h3>
+            <p class="project-location">
+              <UIcon
+                  name="mdi-users"
+                  class="icon"
+              />
+              {{ currentProject.location }}
+              | {{ currentProject.description }}
+            </p>
+            <ul class="project-description">
+              <li v-for="(desc, i) in currentProject.descriptions" :key="i">{{ desc }}</li>
+            </ul>
+            <div class="project-links">
+              <a
+                  v-for="(link, i) in currentProject.links"
+                  :key="i"
+                  :href="link.buttonLink"
+                  target="_blank"
+                  class="project-link"
+              >
+                {{ link.buttonText }}
+              </a>
+            </div>
+          </div>
+          <div class="image-content">
+            <img
+                :src="currentProject.image"
+                :alt="currentProject.title"
+                class="image"
+                loading="lazy"
             />
-            {{ project.location }}
-            | {{ project.description }}
-          </p>
-          <ul class="project-description">
-            <li v-for="(desc, i) in project.descriptions" :key="i">{{ desc }}</li>
-          </ul>
-          <div class="project-links">
-            <a v-for="(link, i) in project.links" :key="i" :href="link.buttonLink" target="_blank" class="project-link">
-              {{ link.buttonText }}
-            </a>
           </div>
         </div>
-        <div class="image-content">
-          <img
-              :src="project.image"
-              :alt="project.title"
-              class="image"
-              loading="lazy"
-          />
-        </div>
-      </template>
-      <template v-else>
-        <div class="image-content">
-          <img
-              :src="project.image"
-              :alt="project.title"
-              class="image"
-              loading="lazy"
-          />
-        </div>
-        <div class="text-content">
-          <h3 class="project-title">{{ project.title }}</h3>
-          <p class="project-location">
 
-            <UIcon
-                name="mdi-users"
-                class="icon"
-            />
-
-            {{ project.location }}
-            | {{ project.description }}
-          </p>
-          <ul class="project-description">
-            <li v-for="(desc, i) in project.descriptions" :key="i">{{ desc }}</li>
-          </ul>
-          <div class="project-links">
-            <a v-for="(link, i) in project.links" :key="i" :href="link.buttonLink" target="_blank" class="project-link">
-              {{ link.buttonText }}
-            </a>
+        <div v-if="hasMultipleProjects" class="project-navigation">
+          <button @click="changeProject(-1)" class="nav-button prev">
+            <UIcon name="mdi-arrow-left-circle" class="icon"/>
+          </button>
+          <div class="project-indicators">
+          <span
+              v-for="(_, index) in currentCategory.items"
+              :key="index"
+              :class="['project-dot', { active: index === currentProjectIndex }]"
+              @click="currentProjectIndex = index"
+          ></span>
           </div>
+          <button @click="changeProject(1)" class="nav-button next">
+            <UIcon name="mdi-arrow-right-circle" class="icon"/>
+          </button>
         </div>
-      </template>
+      </div>
     </div>
+
   </section>
 </template>
 
 <style scoped>
 section {
   margin: 5rem auto;
-  max-width: 1200px;
-  padding: 0 1rem;
+  padding: 2rem;
   display: block;
   height: 100%;
+  background: var(--main-hovor-color);
+  position: relative;
+  overflow: hidden;
+}
+
+section .project-section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.carousel-button {
+  background-color: var(--font-hovor-color);
+  color: var(--main-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-button:hover {
+  background-color: var(--font-hovor-color);
+  transform: scale(1.1);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: var(--font-hovor-color);
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  transform: scale(1.2);
 }
 
 section h2 {
   font-size: 2rem;
-  color: var(--main-color);
-  margin-bottom: 2rem;
+  color: var(--font-hovor-color);
   text-align: center;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 .project-grid {
@@ -180,38 +355,118 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 350px;
+}
+
+.project-grid.animating.right {
+  animation: slideOutLeft 0.3s ease forwards;
+}
+
+.project-grid:not(.animating).right {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+.project-grid.animating.left {
+  animation: slideOutRight 0.3s ease forwards;
+}
+
+.project-grid:not(.animating).left {
+  animation: slideInLeft 0.3s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(30px);
+    opacity: 0;
+  }
 }
 
 .project-title {
-  text-align: start;
-  font-size: 1.8rem;
-  color: var(--main-hovor-color);
-  font-weight: bold;
-  border-bottom: 2px solid var(--main-hovor-color);
+  font-size: 1.5rem;
+  background: var(--font-hovor-color);
+  color: var(--main-color);
+  text-align: center;
+  font-weight: normal;
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: .5rem;
 }
 
 .project-location {
-  color: var(--main-color);
+  color: var(--font-hovor-color);
   margin-bottom: .5rem;
+  transition: all 0.3s ease;
+}
 
-  .icon {
-    color: var(--main-color);
-    margin-right: .2rem;
-  }
+.project-location .icon {
+  color: var(--font-hovor-color);
+  margin-right: .2rem;
+  transition: all 0.3s ease;
 }
 
 .project-description {
   text-align: justify;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--main-hovor-color);
+  color: var(--font-hovor-color);
   margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .project-description li {
+  list-style: none;
   margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.project-description li::before {
+  content: "•";
+  color: var(--font-hovor-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
 }
 
 .project-links {
@@ -223,16 +478,19 @@ section h2 {
 .project-link {
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  background-color: var(--main-color);
-  color: white;
+  background-color: var(--font-hovor-color);
+  color: var(--main-color);
   text-decoration: none;
   border-radius: 4px;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  transform-origin: center;
 }
 
 .project-link:hover {
-  background-color: var(--main-hovor-color);
+  background-color: var(--font-hovor-color);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .image-content {
@@ -240,6 +498,7 @@ section h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1000px;
 }
 
 .image-content img {
@@ -248,13 +507,65 @@ section h2 {
   height: auto;
   aspect-ratio: 16/9;
   object-fit: cover;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
 }
 
 .image-content img:hover {
+  transform: scale(1.05) rotateY(5deg) rotateX(5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  margin: 0.5rem;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--font-hovor-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-button:hover {
+  color: var(--font-hovor-color);
   transform: scale(1.05);
+}
+
+.project-indicators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-dot:hover {
+  transform: scale(1.2);
+}
+
+.project-dot.active {
+  background-color: var(--font-hovor-color);
+  transform: scale(1.2);
 }
 
 @media (max-width: 1024px) {
@@ -286,12 +597,22 @@ section h2 {
   .project-title {
     font-size: 1.5rem;
   }
+
+  .project-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-indicators {
+    order: -1;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .project-section {
     margin: 2rem auto;
-    padding: 0 0.5rem;
+    padding: 1rem;
   }
 
   .image-content img {
@@ -314,6 +635,15 @@ section h2 {
   .project-link {
     width: 100%;
     text-align: center;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-button {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

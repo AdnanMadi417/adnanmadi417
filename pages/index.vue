@@ -8,7 +8,7 @@ import Education from "~/component/Education.vue";
 import Certificates from "~/component/Certificates.vue";
 import Footer from "~/component/Footer.vue";
 import ContactHeader from "~/component/ContactHeader.vue";
-import WPProjects from "~/component/WPProjects.vue";
+
 </script>
 
 <template>
@@ -17,7 +17,6 @@ import WPProjects from "~/component/WPProjects.vue";
   <Education/>
   <About/>
   <Projects/>
-  <WPProjects/>
   <Skills/>
   <Certificates/>
   <Footer/>

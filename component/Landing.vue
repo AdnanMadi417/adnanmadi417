@@ -15,7 +15,6 @@ const links = [
   {link: "education", label: "Education"},
   {link: "about", label: "About"},
   {link: "projects", label: "Projects"},
-  {link: "wpProjects", label: "WP Projects"},
   {link: "skills", label: "Skills"},
   {link: "certificate", label: "Certificates"},
 ];

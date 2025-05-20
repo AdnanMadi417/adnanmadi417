@@ -7,17 +7,18 @@ interface Item {
 const items = ref<Item[]>([
   {
     id: 1,
-    paragraph: "Welcome to my profile! I'm a Web Developer passionate about building efficient, user-friendly websites and solving real-world problems through technology. With a strong foundation in coding and a drive to continuously improve, I strive to stay updated with the latest trends in the tech industry."
+    paragraph: "I’m a Software Engineer with a strong foundation in frontend development (Vue.js, Nuxt.js) and backend integration using Python and Django. I specialize in building responsive user interfaces, secure admin panels, and real-time features that streamline workflows and enhance user experience."
   },
   {
     id: 2,
-    paragraph: "My experience at AIU’s School of Computing and Informatics (SCI), combined with completing various web development and programming courses, has equipped me with both technical expertise and a deeper understanding of business needs and consumer trends."
+    paragraph: "During my studies at Albukhary International University, I led the development of systems such as the Hostel Management System, which significantly reduced manual administrative work and improved operational efficiency. I also contributed to projects that streamlined workflows, integrated automated notifications, and enhanced reporting capabilities."
   },
   {
     id: 3,
-    paragraph: "Fueled by a passion for innovation and growth, I am committed to delivering high-quality digital solutions that make a positive impact."
-  },
+    paragraph: "I am passionate about delivering high-quality digital solutions through clean, maintainable code. With a strong foundation in software engineering and a continuous drive to learn, I aim to build technologies that solve real-world problems and align with organizational goals."
+  }
 ]);
+
 </script>
 
 <template>

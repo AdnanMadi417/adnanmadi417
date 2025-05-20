@@ -43,7 +43,7 @@ onMounted(() => {
       <div class="logo-container">
         <div class="logo">
           <a href="https://adnanmadi-417.vercel.app/">
-            <span>Adnan Madi</span>
+            <img src="../public/images/adnanmadi417_logo.png" alt="adnanmadi417_logo" class="image-logo-container" />
           </a>
         </div>
         <button @click="toggleLinksVisibility" class="menu-toggle" v-if="isMobile" aria-label="Toggle menu">
@@ -66,8 +66,8 @@ onMounted(() => {
   <section class="landing-sec" id="landing">
     <div class="landing-container">
       <div class="text-content">
-        <h1 class="name slide-up">Adnan Madi</h1>
-        <p class="title fade-in">Web Developer</p>
+        <h1 class="name slide-up">ADNAN MADI</h1>
+        <p class="title fade-in">SOFTWARE ENGINEER</p>
         <p class="description fade-in">
           Building user-friendly, efficient websites that solve real problems.
         </p>
@@ -80,6 +80,9 @@ onMounted(() => {
           </a>
         </div>
         <CVPopup v-model:show="showPopup"></CVPopup>
+      </div>
+      <div class="landing-image-container slide-up">
+        <img src="../public/images/landing_pic_1.png" alt="landing_pic">
       </div>
     </div>
   </section>
@@ -119,6 +122,12 @@ onMounted(() => {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+
+  .image-logo-container{
+    width: 150px;
+    height: 60px;
+  }
+
 }
 
 .logo a {
@@ -188,23 +197,27 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 70px);
-  padding: 2rem 1rem;
+  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-image: url("../public/images/LANDING-BG.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  background-color: var(--main-color);
 }
 
 .landing-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr ;
   justify-content: center;
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
   margin: 0 auto;
-  color: var(--main-color);
+  color: var(--font-hovor-color);
+}
+
+@media screen and (max-width: 1200px) {
+  .landing-container {
+    display: block;
+  }
 }
 
 .text-content {
@@ -250,8 +263,8 @@ onMounted(() => {
 
 .cta-button {
   padding: 0.8rem 1.5rem;
-  background-color: var(--main-color);
-  color: var(--font-hovor-color);
+  background-color: var(--font-hovor-color);
+  color: var(--main-color);
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
@@ -267,7 +280,7 @@ onMounted(() => {
 }
 
 .cta-button:hover {
-  background: linear-gradient(45deg, var(--main-color), var(--main-hovor-color));
+  background: linear-gradient(45deg, var(--font-hovor-color), var(--main-font-color));
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -295,6 +308,12 @@ onMounted(() => {
     transform: translateY(0);
   }
 }
+
+.slide-up {
+  animation: slideUp 1.2s ease forwards;
+  opacity: 0;
+}
+
 
 @media (max-width: 1200px) {
   .header-container {

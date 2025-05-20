@@ -8,6 +8,7 @@ import Education from "~/component/Education.vue";
 import Certificates from "~/component/Certificates.vue";
 import Footer from "~/component/Footer.vue";
 import ContactHeader from "~/component/ContactHeader.vue";
+import Test from "~/component/Test.vue";
 
 </script>
 

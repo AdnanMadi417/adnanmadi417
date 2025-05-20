@@ -272,7 +272,7 @@ section {
   padding: 2rem;
   display: block;
   height: 100%;
-  background: var(--main-hovor-color);
+  background: var(--main-color);
   position: relative;
   overflow: hidden;
 }

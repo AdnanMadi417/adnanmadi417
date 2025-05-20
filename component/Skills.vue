@@ -51,6 +51,11 @@ const skills = [
     title: "WordPress",
     icon: "simple-icons:wordpress",
     color: "#21759B"
+  },
+  {
+    title: "Figma",
+    icon: "simple-icons:figma",
+    color: "#F24E1E"
   }
 ];
 

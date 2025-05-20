@@ -8,13 +8,14 @@ import Education from "~/component/Education.vue";
 import Certificates from "~/component/Certificates.vue";
 import Footer from "~/component/Footer.vue";
 import ContactHeader from "~/component/ContactHeader.vue";
-import Test from "~/component/Test.vue";
+import TimeLineWorkingExperience from "~/component/TimeLineWorkingExperience.vue";
 
 </script>
 
 <template>
   <ContactHeader/>
   <Landing/>
+  <TimeLineWorkingExperience/>
   <Education/>
   <About/>
   <Projects/>

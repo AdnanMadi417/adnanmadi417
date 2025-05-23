@@ -111,24 +111,24 @@ const projects = [
           }
         ]
       },
-      {
-        title: "Mapim Website",
-        description: "WordPress Developer",
-        location: "MAPIM ",
-        image: "/images/mapim_website_WP.png",
-        descriptions: [
-          "Redesigned and improved the official website for MAPIM using WordPress, enhancing user experience and visual appeal.",
-          "Implemented a modern, responsive design while maintaining multi-language support for broader accessibility.",
-          "Revamped essential pages, including Home, About, Contact Us, Programs, Events, and Gallery, with enhanced multimedia content and improved navigation.",
-          "Organized content into relevant categories: Articles, Blogs, Charity, Donations, Latest Updates, Media Statements, News, Press Releases, Quotes, Uncategorized, and Videos."
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://mapim.com.my/"
-          }
-        ]
-      },
+      // {
+      //   title: "Mapim Website",
+      //   description: "WordPress Developer",
+      //   location: "MAPIM ",
+      //   image: "/images/mapim_website_WP.png",
+      //   descriptions: [
+      //     "Redesigned and improved the official website for MAPIM using WordPress, enhancing user experience and visual appeal.",
+      //     "Implemented a modern, responsive design while maintaining multi-language support for broader accessibility.",
+      //     "Revamped essential pages, including Home, About, Contact Us, Programs, Events, and Gallery, with enhanced multimedia content and improved navigation.",
+      //     "Organized content into relevant categories: Articles, Blogs, Charity, Donations, Latest Updates, Media Statements, News, Press Releases, Quotes, Uncategorized, and Videos."
+      //   ],
+      //   links: [
+      //     {
+      //       buttonText: "Live Demo",
+      //       buttonLink: "https://mapim.com.my/"
+      //     }
+      //   ]
+      // },
     ],
   }
 ];

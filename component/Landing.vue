@@ -264,7 +264,7 @@ onMounted(() => {
 
 .cta-button {
   padding: 0.8rem 1.5rem;
-  background-color: var(--font-hovor-color);
+  background-color: #fff;
   color: var(--main-color);
   border-radius: 0.5rem;
   cursor: pointer;
@@ -278,16 +278,6 @@ onMounted(() => {
   text-decoration: none;
   border: none;
   min-width: 180px;
-}
-
-.cta-button:hover {
-  background: linear-gradient(45deg, var(--font-hovor-color), var(--main-font-color));
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.cta-button:active {
-  transform: translateY(-1px);
 }
 
 @keyframes fadeIn {

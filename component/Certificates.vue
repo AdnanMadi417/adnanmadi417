@@ -124,6 +124,8 @@ function prevPage() {
 
 .certificate {
   padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .certificate h1 {

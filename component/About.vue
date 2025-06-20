@@ -73,6 +73,8 @@ const items = ref<Item[]>([
 .about-sec {
   width: 100%;
   padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-sec h2 {

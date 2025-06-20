@@ -16,8 +16,7 @@
 <style scoped>
 footer {
   background-image: linear-gradient(-45deg, var(--main-color) 0%, var(--main-hovor-color));
-  padding: 2rem 1rem;
-  margin-top: 5rem;
+  padding: 1rem;
   align-items: center;
   text-align: center;
   font-size: 1.25rem;

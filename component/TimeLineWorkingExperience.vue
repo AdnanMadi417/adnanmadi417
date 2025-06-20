@@ -1,26 +1,3 @@
-<!-- Components/Timeline.vue -->
-<template>
-  <section class="timeline-cover">
-    <div class="timeline-title">
-      <h2>Relevant Experience </h2>
-    </div>
-    <div class="timeline">
-      <ul>
-        <li v-for="(step, index) in steps" :key="index">
-          <div
-              class="content"
-              :class="{ hidden: !visibleItems[index] }"
-              ref="timelineItems"
-          >
-            <h3>{{ step.title }}</h3>
-            <h4>{{ step.company }}</h4>
-            <p>{{ step.description }}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-</template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
@@ -32,7 +9,7 @@ const steps = [
     description: `Developed a Scholarship Registration System to streamline application workflows, reducing submission time by 40% and processing time by 30%. Designed and implemented user-friendly interfaces, leading to a 25% increase in successful applicant registrations and significantly improving the document submission experience.`
   },
   {
-    title: 'WEB DEVELOPMENT INTERN (INTERNSHIP)',
+    title: 'Wed  Development Intern (Internship)',
     company: 'Commerce Dot Com (CDC)',
     description: `Designed and developed web applications that automated previously manual processes, enhancing workflow efficiency for both users and administrators. Focused on building intuitive, responsive front-end interfaces to improve usability and support seamless user experiences.`
   },
@@ -66,10 +43,37 @@ onUnmounted(() => {
 });
 </script>
 
+<template>
+  <section class="timeline-cover">
+    <div class="timeline-title">
+      <h2>Relevant Experience </h2>
+    </div>
+    <div class="timeline">
+      <ul>
+        <li v-for="(step, index) in steps" :key="index">
+          <div
+              class="content"
+              :class="{ hidden: !visibleItems[index] }"
+              ref="timelineItems"
+          >
+            <h3>{{ step.title }}</h3>
+            <h4>{{ step.company }}</h4>
+            <p>{{ step.description }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</template>
+
 <style scoped>
 .timeline-cover {
-  padding: 100px 0;
+  padding: 20px 0;
   color: var(--main-color);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
 }
 
 .timeline-title {
@@ -90,10 +94,11 @@ onUnmounted(() => {
 
 .timeline {
   padding-top: 0;
+
 }
 
 .timeline ul {
-  padding-top: 100px;
+  padding-top: 20px;
   list-style-type: none;
 }
 
@@ -128,8 +133,8 @@ onUnmounted(() => {
 
 .timeline ul li .content {
   position: relative;
-  top: -100px;
-  width: 289px;
+  top: -50px;
+  width: 400px;
   transition: opacity 0.7s ease;
 }
 
@@ -149,7 +154,7 @@ onUnmounted(() => {
 }
 
 .timeline ul li .content h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 28px;
   color: var(--main-color);
@@ -180,7 +185,7 @@ onUnmounted(() => {
 }
 
 .timeline ul li:nth-child(even) .content {
-  left: calc(-289px - 70px);
+  left: calc(-400px - 70px);
 }
 
 .timeline ul li:nth-child(even) .content:before {
@@ -215,7 +220,7 @@ onUnmounted(() => {
   }
 
   .timeline-title h2 {
-    font-size: 32px;
+    font-size: 24px;
     line-height: 44px;
     letter-spacing: 0.08px;
   }

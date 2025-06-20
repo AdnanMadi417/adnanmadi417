@@ -94,6 +94,7 @@ onMounted(() => {
   top: 0;
   z-index: 1000;
   width: 100%;
+  max-width: 1200px;
   padding: 0.5rem;
   margin: 0 auto;
   backdrop-filter: blur(10px);
@@ -105,6 +106,7 @@ onMounted(() => {
   padding: 0.3rem 0.5rem;
   background: #fff;
   width: 100%;
+  max-width: 1200px;
 }
 
 .header-container {
@@ -204,13 +206,13 @@ onMounted(() => {
 }
 
 .landing-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr ;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 1rem;
-  margin: 0 auto;
+  padding: 1rem;
   color: var(--font-hovor-color);
 }
 

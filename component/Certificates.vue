@@ -24,13 +24,6 @@ const certificates = [
     from: "Corsesara"
   },
   {
-    icon: "mdi:language-java",
-    title: "Java Programming",
-    date: "2022",
-    description: "A comprehensive course on Java programming, focusing on object-oriented concepts and backend development essentials.",
-    from: "Corsesara"
-  },
-  {
     icon: "mdi:code-braces",
     title: "Programming Fundamentals",
     date: "2022",

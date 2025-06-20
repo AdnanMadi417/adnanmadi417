@@ -27,5 +27,6 @@ import TimeLineWorkingExperience from "~/component/TimeLineWorkingExperience.vue
 <style scoped>
 html {
   scroll-behavior: smooth;
+  background: var(--body-bg-color);
 }
 </style>

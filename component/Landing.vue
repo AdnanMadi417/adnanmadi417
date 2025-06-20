@@ -66,8 +66,7 @@ onMounted(() => {
   <section class="landing-sec" id="landing">
     <div class="landing-container">
       <div class="text-content">
-        <h1 class="name slide-up">ADNAN MADI</h1>
-        <p class="title fade-in">SOFTWARE ENGINEER</p>
+        <p class="title fade-in">Hi, I am Adnan Madi a Software Engineer</p>
         <p class="description fade-in">
           Building user-friendly, efficient websites that solve real problems.
         </p>
@@ -99,12 +98,12 @@ onMounted(() => {
   margin: 0 auto;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  background-color: #fff;
 }
 
 .header-scrolled {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 0.3rem 0.5rem;
-  background: #fff;
   width: 100%;
   max-width: 1200px;
 }
@@ -202,7 +201,7 @@ onMounted(() => {
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-color: var(--main-color);
+  background: var(--body-bg-color);
 }
 
 .landing-container {
@@ -213,7 +212,7 @@ onMounted(() => {
   justify-content: center;
   width: 100%;
   padding: 1rem;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
 }
 
 @media screen and (max-width: 1200px) {

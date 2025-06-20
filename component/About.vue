@@ -75,6 +75,7 @@ const items = ref<Item[]>([
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  background: transparent;
 }
 
 .about-sec h2 {

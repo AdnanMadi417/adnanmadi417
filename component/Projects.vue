@@ -111,26 +111,31 @@ const projects = [
           }
         ]
       },
-      // {
-      //   title: "Mapim Website",
-      //   description: "WordPress Developer",
-      //   location: "MAPIM ",
-      //   image: "/images/mapim_website_WP.png",
-      //   descriptions: [
-      //     "Redesigned and improved the official website for MAPIM using WordPress, enhancing user experience and visual appeal.",
-      //     "Implemented a modern, responsive design while maintaining multi-language support for broader accessibility.",
-      //     "Revamped essential pages, including Home, About, Contact Us, Programs, Events, and Gallery, with enhanced multimedia content and improved navigation.",
-      //     "Organized content into relevant categories: Articles, Blogs, Charity, Donations, Latest Updates, Media Statements, News, Press Releases, Quotes, Uncategorized, and Videos."
-      //   ],
-      //   links: [
-      //     {
-      //       buttonText: "Live Demo",
-      //       buttonLink: "https://mapim.com.my/"
-      //     }
-      //   ]
-      // },
     ],
-  }
+  },
+  {
+    title: "Figma Projects",
+    items: [
+      {
+        title: "foundation system",
+        description: "Figma Project",
+        location: "Side Project",
+        image: "/images/foundation%20system.jpeg",
+        descriptions: [
+          "Here’s what the system includes",
+          "Secure student dashboards (profile updates, financial records)",
+          "Project browsing + qualification-based applications",
+          "Clean, accessible interfaces for real student needs",
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://www.figma.com/design/bPV0pnOk4oDEWtzD9KLOTr/Bridge-to-Future-Foundation?node-id=0-1&t=RrwBMMFMhFVL77g5-1"
+          }
+        ]
+      },
+    ],
+  },
 ];
 
 const currentCategoryIndex = ref(0);
@@ -272,7 +277,6 @@ section {
   padding: 2rem;
   display: block;
   height: 100%;
-  background: var(--main-color);
   position: relative;
   overflow: hidden;
 }
@@ -307,6 +311,7 @@ section .project-section-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: justify;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -343,7 +348,7 @@ section .project-section-container {
 
 section h2 {
   font-size: 2rem;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   text-align: center;
   margin: 0;
   transition: color 0.3s ease;
@@ -433,13 +438,13 @@ section h2 {
 }
 
 .project-location {
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   margin-bottom: .5rem;
   transition: all 0.3s ease;
 }
 
 .project-location .icon {
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   margin-right: .2rem;
   transition: all 0.3s ease;
 }
@@ -448,7 +453,7 @@ section h2 {
   text-align: justify;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
 }
@@ -462,7 +467,7 @@ section h2 {
 
 .project-description li::before {
   content: "•";
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -532,7 +537,7 @@ section h2 {
   margin: 0.5rem;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -541,7 +546,7 @@ section h2 {
 }
 
 .nav-button:hover {
-  color: var(--font-hovor-color);
+  color: var(--main-color);
   transform: scale(1.05);
 }
 
@@ -564,7 +569,7 @@ section h2 {
 }
 
 .project-dot.active {
-  background-color: var(--font-hovor-color);
+  background-color: var(--main-color);
   transform: scale(1.2);
 }
 

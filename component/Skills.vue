@@ -154,7 +154,8 @@ function handleMouseLeave() {
 .skills-section {
   padding: 5rem 1rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .title {
@@ -213,7 +214,7 @@ function handleMouseLeave() {
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   animation: fadeIn 0.5s ease-out forwards;
-  animation-delay: var(--delay);
+  animation-delay: .3ms;
   transform-origin: center center;
   opacity: 0;
   z-index: 1;

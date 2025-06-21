@@ -92,6 +92,30 @@ const projects = [
     ]
   },
   {
+    title: "Figma Projects",
+    items: [
+      {
+        title: "foundation system",
+        description: "Figma Project",
+        location: "Side Project",
+        image: "/images/foundation%20system.jpeg",
+        descriptions: [
+          "Here’s what the system includes",
+          "Secure student dashboards (profile updates, financial records)",
+          "Project and course browsing + qualification-based applications",
+          "Admin controls to add/manage projects and accept students",
+          "Clean, accessible interfaces for real student needs",
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://www.figma.com/design/i0mDibQ5WTUyLj8yQ6LFfo/education-Foundation?node-id=0-1&t=pnTVP2WdnFcr6fWs-1"
+          }
+        ]
+      },
+    ],
+  },
+  {
     title: "WordPress Projects",
     items: [
       {
@@ -108,29 +132,6 @@ const projects = [
           {
             buttonText: "Live Demo",
             buttonLink: "https://masjidalbukharykl.com/"
-          }
-        ]
-      },
-    ],
-  },
-  {
-    title: "Figma Projects",
-    items: [
-      {
-        title: "foundation system",
-        description: "Figma Project",
-        location: "Side Project",
-        image: "/images/foundation%20system.jpeg",
-        descriptions: [
-          "Here’s what the system includes",
-          "Secure student dashboards (profile updates, financial records)",
-          "Project browsing + qualification-based applications",
-          "Clean, accessible interfaces for real student needs",
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://www.figma.com/design/bPV0pnOk4oDEWtzD9KLOTr/Bridge-to-Future-Foundation?node-id=0-1&t=RrwBMMFMhFVL77g5-1"
           }
         ]
       },

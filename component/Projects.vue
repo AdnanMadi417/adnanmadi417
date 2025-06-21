@@ -98,7 +98,7 @@ const projects = [
         title: "foundation system",
         description: "Figma Project",
         location: "Side Project",
-        image: "/images/foundation%20system.jpeg",
+        image: "/images/EDUCATION%20FOUNADTION%20.png",
         descriptions: [
           "Here’s what the system includes",
           "Secure student dashboards (profile updates, financial records)",

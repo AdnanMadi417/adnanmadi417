@@ -80,11 +80,11 @@ const projects = [
             buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/"
           },
           {
-            buttonText: "GitHub Repository",
+            buttonText: "Frontend GitHub",
             buttonLink: "https://github.com/masjid-albukhary/masjid-frontend.git"
           },
           {
-            buttonText: "GitHub Repository",
+            buttonText: "Backend GitHub",
             buttonLink: "https://github.com/masjid-albukhary/masjid-backend.git"
           }
         ]
@@ -95,7 +95,7 @@ const projects = [
     title: "Figma Projects",
     items: [
       {
-        title: "foundation system",
+        title: "Education Foundation system",
         description: "Figma Project",
         location: "Side Project",
         image: "/images/EDUCATION%20FOUNADTION%20.png",

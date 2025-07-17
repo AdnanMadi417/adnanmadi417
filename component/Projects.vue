@@ -17,7 +17,7 @@ const projects = [
         links: [
           {
             buttonText: "Live Demo",
-            buttonLink: "https://aiu-fyp.github.io/fyp-frontend2/home/"
+            buttonLink: "https://www.aiuhms.pro/home"
           }
         ]
       },

@@ -163,7 +163,7 @@ function handleMouseLeave() {
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   font-weight: 800;
   margin-bottom: 3rem;
-  color: var(--main-color);
+  color: var(--secondary-color);
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
@@ -179,7 +179,7 @@ function handleMouseLeave() {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, var(--main-color) 0%, var(--main-hovor-color) 100%);
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-color) 100%);
   border-radius: 2px;
 }
 
@@ -251,7 +251,7 @@ function handleMouseLeave() {
 .skill-icon {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--skill-color, var(--main-color));
+  color: var(--skill-color, var(--secondary-color));
   transition: transform 0.3s ease;
 }
 
@@ -278,7 +278,7 @@ function handleMouseLeave() {
   transform: translateX(-50%) scaleX(0);
   width: 70%;
   height: 3px;
-  background-color: var(--skill-color, var(--main-color));
+  background-color: var(--skill-color, var(--secondary-color));
   transition: transform 0.3s ease;
   border-radius: 2px;
 }
@@ -306,14 +306,14 @@ function handleMouseLeave() {
   justify-content: center;
   cursor: pointer;
   font-size: 1.5rem;
-  color: var(--main-color);
+  color: var(--secondary-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
   transform: translateY(-3px);
-  color: var(--main-hovor-color);
+  color: var(--secondary-color);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -342,7 +342,7 @@ function handleMouseLeave() {
 }
 
 .dot.active {
-  background-color: var(--main-color);
+  background-color: var(--secondary-color);
   transform: scale(1.3);
 }
 

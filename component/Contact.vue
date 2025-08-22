@@ -60,7 +60,7 @@ const sendMessage = async () => {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
-  background-color: var(--font-hovor-color);
+  background-color: var(--font-light-color);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -106,7 +106,7 @@ button.submit-btn {
   padding: 10px 15px;
   font-size: 16px;
   background-color: var(--main-color);
-  color: var(--font-hovor-color);
+  color: var(--font-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -114,8 +114,8 @@ button.submit-btn {
 }
 
 button.submit-btn:hover {
-  background-color: var(--main-hovor-color);
-  color: var(--main-font-color);
+  background-color: var(--secondary-color);
+  color: var(--font-color);
   transition: .3s ease-in-out;
 }
 

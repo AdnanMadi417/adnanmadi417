@@ -5,11 +5,25 @@
 
 <style>
 :root {
-  --main-color: #0a3a48;
-  --main-hovor-color: #11667f;
-  --main-font-color: #f5f5f5;
-  --font-hovor-color: #eeeeee;
-  --body-bg-color: #eeeeee;
+
+  --header-bg-color: #f0f0f0;
+  --card-bg-color: #eeeef1;
+  --main-color: #000000;
+  --secondary-color: #1d1d1f;
+  --body-bg-color: #ffffff;
+  --section-bg-color: #f5f5f7;
+  --font-color: #1d1d1f;
+  --font-light-color: #6e6e73;
+  --accent-color: #0071e3;
+  --accent-hover-color: #0077ed;
+  --button-hover-bg: #f0f0f0;
+
+
+  --font-size-base: 0.95rem;
+  --font-size-sm: 0.8rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.2rem;
+
 }
 </style>
 

@@ -46,7 +46,7 @@ function closePopup() {
 }
 
 .popup-content {
-  background-color: var(--main-font-color);
+  background-color: var(--font-color);
   width: 80%;
   max-width: 800px;
   position: relative;

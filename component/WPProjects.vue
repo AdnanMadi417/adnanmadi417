@@ -116,9 +116,9 @@ section h2 {
 .project-title {
   text-align: start;
   font-size: 1.8rem;
-  color: var(--main-hovor-color);
+  color: var(----secondary-color);
   font-weight: bold;
-  border-bottom: 2px solid var(--main-hovor-color);
+  border-bottom: 2px solid var(----secondary-color);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -137,7 +137,7 @@ section h2 {
   text-align: justify;
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--main-hovor-color);
+  color: var(----secondary-color);
   margin-bottom: 1.5rem;
 }
 
@@ -163,7 +163,7 @@ section h2 {
 }
 
 .project-link:hover {
-  background-color: var(--main-hovor-color);
+  background-color: var(----secondary-color);
 }
 
 .image-content {

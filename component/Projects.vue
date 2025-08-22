@@ -303,7 +303,7 @@ section .project-section-container {
 }
 
 .carousel-button {
-  background-color: var(--font-hovor-color);
+  background-color: var(--font-light-color);
   color: var(--main-color);
   border: none;
   width: 40px;
@@ -318,7 +318,7 @@ section .project-section-container {
 }
 
 .carousel-button:hover {
-  background-color: var(--font-hovor-color);
+  background-color: var(--font-light-color);
   transform: scale(1.1);
 }
 
@@ -339,7 +339,7 @@ section .project-section-container {
 }
 
 .indicator.active {
-  background-color: var(--font-hovor-color);
+  background-color: var(--font-light-color);
   transform: scale(1.2);
 }
 
@@ -428,7 +428,7 @@ section h2 {
 
 .project-title {
   font-size: 1.5rem;
-  background: var(--font-hovor-color);
+  background: var(--font-light-color);
   color: var(--main-color);
   text-align: center;
   font-weight: normal;
@@ -484,7 +484,7 @@ section h2 {
 .project-link {
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  background-color: var(--font-hovor-color);
+  background-color: var(--font-light-color);
   color: var(--main-color);
   text-decoration: none;
   border-radius: 4px;
@@ -494,7 +494,7 @@ section h2 {
 }
 
 .project-link:hover {
-  background-color: var(--font-hovor-color);
+  background-color: var(--font-light-color);
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

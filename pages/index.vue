@@ -16,7 +16,6 @@ import Landing from "~/component/Landing.vue";
   <Header/>
   <Landing/>
   <TimeLineWorkingExperience/>
-
   <Education/>
   <About/>
   <Projects/>

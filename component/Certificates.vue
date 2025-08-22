@@ -79,20 +79,107 @@ function prevPage() {
 </template>
 
 <style scoped>
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.certificate {
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-@keyframes slideUp {
+.certificate h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.card {
+  background: var(--body-bg-color);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  flex: 1 1 250px;
+  max-width: 280px;
+  min-width: 220px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.card h4 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--font-light-color);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  line-height: 1.5;
+}
+
+.certificate-control-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  gap: 1.5rem;
+}
+
+.certificate-control-buttons button {
+  background: var(--body-bg-color);
+  border: 1px solid #d2d2d7;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.certificate-control-buttons button:hover {
+  background: var(--section-bg-color);
+  transform: translateY(-2px);
+}
+
+.certificate-control-buttons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -100,99 +187,8 @@ function prevPage() {
   }
 }
 
-@keyframes slideInFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.certificate {
-  padding: 5rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.certificate h1 {
-  text-align: center;
-  font-size: 2rem;
-  text-transform: capitalize;
-  font-weight: bold;
-  margin-bottom: 4rem;
-  color: var(--main-color);
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.container {
-  max-width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  gap: 1rem 2rem;
-}
-
-.container .card {
-  flex: 1 1 250px;
-  max-width: 250px;
-  padding: 1rem;
-  color: var(--main-color);
-  border: 2px solid var(--main-color);
-  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-  border-radius: 1rem 0;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards, slideInFromLeft 0.5s ease-out forwards;
-}
-
-.card:nth-child(even) {
-  animation: fadeIn 1s ease-out forwards, slideInFromRight 0.5s ease-out forwards;
-}
-
-.card h2 {
-  font-size: 1rem;
-  margin: 1rem 0;
-}
-
-.card p {
-  text-align: justify;
-  margin: 0.5rem 0;
-}
-
-.certificate-control-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.certificate-control-buttons button {
-  padding: 0 1rem;
-  margin: 0 2rem;
-  font-size: 2rem;
-  color: var(--main-color);
-  border-radius: .5rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  transform: scale(1);
-}
-
-.certificate-control-buttons button:hover {
-  transform: scale(1.1);
-  color: var(--main-color);
+.card {
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 </style>

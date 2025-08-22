@@ -37,27 +37,6 @@ const projects = [
           }
         ]
       },
-      {
-        title: "MyChild Website",
-        description: "Frontend Developer",
-        location: "Side Project",
-        image: "./images/MyChild_Website.png",
-        descriptions: [
-          "Streamlined content management by enabling publishing of articles, sharing of stories, and showcasing organizational activities, improving visibility and engagement.",
-          "Implemented multi-language support (Malay & English).",
-          "Developed a seamless donation system with Stripe integration and manual payment options, increasing fundraising efficiency."
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://sideprojectngo.github.io/FrontEnd/home"
-          },
-          {
-            buttonText: "GitHub Repository",
-            buttonLink: "https://github.com/SideProjectNGO/FrontEnd.git"
-          }
-        ]
-      }
     ]
   },
   {
@@ -110,28 +89,6 @@ const projects = [
           {
             buttonText: "Live Demo",
             buttonLink: "https://www.figma.com/design/i0mDibQ5WTUyLj8yQ6LFfo/education-Foundation?node-id=0-1&t=pnTVP2WdnFcr6fWs-1"
-          }
-        ]
-      },
-    ],
-  },
-  {
-    title: "WordPress Projects",
-    items: [
-      {
-        title: "Masjid Albukhary KL Website",
-        description: "WordPress Developer",
-        location: "commerce dot com _ CDC",
-        image: "/images/masjid_albukhary_kl_WP.png",
-        descriptions: [
-          "Developed the official website for Masjid Albukhary KL using WordPress, focusing on responsive design and community engagement.",
-          "Built essential pages, including Home, About, Contact Us, Services, Facilities, and Gallery, with multi-language support.",
-          "Integrated multimedia content through a Gallery page with YouTube video support."
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://masjidalbukharykl.com/"
           }
         ]
       },
@@ -196,11 +153,12 @@ const hasMultipleProjects = computed(() => currentCategory.value.items.length > 
 
 </script>
 
+
 <template>
   <section class="project-section" id="projects">
-
     <div class="project-section-container">
-      <div class="carousel-controls top-controls">
+
+      <div class="top-controls">
         <h2>{{ currentCategory.title }}</h2>
       </div>
 
@@ -217,439 +175,252 @@ const hasMultipleProjects = computed(() => currentCategory.value.items.length > 
         <div class="project-grid" :class="[animationDirection, { animating: isAnimating }]">
           <div class="text-content">
             <h3 class="project-title">{{ currentProject.title }}</h3>
-            <p class="project-location">
-              <UIcon
-                  name="mdi-users"
-                  class="icon"
-              />
-              {{ currentProject.location }}
-              | {{ currentProject.description }}
-            </p>
+            <p class="project-location">{{ currentProject.location }} | {{ currentProject.description }}</p>
             <ul class="project-description">
               <li v-for="(desc, i) in currentProject.descriptions" :key="i">{{ desc }}</li>
             </ul>
             <div class="project-links">
-              <a
-                  v-for="(link, i) in currentProject.links"
-                  :key="i"
-                  :href="link.buttonLink"
-                  target="_blank"
-                  class="project-link"
-              >
-                {{ link.buttonText }}
-              </a>
+              <template v-for="(link, i) in currentProject.links" :key="i" class="buttons">
+                <a
+                    :href="link.buttonLink"
+                    target="_blank"
+                    class="project-link-primary"
+                >
+                  {{ link.buttonText }}
+                </a>
+              </template>
             </div>
           </div>
           <div class="image-content">
-            <img
-                :src="currentProject.image"
-                :alt="currentProject.title"
-                class="image"
-                loading="lazy"
-            />
+            <img :src="currentProject.image" :alt="currentProject.title" class="image" loading="lazy"/>
           </div>
         </div>
 
         <div v-if="hasMultipleProjects" class="project-navigation">
-          <button @click="changeProject(-1)" class="nav-button prev">
-            <UIcon name="mdi-arrow-left-circle" class="icon"/>
-          </button>
+
+          <span @click="changeProject(-1)" class="nav-button prev">
+            <UIcon name="mdi-chevron-left" class="nav-icon"/>
+          </span>
+
           <div class="project-indicators">
-          <span
-              v-for="(_, index) in currentCategory.items"
-              :key="index"
-              :class="['project-dot', { active: index === currentProjectIndex }]"
-              @click="currentProjectIndex = index"
-          ></span>
+            <span
+                v-for="(_, index) in currentCategory.items"
+                :key="index"
+                :class="['project-dot', { active: index === currentProjectIndex }]"
+                @click="currentProjectIndex = index"
+            ></span>
           </div>
-          <button @click="changeProject(1)" class="nav-button next">
-            <UIcon name="mdi-arrow-right-circle" class="icon"/>
-          </button>
+
+          <span @click="changeProject(1)" class="nav-button next">
+          <UIcon name="mdi-chevron-right" class="nav-icon"/>
+          </span>
+
         </div>
       </div>
     </div>
-
   </section>
 </template>
 
 <style scoped>
-section {
-  margin: 5rem auto;
-  padding: 2rem;
-  display: block;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
 
-section .project-section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.top-controls {
+.project-section {
+  padding: 6rem 2rem;
+  background-color: var(--body-bg-color);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.project-section-container {
+  max-width: 1300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.project-section h2 {
+  font-weight: 400;
+  font-size: 2.4rem;
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.project-title {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+
+.project-location {
+  font-size: 1rem;
+  color: var(--secondary-color);
   margin-bottom: 1rem;
 }
 
-.carousel-controls {
-  display: flex;
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
   align-items: center;
-  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  width: 100%;
 }
 
-.carousel-button {
-  background-color: var(--font-light-color);
-  color: var(--main-color);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.project-description {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--main-color);
 }
 
-.carousel-button:hover {
-  background-color: var(--font-light-color);
-  transform: scale(1.1);
+.project-description li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-color: var(--card-bg-color);
+  padding: 10px ;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.project-link-primary {
+  color: var(--font-color);
+  background-color: transparent;
+  text-decoration: none;
+  padding: 0.65rem 1.3rem;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: all 0.35s ease;
+
+}
+
+.project-link-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--body-bg-color);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.project-link-primary{
+  color: var(--font-color);
+  text-decoration: none;
+  padding: 0.65rem 1.3rem;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.project-link-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--body-bg-color);
+}
+
+.project-link-primary:first-child {
+  background-color: var(--secondary-color);
+  color: var(--body-bg-color);
+}
+
+.image-content img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-content img:hover {
+  transform: scale(1.04) translateY(-3px);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
 }
 
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 0.6rem;
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: #d1d1d6;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .indicator.active {
-  background-color: var(--font-light-color);
-  transform: scale(1.2);
+  background-color: var(--accent-color);
+  transform: scale(1.4);
 }
 
-.indicator:hover {
-  transform: scale(1.2);
-}
-
-section h2 {
-  font-size: 2rem;
-  color: var(--main-color);
-  text-align: center;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-.project-grid {
-  width: 100%;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  position: relative;
-  transition: all 0.3s ease;
-  min-height: 350px;
-}
-
-.project-grid.animating.right {
-  animation: slideOutLeft 0.3s ease forwards;
-}
-
-.project-grid:not(.animating).right {
-  animation: slideInRight 0.3s ease forwards;
-}
-
-.project-grid.animating.left {
-  animation: slideOutRight 0.3s ease forwards;
-}
-
-.project-grid:not(.animating).left {
-  animation: slideInLeft 0.3s ease forwards;
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-}
-
-.project-title {
-  font-size: 1.5rem;
-  background: var(--font-light-color);
-  color: var(--main-color);
-  text-align: center;
-  font-weight: normal;
-  padding-bottom: 0.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  margin: .5rem;
-}
-
-.project-location {
-  color: var(--main-color);
-  margin-bottom: .5rem;
-  transition: all 0.3s ease;
-}
-
-.project-location .icon {
-  color: var(--main-color);
-  margin-right: .2rem;
-  transition: all 0.3s ease;
-}
-
-.project-description {
-  text-align: justify;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--main-color);
-  margin-bottom: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.project-description li {
-  list-style: none;
-  margin-bottom: 0.5rem;
-  position: relative;
-  padding-left: 1.2rem;
-}
-
-.project-description li::before {
-  content: "•";
-  color: var(--main-color);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  transition: all 0.3s ease;
-}
-
-.project-links {
+.nav-button {
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #d1d1d6;
+  color: var(--font-color);
+  width: 48px;
+  height: 48px;
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.project-link {
-  display: inline-block;
-  padding: 0.5rem 1.2rem;
-  background-color: var(--font-light-color);
-  color: var(--main-color);
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  transform-origin: center;
-}
-
-.project-link:hover {
-  background-color: var(--font-light-color);
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.image-content {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  perspective: 1000px;
-}
-
-.image-content img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transform-style: preserve-3d;
-}
-
-.image-content img:hover {
-  transform: scale(1.05) rotateY(5deg) rotateX(5deg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .project-navigation {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   align-items: center;
-}
-
-.nav-button {
-  display: flex;
-  align-items: center;
-  font-size: 1.8rem;
-  margin: 0.5rem;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  color: var(--main-color);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  transform-origin: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  transition: all .2s ease-in-out;
 }
 
 .nav-button:hover {
-  color: var(--main-color);
-  transform: scale(1.05);
+  background-color: var(--card-bg-color);
 }
 
-.project-indicators {
-  display: flex;
-  gap: 0.5rem;
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--main-color);
+  transition: stroke 0.3s ease;
 }
 
-.project-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #ddd;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.project-dot:hover {
-  transform: scale(1.2);
-}
-
-.project-dot.active {
-  background-color: var(--main-color);
-  transform: scale(1.2);
-}
-
-@media (max-width: 1024px) {
-  .project-grid {
-    gap: 2rem;
-    width: 100%;
-  }
-
-  .image-content img {
-    max-width: 100%;
-  }
+.nav-button:hover .nav-icon {
+  stroke: var(--accent-color);
 }
 
 @media (max-width: 768px) {
+  .project-section {
+    padding: 4rem 1rem;
+  }
+
+  .project-title {
+    font-size: 1.6rem;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-    width: 100%;
-  }
-
-  .project-section {
-    margin: 3rem auto;
-  }
-
-  .image-content img {
-    max-width: 100%;
-  }
-
-  .project-title {
-    font-size: 1.5rem;
-  }
-
-  .project-navigation {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .project-indicators {
-    order: -1;
-    margin-bottom: 1rem;
   }
 }
 
-@media (max-width: 480px) {
-  .project-section {
-    margin: 2rem auto;
-    padding: 1rem;
-  }
-
-  .image-content img {
-    max-width: 100%;
-  }
-
-  .project-description {
-    font-size: 1rem;
-  }
-
-  .project-title {
-    font-size: 1.3rem;
-  }
-
-  .project-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .project-link {
-    width: 100%;
-    text-align: center;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  .carousel-button {
-    width: 32px;
-    height: 32px;
-  }
-}
 </style>

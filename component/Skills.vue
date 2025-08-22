@@ -151,142 +151,78 @@ function handleMouseLeave() {
 </template>
 
 <style scoped>
+
 .skills-section {
   padding: 5rem 1rem;
   overflow: hidden;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .title {
-  text-align: center;
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
   margin-bottom: 3rem;
   color: var(--secondary-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  padding-bottom: 0.75rem;
-  animation: fadeUp 1s ease-out forwards;
-}
-
-.title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--secondary-color) 100%);
-  border-radius: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
   position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .skills-carousel {
   display: flex;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 2rem);
+  gap: clamp(1rem, 2vw, 2rem);
   margin-bottom: 2rem;
   min-height: 200px;
-  perspective: 1000px;
 }
 
 .skill-card {
-  background: white;
-  border-radius: 12px;
+  background: var(--body-bg-color);
+  border-radius: 16px;
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  flex: 1;
-  max-width: 240px;
-  min-width: 180px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  overflow: hidden;
-  animation: fadeIn 0.5s ease-out forwards;
-  animation-delay: .3ms;
-  transform-origin: center center;
-  opacity: 0;
-  z-index: 1;
+  min-width: 160px;
+  max-width: 220px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  z-index: 2;
-}
-
-.card-glow {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 0) 70%
-  );
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.skill-card:hover .card-glow {
-  opacity: 0.6;
-  animation: rotateGlow 10s linear infinite;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 .skill-icon {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--skill-color, var(--secondary-color));
   transition: transform 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
-  transform: scale(1.2);
-  animation: bounce 1s ease infinite;
+  transform: scale(1.1);
 }
 
 .skill-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--secondary-color);
   margin-top: 0.5rem;
-  color: #333;
-  position: relative;
-  z-index: 2;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.skill-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%) scaleX(0);
-  width: 70%;
-  height: 3px;
-  background-color: var(--skill-color, var(--secondary-color));
-  transition: transform 0.3s ease;
-  border-radius: 2px;
-}
-
-.skill-card:hover .skill-title::after {
-  transform: translateX(-50%) scaleX(1);
-}
-
+/* Navigation */
 .navigation {
   display: flex;
   justify-content: center;
@@ -296,183 +232,47 @@ function handleMouseLeave() {
 }
 
 .nav-btn {
-  background: white;
-  border: none;
+  background: var(--body-bg-color);
+  border: 1px solid #d2d2d7;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--secondary-color);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .nav-btn:hover {
-  transform: translateY(-3px);
-  color: var(--secondary-color);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.nav-btn:active {
-  transform: translateY(-1px);
+  background: var(--section-bg-color);
+  transform: translateY(-2px);
 }
 
 .nav-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .dots {
   display: flex;
-  gap: 8px;
-  margin: 0 1rem;
+  gap: 6px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: #ddd;
+  background-color: #d2d2d7;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .dot.active {
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   transform: scale(1.3);
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes rotateGlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Transitions for cards */
-.skill-card-enter-active,
-.skill-card-leave-active {
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.skill-card-enter-from {
-  opacity: 0;
-  transform: translateX(30px) scale(0.9);
-}
-
-.skill-card-leave-to {
-  opacity: 0;
-  transform: translateX(-30px) scale(0.9);
-}
-
-/* Responsive styles */
-@media (max-width: 1200px) {
-  .skills-carousel {
-    padding: 0 2rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .skill-card {
-    min-width: 160px;
-  }
-}
-
-@media (max-width: 768px) {
-  .skills-section {
-    padding: 4rem 1rem;
-  }
-
-  .skills-carousel {
-    gap: 1rem;
-  }
-
-  .skill-card {
-    padding: 1.5rem 1rem;
-    min-width: 140px;
-  }
-
-  .skill-icon {
-    font-size: 2.8rem;
-  }
-
-  .skill-title {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .skills-section {
-    padding: 3rem 0.75rem;
-  }
-
-  .title {
-    margin-bottom: 2rem;
-  }
-
-  .skills-carousel {
-    min-height: 180px;
-  }
-
-  .skill-card {
-    min-width: 80%;
-    max-width: none;
-    margin: 0 auto;
-  }
-
-  .navigation {
-    flex-wrap: wrap;
-  }
-
-  .dots {
-    order: 1;
-    width: 100%;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-}
 </style>

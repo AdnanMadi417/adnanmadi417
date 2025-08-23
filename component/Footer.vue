@@ -83,7 +83,7 @@ const contactInfo = [
   font-weight: 500;
   color: var(--font-light-color);
   text-decoration: none;
-  border: 1px solid transparent;
+  border: 1px solid var(--secondary-color);
   padding: 0.25rem;
   border-radius: 50%;
   font-size: var(--font-size-base, 1rem);

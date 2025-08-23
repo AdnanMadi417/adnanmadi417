@@ -94,6 +94,7 @@ const visibleSkills = computed(() =>
 function nextPage() {
   currentIndex.value = (currentIndex.value + itemsPerPage.value) % skills.length;
 }
+
 function prevPage() {
   currentIndex.value = (currentIndex.value - itemsPerPage.value + skills.length) % skills.length;
 }
@@ -102,6 +103,7 @@ function prevPage() {
 function handleMouseEnter() {
   isHovering.value = true;
 }
+
 function handleMouseLeave() {
   isHovering.value = false;
 }
@@ -151,22 +153,20 @@ function handleMouseLeave() {
 </template>
 
 <style scoped>
-
 .skills-section {
-  padding: 5rem 1rem;
-  overflow: hidden;
+  padding: 6rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
 .title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   margin-bottom: 3rem;
   color: var(--secondary-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.03em;
   line-height: 1.2;
 }
 
@@ -179,55 +179,56 @@ function handleMouseLeave() {
 .skills-carousel {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: clamp(1rem, 2vw, 2rem);
   margin-bottom: 2rem;
-  min-height: 200px;
+  min-height: 220px;
 }
 
 .skill-card {
   background: var(--body-bg-color);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
+  border: 1px solid #e5e5e7;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 160px;
-  max-width: 220px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  min-width: 180px;
+  max-width: 240px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .skill-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .skill-icon {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: 1rem;
   color: var(--skill-color, var(--secondary-color));
   transition: transform 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .skill-title {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--secondary-color);
   margin-top: 0.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.015em;
 }
 
-/* Navigation */
 .navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   gap: 1rem;
 }
 
@@ -235,8 +236,8 @@ function handleMouseLeave() {
   background: var(--body-bg-color);
   border: 1px solid #d2d2d7;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -252,18 +253,18 @@ function handleMouseLeave() {
 }
 
 .nav-btn:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
 .dots {
   display: flex;
-  gap: 6px;
+  gap: 8px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: #d2d2d7;
   cursor: pointer;
@@ -272,7 +273,7 @@ function handleMouseLeave() {
 
 .dot.active {
   background-color: var(--accent-color);
-  transform: scale(1.3);
+  transform: scale(1.4);
 }
 
 </style>

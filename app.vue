@@ -24,6 +24,8 @@
   --font-size-md: 1rem;
   --font-size-lg: 1.2rem;
 
+  --transition: all 0.2s ease-in-out;
+
 }
 </style>
 

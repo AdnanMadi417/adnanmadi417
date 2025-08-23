@@ -32,7 +32,7 @@ const contactInfo = [
     <div class="footer-container">
 
       <p class="copyright">
-        © 2025 <a href="https://adnanmadi417.vercel.app" target="_blank">Adnan Madi</a>.
+        © 2025 <a href="https://adnanmadi417.vercel.app" target="_self">Adnan Madi</a>.
         All rights reserved.
       </p>
 
@@ -83,7 +83,7 @@ const contactInfo = [
   font-weight: 500;
   color: var(--font-light-color);
   text-decoration: none;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   padding: 0.25rem;
   border-radius: 50%;
   font-size: var(--font-size-base, 1rem);

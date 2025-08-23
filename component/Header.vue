@@ -6,15 +6,15 @@ const isLinksVisible = ref(false);
 function toggleLinksVisibility() {
   isLinksVisible.value = !isLinksVisible.value;
 }
-
 const links = [
   { link: "landing", label: "Home" },
   { link: "about", label: "About" },
   { link: "education", label: "Education" },
-  { link: "projects", label: "Projects" },
   { link: "skills", label: "Skills" },
+  { link: "projects", label: "Projects" },
   { link: "certificate", label: "Certificates" },
 ];
+
 
 const isMobile = ref(false);
 
@@ -121,11 +121,11 @@ onMounted(() => {
   font-size: var(--font-size-md);
   color: var(--font-color);
   text-decoration: none;
-  transition: opacity 0.2s ease-in-out;
+  transition: var(--transition);
 }
 
 .menu-links li a:hover {
-  opacity: var(--link-hover-opacity);
+  color: var(--font-light-color);
 }
 
 .contact-btn {
@@ -135,7 +135,7 @@ onMounted(() => {
   background-color: var(--accent-color);
   color: white;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
 }
 
 .contact-btn:hover {

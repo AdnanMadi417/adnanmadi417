@@ -15,14 +15,12 @@ import Landing from "~/component/Landing.vue";
 <template>
   <Header/>
   <Landing/>
-  <TimeLineWorkingExperience/>
-  <Education/>
   <About/>
-  <Projects/>
+  <Education/>
   <Skills/>
+  <Projects/>
   <Certificates/>
-
-
+  <TimeLineWorkingExperience/>
   <Footer/>
 </template>
 

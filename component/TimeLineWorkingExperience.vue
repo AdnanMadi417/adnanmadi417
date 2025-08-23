@@ -110,7 +110,7 @@ onUnmounted(() => {
   transform: translateX(-50%);
   width: 2px;
   height: 100%;
-  background: var(--font-light-color);
+  background: var(--card-bg-color);
 }
 
 .timeline ul li::before {

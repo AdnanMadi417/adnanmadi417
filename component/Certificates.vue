@@ -79,56 +79,61 @@ function prevPage() {
 </template>
 
 <style scoped>
+
 .certificate {
-  padding: 5rem 1rem;
+  padding: 6rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
 .certificate h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   color: var(--secondary-color);
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(1.2rem, 2vw, 2rem);
 }
 
 .card {
   background: var(--body-bg-color);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  flex: 1 1 250px;
-  max-width: 280px;
+  border: 1px solid #e5e5e7;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  flex: 1 1 260px;
+  max-width: 300px;
   min-width: 220px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card h2 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: var(--secondary-color);
+  letter-spacing: -0.015em;
 }
 
 .card h4 {
@@ -141,13 +146,13 @@ function prevPage() {
 .card p {
   font-size: 0.95rem;
   color: var(--secondary-color);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .certificate-control-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   gap: 1.5rem;
 }
 
@@ -155,8 +160,8 @@ function prevPage() {
   background: var(--body-bg-color);
   border: 1px solid #d2d2d7;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,7 +177,7 @@ function prevPage() {
 }
 
 .certificate-control-buttons button:disabled {
-  opacity: 0.4;
+  opacity: 0.35;
   cursor: not-allowed;
 }
 
@@ -190,5 +195,6 @@ function prevPage() {
 .card {
   animation: fadeInUp 0.6s ease forwards;
 }
+
 
 </style>

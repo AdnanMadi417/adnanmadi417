@@ -45,7 +45,7 @@
   align-items: center;
   margin: 0 auto;
   gap: 3rem;
-  background-color: var(--section-bg-color);
+  background-color: var(--card-bg-color);
   border-radius: 24px;
   padding: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -60,7 +60,7 @@
 }
 
 .box-content h3 {
-  font-size: 2.25rem; /* Apple-style larger heading */
+  font-size: 2.25rem;
   font-weight: 600;
   color: var(--secondary-color);
   margin-bottom: 0.75rem;

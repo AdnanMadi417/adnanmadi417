@@ -3,6 +3,31 @@ import {ref, computed} from 'vue';
 
 const projects = [
   {
+    title: "Full Stack ",
+    items: [
+      {
+        title: "Investment Management System",
+        description: "Full Stack Developer",
+        location: "COMMERCE DOT COM",
+        image: "./images/Investment_Management_System.png",
+        descriptions: [
+          "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%." ,
+          "Designed interactive dashboards displaying total transactions, account balances, share allocations registration payments, member statuses (active/inactive), expected profits, and investment completion.\n" ,
+          "Created member-specific sub-dashboards for personalized financial tracking, showing account balances, profit earned, total deposits, and total withdrawals." ,
+          "Implemented real-time transaction tracking with automated notifications to enhance communication and operational efficiency." ,
+          "Enabled PDF invoice generation for comprehensive investment summaries." ,
+          "Improved data accuracy, transparency, and accessibility, streamlining investment management for administrators and members."
+        ],
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: ""
+          }
+        ]
+      },
+    ]
+  },
+  {
     title: "Frontend Projects",
     items: [
       {
@@ -296,7 +321,7 @@ const hasMultipleProjects = computed(() => currentCategory.value.items.length > 
   gap: 10px;
   flex-wrap: wrap;
   background-color: var(--card-bg-color);
-  padding: 10px ;
+  padding: 10px;
   border-radius: 999px;
   width: fit-content;
 }
@@ -315,11 +340,11 @@ const hasMultipleProjects = computed(() => currentCategory.value.items.length > 
 .project-link-primary:hover {
   background-color: var(--secondary-color);
   color: var(--body-bg-color);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
-.project-link-primary{
+.project-link-primary {
   color: var(--font-color);
   text-decoration: none;
   padding: 0.65rem 1.3rem;
@@ -341,13 +366,13 @@ const hasMultipleProjects = computed(() => currentCategory.value.items.length > 
 .image-content img {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .image-content img:hover {
   transform: scale(1.04) translateY(-3px);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-indicators {

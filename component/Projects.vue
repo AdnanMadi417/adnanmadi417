@@ -12,7 +12,7 @@ const projects = [
         image: "./images/Investment_Management_System.png",
         descriptions: [
           "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%." ,
-          "Designed interactive dashboards displaying total transactions, account balances, share allocations registration payments, member statuses (active/inactive), expected profits, and investment completion.\n" ,
+          "Designed interactive dashboards displaying total transactions, account balances, share allocations registration payments, member statuses (active/inactive), expected profits, and investment completion." ,
           "Created member-specific sub-dashboards for personalized financial tracking, showing account balances, profit earned, total deposits, and total withdrawals." ,
           "Implemented real-time transaction tracking with automated notifications to enhance communication and operational efficiency." ,
           "Enabled PDF invoice generation for comprehensive investment summaries." ,

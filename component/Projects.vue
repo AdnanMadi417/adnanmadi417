@@ -46,22 +46,22 @@ const projects = [
           }
         ]
       },
-      {
-        title: "IESCO Scholarship Application",
-        description: "Frontend Developer",
-        location: "The International Educational Scientific and Cultural Organization",
-        image: "./images/IESCO_Scholarship_Application.png",
-        descriptions: [
-          "Developed a Scholarship Registration System that streamlined application processes, reducing submission time by 40% and decreasing application processing by 30%.",
-          "Designed and implemented user-friendly interfaces, resulting in a 25% increase in successful applicant registrations and improved the overall user experience for submitting documents."
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://application.iesco.my"
-          }
-        ]
-      },
+      // {
+      //   title: "IESCO Scholarship Application",
+      //   description: "Frontend Developer",
+      //   location: "The International Educational Scientific and Cultural Organization",
+      //   image: "./images/IESCO_Scholarship_Application.png",
+      //   descriptions: [
+      //     "Developed a Scholarship Registration System that streamlined application processes, reducing submission time by 40% and decreasing application processing by 30%.",
+      //     "Designed and implemented user-friendly interfaces, resulting in a 25% increase in successful applicant registrations and improved the overall user experience for submitting documents."
+      //   ],
+      //   links: [
+      //     {
+      //       buttonText: "Live Demo",
+      //       buttonLink: "https://application.iesco.my"
+      //     }
+      //   ]
+      // },
     ]
   },
   {

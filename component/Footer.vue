@@ -83,10 +83,10 @@ const contactInfo = [
   font-weight: 500;
   color: var(--font-light-color);
   text-decoration: none;
-  border: 1px solid var(--secondary-color);
   padding: 0.25rem;
+  border: 1px solid var(--font-light-color);
   border-radius: 50%;
-  font-size: var(--font-size-base, 1rem);
+  font-size: var(--font-size-base);
   width: 40px;
   height: 40px;
   justify-content: center;
@@ -94,14 +94,14 @@ const contactInfo = [
   transition: all 0.3s ease;
 }
 
+.icon{
+  color: var(--font-light-color);
+}
+
 .contact-item:hover {
   color: var(--font-color);
   border-color: var(--card-bg-color);
   background: var(--card-bg-color);
-}
-
-.icon {
-  font-size: 1.2rem;
 }
 
 .footer a {

@@ -46,8 +46,8 @@ const items = ref<Item[]>([
 }
 
 .about-sec h2 {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: var(--font-size-h1);
+  font-weight: 700;
   text-align: center;
   color: var(--main-color);
   margin-bottom: 3rem;

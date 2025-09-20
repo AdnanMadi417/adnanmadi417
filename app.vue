@@ -23,6 +23,8 @@
   --font-size-sm: 0.8rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.2rem;
+  --font-size-xl: 1.5rem;
+  --font-size-h1: 2.5rem;
 
   --transition: all 0.2s ease-in-out;
 

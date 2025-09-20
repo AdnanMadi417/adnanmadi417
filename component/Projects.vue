@@ -40,9 +40,9 @@ const projects = [
     items: [
       {
         title: "Al Awda Mosque Website",
-        description: "Full Stack Developer",
+        description: "Backend Developer",
         location: "Side Project",
-        image: "./images/Masjid_Awda_Website.png.png",
+        image: "./images/masjid_website.png",
         descriptions: [
           "Built official website for Al Awda Mosque focusing on responsive design and community engagement.",
           "Integrated dynamic prayer times, multi-language support, and video gallery."
@@ -62,7 +62,7 @@ const projects = [
         title: "Education Foundation system",
         description: "Figma Project",
         location: "Side Project",
-        image: "/images/EDUCATION%20FOUNADTION%20.png",
+        image: "/images/education-foundation.png",
         descriptions: ["Secure student dashboards, project/course browsing, admin controls, clean interfaces."],
         links: [
           {

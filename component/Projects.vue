@@ -136,7 +136,7 @@ onMounted(() => {
 
 <style scoped>
 .projects-section {
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   max-width: 1200px;
   margin: auto;
 }

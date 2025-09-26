@@ -17,7 +17,7 @@ import Landing from "~/component/Landing.vue";
   <Landing/>
   <About/>
   <Education/>
-<!--  <Skills/>-->
+  <Skills/>
   <Projects/>
   <Certificates/>
   <TimeLineWorkingExperience/>

@@ -50,7 +50,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="timeline-cover">
+  <section class="timeline-cover" id="working-timeline">
     <div class="timeline-container">
 
       <div class="section-header">

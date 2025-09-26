@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="education-sec" id="education-sec">
+  <section class="education-sec" id="education">
 
     <div class="section-header" data-aos="fade-up">
       <h4 class="headline">My Academic Journey</h4>

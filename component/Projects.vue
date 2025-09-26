@@ -99,7 +99,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="projects-section">
+  <section class="projects-section" id="projects">
     <h2 class="section-title">Featured Projects</h2>
     <p class="section-subtitle">A selection of my recent work in frontend, backend, and full-stack development.</p>
     <div class="segmented-tabs">

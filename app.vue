@@ -14,6 +14,7 @@
   --section-bg-color: #f5f5f7;
   --font-color: #1d1d1f;
   --font-light-color: #6e6e73;
+  --border-color: #6e6e73;
   --accent-color: #2E4E43;
   --accent-hover-color: #1C352D;
   --button-hover-bg: #f0f0f0;

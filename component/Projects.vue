@@ -100,8 +100,11 @@ onMounted(() => {
 
 <template>
   <section class="projects-section" id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-subtitle">A selection of my recent work in frontend, backend, and full-stack development.</p>
+    <div class="header-container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A selection of my recent work in frontend, backend, and full-stack development.</p>
+    </div>
+
     <div class="segmented-tabs">
       <div class="tabs-wrapper">
         <div
@@ -116,18 +119,58 @@ onMounted(() => {
         <div class="indicator" :style="indicatorStyle"></div>
       </div>
     </div>
+
     <div class="projects-grid">
-      <div v-for="(project, index) in currentCategory.items" :key="index" class="project-card">
-        <img :src="project.image" :alt="project.title" class="project-image"/>
-        <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-location">{{ project.location }} | {{ project.description }}</p>
-        <ul class="project-descriptions">
-          <li v-for="(desc, i) in project.descriptions" :key="i">{{ desc }}</li>
-        </ul>
-        <div class="project-links">
-          <a v-for="(link, i) in project.links" :key="i" :href="link.buttonLink" target="_blank" class="project-link">
-            {{ link.buttonText }}
-          </a>
+      <div
+          v-for="(project, index) in currentCategory.items"
+          :key="index"
+          class="project-card"
+      >
+        <div class="project-image-container">
+          <img :src="project.image" :alt="project.title" class="project-image"/>
+          <div class="image-overlay"></div>
+          <div class="featured-badge">Featured</div>
+        </div>
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <div class="project-meta">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span class="location">{{ project.location }}</span>
+              <span class="separator">•</span>
+              <span class="role">{{ project.description }}</span>
+            </div>
+          </div>
+
+          <ul class="project-descriptions">
+            <li v-for="(desc, i) in project.descriptions" :key="i">
+              <svg class="bullet-icon" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <span>{{ desc }}</span>
+            </li>
+          </ul>
+
+          <div class="project-links">
+            <a
+                v-for="(link, i) in project.links"
+                :key="i"
+                :href="link.buttonLink"
+                target="_blank"
+                class="project-link"
+            >
+              <span>{{ link.buttonText }}</span>
+              <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -136,151 +179,378 @@ onMounted(() => {
 
 <style scoped>
 .projects-section {
-  padding: 2rem 1rem;
-  max-width: 1200px;
+  padding: 5rem 2rem;
+  max-width: 1400px;
   margin: auto;
+  background-color: var(--section-bg-color);
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .section-title {
-  text-align: center;
   font-size: var(--font-size-h1);
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 0.5rem 0;
+  color: var(--font-color);
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
   font-size: var(--font-size-lg);
   color: var(--font-light-color);
-  text-align: center;
-  margin-top: -.75rem;
-  margin-bottom: 2rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .segmented-tabs {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   overflow-x: auto;
+  padding: 0.5rem 0;
 }
 
 .tabs-wrapper {
   position: relative;
-  display: flex;
-  gap: 1rem;
+  display: inline-flex;
+  gap: 0.5rem;
   background-color: var(--card-bg-color);
   padding: 0.5rem;
   border-radius: 999px;
-  min-width: max-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .tab {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: var(--font-size-base);
   color: var(--font-light-color);
-  z-index: 1;
+  z-index: 2;
   border-radius: 999px;
   text-align: center;
-  transition: color 0.3s ease;
+  transition: var(--transition);
   white-space: nowrap;
+  position: relative;
+}
+
+.tab:hover {
+  color: var(--font-color);
 }
 
 .tab.active {
   color: white;
-  font-weight: 500;
-  background-color: var(--accent-color);
 }
 
 .indicator {
   position: absolute;
-  top: 0;
-  height: 100%;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  background-color: var(--accent-color);
   border-radius: 999px;
-  transition: left 0.3s ease, width 0.3s ease;
-  z-index: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
+  animation: fadeIn 0.6s ease-out 0.2s both;
 }
 
 .project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  background-color: var(--body-bg-color);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), var(--accent-hover-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.project-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
   background-color: var(--card-bg-color);
-  border-radius: 15px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-image {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+  transition: opacity 0.3s ease;
+}
+
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(46, 78, 67, 0.3);
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .project-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0;
+  color: var(--font-color);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
-.project-location {
-  font-size: 0.95rem;
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-size-sm);
   color: var(--font-light-color);
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+.location {
+  font-weight: 600;
+  color: var(--font-color);
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.role {
+  color: var(--font-light-color);
 }
 
 .project-descriptions {
-  list-style: disc;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-descriptions li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+  transition: color 0.2s ease;
+}
+
+.project-card:hover .project-descriptions li {
+  color: var(--font-color);
+}
+
+.bullet-icon {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  margin-top: 0.5rem;
+  color: var(--accent-color);
 }
 
 .project-links {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .project-link {
-  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
   background-color: var(--accent-color);
   color: white;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(46, 78, 67, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.project-link:hover {
+.project-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-color: var(--accent-hover-color);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover::before {
+  transform: translateY(0);
+}
+
+.project-link span,
+.project-link .link-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.project-link:active {
+  transform: translateY(0);
+}
+
+.link-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover .link-icon {
+  transform: translate(2px, -2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-image-container {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 @media (max-width: 768px) {
   .projects-section {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .section-title {
     font-size: var(--font-size-xl);
   }
+
   .section-subtitle {
     font-size: var(--font-size-md);
-    margin-top: -0.5rem;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .header-container {
+    margin-bottom: 2rem;
   }
 
-  .project-title {
-    font-size: 1.2rem;
+  .segmented-tabs {
+    margin-bottom: 2rem;
+  }
+
+  .tabs-wrapper {
+    gap: 0.25rem;
+    padding: 0.4rem;
+  }
+
+  .tab {
+    padding: 0.6rem 1rem;
+    font-size: var(--font-size-sm);
   }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
     gap: 1.5rem;
+  }
+
+  .project-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .project-links {
+    gap: 0.5rem;
+  }
+
+  .project-link {
+    padding: 0.6rem 1.1rem;
   }
 }
 </style>

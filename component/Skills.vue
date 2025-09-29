@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, onUnmounted } from "vue";
+import {computed, ref, onMounted, onUnmounted} from "vue";
 
 const skills = [
-  { title: "HTML", icon: "mdi:language-html5", color: "#E44D26" },
-  { title: "CSS", icon: "mdi:language-css3", color: "#264DE4" },
-  { title: "SASS", icon: "mdi:sass", color: "#CC6699" },
-  { title: "Bootstrap", icon: "simple-icons:bootstrap", color: "#7952B3" },
-  { title: "JavaScript", icon: "mdi:language-javascript", color: "#F7DF1E" },
-  { title: "Vue.js", icon: "mdi:vuejs", color: "#4FC08D" },
-  { title: "Nuxt.js", icon: "simple-icons:nuxtdotjs", color: "#00DC82" },
-  { title: "API", icon: "mdi:api", color: "#0096FF" },
-  { title: "Django", icon: "simple-icons:django", color: "#092E20" },
-  { title: "WordPress", icon: "simple-icons:wordpress", color: "#21759B" },
-  { title: "Figma", icon: "simple-icons:figma", color: "#F24E1E" },
-  { title: "Next.js", icon: "simple-icons:nextdotjs", color: "#000000" },
-
+  {title: "HTML", icon: "mdi:language-html5", color: "#E44D26"},
+  {title: "CSS", icon: "mdi:language-css3", color: "#264DE4"},
+  {title: "SASS", icon: "mdi:sass", color: "#CC6699"},
+  {title: "Bootstrap", icon: "simple-icons:bootstrap", color: "#7952B3"},
+  {title: "JavaScript", icon: "mdi:language-javascript", color: "#F7DF1E"},
+  {title: "Vue.js", icon: "mdi:vuejs", color: "#4FC08D"},
+  {title: "Nuxt.js", icon: "simple-icons:nuxtdotjs", color: "#00DC82"},
+  {title: "Next.js", icon: "simple-icons:nextdotjs", color: "#000000"},
+  {title: "API", icon: "mdi:api", color: "#0096FF"},
+  {title: "Django", icon: "simple-icons:django", color: "#092E20"},
+  {title: "WordPress", icon: "simple-icons:wordpress", color: "#21759B"},
+  {title: "Figma", icon: "simple-icons:figma", color: "#F24E1E"},
 ];
 
 const currentIndex = ref(0);

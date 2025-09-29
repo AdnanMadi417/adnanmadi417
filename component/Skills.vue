@@ -12,7 +12,9 @@ const skills = [
   { title: "API", icon: "mdi:api", color: "#0096FF" },
   { title: "Django", icon: "simple-icons:django", color: "#092E20" },
   { title: "WordPress", icon: "simple-icons:wordpress", color: "#21759B" },
-  { title: "Figma", icon: "simple-icons:figma", color: "#F24E1E" }
+  { title: "Figma", icon: "simple-icons:figma", color: "#F24E1E" },
+  { title: "Next.js", icon: "simple-icons:nextdotjs", color: "#000000" },
+
 ];
 
 const currentIndex = ref(0);

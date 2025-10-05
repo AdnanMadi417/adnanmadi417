@@ -120,7 +120,7 @@ const contactInfo = [
   .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .contact-list {
@@ -130,9 +130,8 @@ const contactInfo = [
 
 @media (max-width: 768px) {
   .contact-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
+    display: flex;
+    gap: 20px;
     width: 100%;
   }
 }

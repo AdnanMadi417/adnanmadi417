@@ -50,11 +50,12 @@ onMounted(() => {
 
       <div class="contact-btn-box" v-if="!isMobile">
         <a
-            class="contact-btn"
+            class="contact-btn btn-primary"
             href="https://wa.me/+601170064361"
             target="_blank"
         >
-          Contact
+          Contact Me
+          <span class="btn-shine"></span>
         </a>
       </div>
 
@@ -80,7 +81,7 @@ onMounted(() => {
                 href="https://wa.me/+601170064361"
                 target="_blank"
             >
-              Contact
+              Contact Me
             </a>
           </li>
         </ul>
@@ -129,18 +130,46 @@ onMounted(() => {
   color: var(--font-light-color);
 }
 
-.contact-btn {
-  font-size: var(--font-size-md);
+.btn-primary{
   padding: 0.4rem 1.2rem;
-  border-radius: 9999px;
-  background-color: var(--accent-color);
-  color: white;
-  text-decoration: none;
-  transition: var(--transition);
+  border-radius: 999px;
+  font-weight: normal;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-btn:hover {
-  background-color: var(--accent-hover-color);
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover-color) 100%);
+  color: white;
+}
+
+.btn-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover .btn-shine {
+  left: 100%;
+}
+
+.visual-side {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bar-btn {

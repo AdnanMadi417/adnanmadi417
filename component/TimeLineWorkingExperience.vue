@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import {ref, onMounted, onUnmounted} from 'vue';
 
 const steps = [
   {
@@ -19,6 +19,13 @@ const steps = [
     company: 'Unibexs',
     date: 'Sep 2025 – Present',
     description: `Building and optimizing modern front-end applications with a focus on performance, scalability, and user experience. Collaborating with cross-functional teams to deliver responsive interfaces, implement design systems, and ensure seamless integration with back-end services.`
+  },
+  {
+    title: 'Front End Developer (Freelance)',
+    company: 'Code & Canvas',
+    date: 'Oct 2025 – Present',
+    description: ` Designing and developing modern user interfaces. Translating UI/UX designs into responsive front-end components.
+    Working with clients to improve usability and visual consistency.`
   },
 ];
 

@@ -137,10 +137,18 @@ onMounted(() => {
           :key="index"
           class="project-card"
       >
-        <div class="project-image-container">
-          <img :src="project.image" :alt="project.title" class="project-image"/>
-          <div class="image-overlay"></div>
-          <div class="featured-badge">Featured</div>
+
+        <div class="project-image-card">
+          <div class="project-image-container">
+            <img :src="project.image" :alt="project.title" class="project-image"/>
+
+            <div class="image-overlay-button">
+              <h3 class="overlay-title">{{ project.title }}</h3>
+              <span class="overlay-location">{{ project.location }}</span>
+            </div>
+
+            <div class="featured-badge">Featured</div>
+          </div>
         </div>
 
         <div class="project-content">
@@ -193,7 +201,6 @@ onMounted(() => {
   padding: 5rem 2rem;
   max-width: 1400px;
   margin: auto;
-  background-color: var(--section-bg-color);
 }
 
 .header-container {
@@ -278,7 +285,6 @@ onMounted(() => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
-  background-color: var(--body-bg-color);
   border-radius: 20px;
   padding: 2rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -301,13 +307,82 @@ onMounted(() => {
 
 .project-image-container {
   position: relative;
-  border-radius: 16px;
   overflow: hidden;
-  background-color: var(--card-bg-color);
+  border-radius: 16px;
   aspect-ratio: 16 / 10;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  background-color: var(--card-bg-color, #111);
+  cursor: pointer;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-image-container:hover .project-image {
+  transform: scale(1.05);
+}
+
+.image-overlay-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.50);
+  padding: 1rem;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.project-image-container:hover .image-overlay-button {
+  transform: translateY(0);
+}
+
+.overlay-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.overlay-location {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* Featured Badge */
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #ff4d6d, #ff6a00);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4757;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  z-index: 2;
 }
 
 .project-image {

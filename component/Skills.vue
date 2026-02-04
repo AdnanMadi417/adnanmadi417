@@ -8,6 +8,7 @@ const skills = [
   {title: "Bootstrap", icon: "simple-icons:bootstrap", color: "#7952B3"},
   {title: "JavaScript", icon: "mdi:language-javascript", color: "#F7DF1E"},
   {title: "Vue.js", icon: "mdi:vuejs", color: "#4FC08D"},
+  {title: "React", icon: "mdi:react", color: "#61DAFB"},
   {title: "Nuxt.js", icon: "simple-icons:nuxtdotjs", color: "#00DC82"},
   {title: "Next.js", icon: "simple-icons:nextdotjs", color: "#000000"},
   {title: "API", icon: "mdi:api", color: "#0096FF"},
@@ -25,7 +26,6 @@ function updateItemsPerPage() {
   else if (window.innerWidth < 992) itemsPerPage.value = 4;
   else itemsPerPage.value = 5;
 
-  // Prevent index overflow
   if (currentIndex.value > skills.length - itemsPerPage.value) {
     currentIndex.value = 0;
   }
@@ -35,7 +35,6 @@ onMounted(() => {
   updateItemsPerPage();
   window.addEventListener("resize", updateItemsPerPage);
 
-  // Auto-rotate every 4 seconds
   const interval = setInterval(() => {
     currentIndex.value = (currentIndex.value + itemsPerPage.value) % skills.length;
   }, 4000);
@@ -52,7 +51,9 @@ const visibleSkills = computed(() =>
 </script>
 
 <template>
-  <div class="skills-section" id="skills">
+
+  <section class="skills" id="skills">
+
     <h1 class="title">Technical Skills</h1>
 
     <div class="container">
@@ -73,15 +74,18 @@ const visibleSkills = computed(() =>
         </transition-group>
       </div>
     </div>
-  </div>
+
+  </section>
+
 </template>
 
 
 <style scoped>
-.skills-section {
-  padding: 2rem 1.5rem;
+
+section {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 
@@ -105,13 +109,21 @@ const visibleSkills = computed(() =>
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: 12px;
   margin-bottom: 2rem;
-  min-height: 220px;
+  min-height: 200px;
+  position: relative;
+}
+
+.skill-card-enter-from,
+.skill-card-leave-to {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .skill-card {
-  background: var(--body-bg-color);
   border: 1px solid #e5e5e7;
   border-radius: 20px;
   padding: 2.5rem 2rem;
@@ -120,7 +132,7 @@ const visibleSkills = computed(() =>
   align-items: center;
   justify-content: center;
   min-width: 180px;
-  max-width: 240px;
+  max-width: 200px;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
@@ -147,6 +159,13 @@ const visibleSkills = computed(() =>
   color: var(--secondary-color);
   margin-top: 0.5rem;
   letter-spacing: -0.015em;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 </style>

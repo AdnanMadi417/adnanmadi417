@@ -3,12 +3,11 @@
 import About from "~/component/About.vue";
 import Skills from "~/component/Skills.vue";
 import Projects from "~/component/Projects.vue";
-import Education from "~/component/Education.vue";
-import Certificates from "~/component/Certificates.vue";
 import Footer from "~/component/Footer.vue";
 import TimeLineWorkingExperience from "~/component/TimeLineWorkingExperience.vue";
 import Header from "~/component/Header.vue";
 import Landing from "~/component/Landing.vue";
+import Services from "~/component/Services.vue";
 
 </script>
 
@@ -16,10 +15,9 @@ import Landing from "~/component/Landing.vue";
   <Header/>
   <Landing/>
   <About/>
-  <Education/>
   <Skills/>
+  <Services/>
   <Projects/>
-  <Certificates/>
   <TimeLineWorkingExperience/>
   <Footer/>
 </template>
@@ -27,6 +25,5 @@ import Landing from "~/component/Landing.vue";
 <style scoped>
 html {
   scroll-behavior: smooth;
-  background: var(--body-bg-color);
 }
 </style>

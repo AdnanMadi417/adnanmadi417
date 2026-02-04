@@ -9,10 +9,8 @@ function toggleLinksVisibility() {
 const links = [
   { link: "landing", label: "Home" },
   { link: "about", label: "About Me" },
-  { link: "education", label: "Education" },
   { link: "skills", label: "Technical Skills" },
   { link: "projects", label: "Projects" },
-  { link: "certificate", label: "Certificates" },
   { link: "working-timeline", label: "Work Experience" },
 ];
 

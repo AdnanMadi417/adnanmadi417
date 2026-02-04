@@ -91,7 +91,6 @@
 
     </div>
 
-
   </div>
 
 </template>
@@ -183,6 +182,12 @@
   gap: 0;
   margin: 0 auto;
   max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .service-card {

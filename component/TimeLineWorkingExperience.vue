@@ -59,7 +59,6 @@ onUnmounted(() => {
 <template>
   <section class="timeline-cover" id="working-timeline">
     <div class="timeline-container">
-
       <div class="section-header">
         <div class="header-eyebrow">Experience</div>
         <h2 class="section-title">
@@ -70,7 +69,6 @@ onUnmounted(() => {
         </p>
       </div>
     </div>
-
     <div class="timeline">
       <ul>
         <li v-for="(step, index) in steps" :key="index">

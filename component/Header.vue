@@ -124,8 +124,35 @@ onMounted(() => {
   transition: var(--transition);
 }
 
+.menu-links li a {
+  position: relative;
+  font-size: var(--font-size-md);
+  color: var(--font-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding-top: 6px;
+}
+
+.menu-links li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 12px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
 .menu-links li a:hover {
-  color: var(--font-light-color);
+  color: var(--accent-color);
+}
+
+.menu-links li a:hover::before {
+  transform: scaleX(1);
 }
 
 .btn-primary{

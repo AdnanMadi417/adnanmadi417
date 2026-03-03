@@ -9,15 +9,15 @@ interface Item {
 const aboutItems = ref<Item[]>([
   {
     id: 1,
-    paragraph: "I'm a Software Engineer with a strong foundation in frontend development (Vue.js, Nuxt.js) and backend integration using Python and Django. I specialize in building responsive user interfaces, secure admin panels, and real-time features that streamline workflows and enhance user experience."
+    paragraph: "Currently pursuing a Master’s in Software Engineering with a focus on scalable and secure systems."
   },
   {
     id: 2,
-    paragraph: "During my studies at Albukhary International University, I led the development of systems such as the Hostel Management System, which significantly reduced manual administrative work and improved operational efficiency. I also contributed to projects that streamlined workflows, integrated automated notifications, and enhanced reporting capabilities."
+    paragraph: "Experienced in Vue.js, Nuxt.js, Python, and Django, building responsive interfaces and integrated systems."
   },
   {
     id: 3,
-    paragraph: "I am passionate about delivering high-quality digital solutions through clean, maintainable code. With a strong foundation in software engineering and a continuous drive to learn, I aim to build technologies that solve real-world problems and align with organizational goals."
+    paragraph: "Passionate about writing clean, maintainable code and building solutions that solve real-world problems."
   }
 ])
 </script>
@@ -33,22 +33,33 @@ const aboutItems = ref<Item[]>([
       </div>
 
       <div class="right-panel">
-        <div class="img-frame">
-          <img src="/images/aiu-scholarship-poster.jpeg" alt="AIU" />
-          <div class="img-overlay"></div>
+
+        <div class="info-box">
+          <div class="top-row block">
+            <h2 class="uni-name">University of Malaya</h2>
+            <span class="year-pill">2026–Present</span>
+          </div>
+          <h3 class="program">Master of Software Engineering</h3>
+          <p class="details">
+            Currently pursuing a Master’s degree in Software Engineering, focusing on advanced system design,
+            scalable architectures, and software quality. The program strengthens my ability to build secure,
+            maintainable, and high-performance applications aligned with industry standards.
+          </p>
         </div>
 
         <div class="info-box">
           <div class="top-row block">
             <h2 class="uni-name">Albukhary International University</h2>
-            <span class="year-pill">2022–2025</span>
+            <span class="">2025</span>
           </div>
           <h3 class="program">Bachelor of Computer Science (Honours)</h3>
           <p class="details">
-            My studies at AIU's School of Computing and Informatics (SCI) equipped me with a strong technical foundation,
-            emphasizing problem solving, leadership, and community impact. This prepared me to design innovative and sustainable digital solutions.
+            Graduated with a Bachelor of Computer Science (Honours).
+            Built a strong foundation in software development and contributed to projects
+            such as a Hostel Management System to improve administrative efficiency.
           </p>
         </div>
+
       </div>
     </div>
 

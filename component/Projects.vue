@@ -3,23 +3,6 @@ import {ref, computed, nextTick, onMounted} from 'vue';
 
 const projects = [
   {
-    title: "Full Stack",
-    items: [
-      {
-        title: "Investment Management System",
-        description: "Full Stack Developer",
-        location: "COMMERCE DOT COM",
-        image: "./images/Investment_Management_System.png",
-        descriptions: [
-          "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%.",
-          "Designed interactive dashboards displaying total transactions, account balances, share allocations, registration payments, member statuses, expected profits, and investment completion.",
-          "Created member-specific sub-dashboards for personalized financial tracking.",
-        ],
-        links: [{buttonText: "Live Demo", buttonLink: ""}]
-      }
-    ]
-  },
-  {
     title: "Frontend Projects",
     items: [
       {
@@ -43,6 +26,23 @@ const projects = [
           "Optimized user interfaces for staff and residents, increasing satisfaction by 30%."
         ],
         links: [{buttonText: "Live Demo", buttonLink: "https://www.aiuhms.pro/home"}]
+      }
+    ]
+  },
+  {
+    title: "Full Stack",
+    items: [
+      {
+        title: "Investment Management System",
+        description: "Full Stack Developer",
+        location: "COMMERCE DOT COM",
+        image: "./images/Investment_Management_System.png",
+        descriptions: [
+          "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%.",
+          "Designed interactive dashboards displaying total transactions, account balances, share allocations, registration payments, member statuses, expected profits, and investment completion.",
+          "Created member-specific sub-dashboards for personalized financial tracking.",
+        ],
+        links: [{buttonText: "Live Demo", buttonLink: ""}]
       }
     ]
   },
@@ -140,14 +140,24 @@ onMounted(() => {
 
         <div class="project-image-card">
           <div class="project-image-container">
+
             <img :src="project.image" :alt="project.title" class="project-image"/>
 
-            <div class="image-overlay-button">
-              <h3 class="overlay-title">{{ project.title }}</h3>
-              <span class="overlay-location">{{ project.location }}</span>
+            <div class="img-veil"></div>
+            <div class="img-shimmer"></div>
+
+            <div class="featured-badge">
+              <span class="badge-dot"></span>
+              Featured
             </div>
 
-            <div class="featured-badge">Featured</div>
+            <div class="image-overlay-button">
+              <div class="overlay-rule"></div>
+              <h3 class="overlay-title">{{ project.title }}</h3>
+              <span class="overlay-location">{{ project.location }}
+              </span>
+            </div>
+
           </div>
         </div>
 
@@ -333,7 +343,7 @@ onMounted(() => {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.50);
+  background: rgba(0, 0, 0, 0.75);
   padding: 1rem;
   text-align: center;
   transform: translateY(100%);
@@ -398,7 +408,6 @@ onMounted(() => {
   background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
   transition: opacity 0.3s ease;
 }
-
 
 .featured-badge {
   position: absolute;
@@ -554,6 +563,239 @@ onMounted(() => {
 
 .project-link:hover .link-icon {
   transform: translate(2px, -2px);
+}
+
+.project-image-card {
+  font-family: 'Jost', sans-serif;
+}
+
+.project-image-container {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: flex-end;
+  background: #0d0c0b;
+  cursor: pointer;
+  border-radius: 2px;
+  outline: 1px solid rgba(196, 164, 102, 0.15);
+  outline-offset: -1px;
+}
+
+.project-image-container::before,
+.project-image-container::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+  opacity: 0.35;
+  transition: width 0.55s ease, height 0.55s ease, opacity 0.55s ease;
+  pointer-events: none;
+}
+
+.project-image-container::before {
+  top: 15px;
+  left: 15px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+}
+
+.project-image-container::after {
+  bottom: 15px;
+  right: 15px;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+}
+
+.project-image-container:hover::before,
+.project-image-container:hover::after {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+}
+
+.project-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.8) brightness(0.88);
+  transform: scale(1.07);
+  transform-origin: center center;
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  filter 1s ease;
+}
+
+.project-image-container:hover .project-image {
+  transform: scale(1);
+  filter: saturate(1) brightness(1);
+}
+
+.img-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to top,
+      rgba(5, 4, 3, 0.82) 0%,
+      rgba(5, 4, 3, 0.28) 42%,
+      transparent 68%
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+}
+
+.project-image-container:hover .img-veil {
+  opacity: 0.6;
+}
+
+.img-shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+      118deg,
+      transparent 0%,
+      transparent 36%,
+      rgba(255, 248, 210, 0.055) 50%,
+      transparent 64%,
+      transparent 100%
+  );
+  background-size: 240% 100%;
+  background-position: 240% center;
+  pointer-events: none;
+  transition: background-position 1s ease;
+}
+
+.project-image-container:hover .img-shimmer {
+  background-position: -60% center;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(196, 164, 102, 0.75);
+
+  background: rgba(10, 9, 8, 0.7);
+  border: 1px solid rgba(196, 164, 102, 0.22);
+  padding: 0.22rem 0.6rem 0.22rem 0.45rem;
+  backdrop-filter: blur(6px);
+
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-image-container:hover .featured-badge {
+  color: #ffffff;
+  border-color: rgba(196, 164, 102, 0.5);
+}
+
+.badge-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c4a466;
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+/* ── OVERLAY PANEL ─────────────────────────────────── */
+.image-overlay-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 1.4rem 1.6rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background: transparent;
+  transform: translateY(102%);
+  transition: transform 0.58s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.project-image-container:hover .image-overlay-button {
+  transform: translateY(0);
+}
+
+.overlay-rule {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffffff 0%, rgba(196, 164, 102, 0) 100%);
+  margin-bottom: 0.85rem;
+  transition: width 0.65s cubic-bezier(0.76, 0, 0.24, 1) 0.06s;
+}
+
+.project-image-container:hover .overlay-rule {
+  width: 100%;
+}
+
+.overlay-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  color: #f5f0e8;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin: 0 0 0.35rem;
+
+  opacity: 0;
+  transform: translateY(9px);
+  transition: opacity 0.42s ease 0.22s, transform 0.42s ease 0.22s;
+}
+
+.project-image-container:hover .overlay-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.67rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease 0.31s, transform 0.4s ease 0.31s;
+}
+
+.project-image-container:hover .overlay-location {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeInUp {

@@ -4,29 +4,29 @@ import {ref, onMounted, onUnmounted} from 'vue';
 const steps = [
   {
     title: 'Front End Developer',
-    company: 'The International Educational Scientific and Cultural Organization (IESCO)',
-    date: 'Apr 2024 – Aug 2024',
-    description: `Developed a Scholarship Registration System to streamline application workflows, reducing submission time by 40% and processing time by 30%. Designed and implemented user-friendly interfaces, leading to a 25% increase in successful applicant registrations and significantly improving the document submission experience.`
-  },
-  {
-    title: 'Web Development Intern (Internship)',
-    company: 'Commerce Dot Com (CDC)',
-    date: 'Mar 2025 – Aug 2025',
-    description: `Designed and developed web applications that automated previously manual processes, enhancing workflow efficiency for both users and administrators. Focused on building intuitive, responsive front-end interfaces to improve usability and support seamless user experiences.`
-  },
-  {
-    title: 'Front End Developer',
     company: 'Unibexs',
     date: 'Sep 2025 – Present',
-    description: `Building and optimizing modern front-end applications with a focus on performance, scalability, and user experience. Collaborating with cross-functional teams to deliver responsive interfaces, implement design systems, and ensure seamless integration with back-end services.`
+    description: `Developing high-performance, scalable front-end applications with a strong focus on user experience. Collaborating with cross-functional teams to implement design systems, optimize responsiveness, and integrate seamlessly with back-end services, ensuring reliable and polished applications.`
   },
   {
     title: 'Front End Developer (Freelance)',
     company: 'Code & Canvas',
-    date: 'Oct 2025 – Mar 2026',
-    description: ` Designing and developing modern user interfaces. Translating UI/UX designs into responsive front-end components.
-    Working with clients to improve usability and visual consistency.`
+    date: 'Sep 2025 – Mar 2026',
+    description: `Designed and delivered modern, responsive user interfaces by translating UI/UX designs into clean front-end components. Partnered with clients to improve usability, visual consistency, and overall digital experience.`
   },
+  {
+    title: 'Web Development Intern',
+    company: 'Commerce Dot Com (CDC)',
+    date: 'Mar 2025 – Aug 2025',
+    description: `Automated previously manual web processes, improving workflow efficiency for both users and administrators. Built responsive and user-centric interfaces that enhanced usability across multiple devices.`
+  },
+  {
+    title: 'Front End Developer',
+    company: 'IESCO',
+    companyFullName: 'The International Educational Scientific and Cultural Organization',
+    date: 'Apr 2024 – Aug 2024',
+    description: `Spearheaded the development of a Scholarship Registration System that streamlined application workflows, reducing submission time by 40% and processing time by 30%. Designed intuitive interfaces that increased successful applicant registrations by 25%.`
+  }
 ];
 
 const timelineItems = ref([]);
@@ -340,7 +340,6 @@ onUnmounted(() => {
   }
 }
 
-/* Smooth scrolling */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;

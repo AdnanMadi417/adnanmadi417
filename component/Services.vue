@@ -7,85 +7,86 @@
 
     <div class="services-intro">
 
-        <div class="subheader">
-          <h3 class="services-title">Services</h3>
-        </div>
-       <p>
-          I provide end-to-end web development services focused on performance, security, and user experience.
-          My work combines clean design with scalable engineering to deliver real-world impact.
-        </p>
+      <div class="subheader">
+        <h3 class="services-title">Services</h3>
       </div>
+      <p>
+        I provide end-to-end web development services focused on performance, security, and user experience.
+        My work combines clean design with scalable engineering to deliver real-world impact.
+      </p>
+    </div>
 
     <div class="services-container">
 
       <div class="service-card">
         <div class="service-header-card">
+
           <div class="icon-circle blue">
             <UIcon name="mdi:palette" />
           </div>
 
           <div class="service-content">
-            <h3 class="service-title">UI / UX Implementation</h3>
+            <h3 class="service-title">Interface Engineering</h3>
 
             <p class="service-description">
-              Transforming Figma designs and prototypes into responsive, user-friendly
-              web interfaces using Vue.js, Nuxt.js, and React. Clean layouts, intuitive
-              navigation, and seamless interactions across devices.
+              Transform design concepts into production-quality interfaces with attention to accessibility, responsiveness, and interaction polish using modern frontend frameworks.
             </p>
           </div>
+
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-header-card">
+
           <div class="icon-circle green">
             <UIcon name="mdi:code-braces" />
           </div>
 
           <div class="service-content">
-            <h3 class="service-title">Frontend Development</h3>
+            <h3 class="service-title">Frontend Platform Development</h3>
 
             <p class="service-description">
-              Building scalable and maintainable web applications with Vue.js, Nuxt.js,
-              and React. Specializing in dashboards, admin panels, and content
-              management systems with efficient backend integration.
+              Develop scalable web platforms including dashboards, administrative systems, and content-driven applications using component-based architecture and TypeScript-enabled frameworks.
             </p>
           </div>
+
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-header-card">
+
           <div class="icon-circle purple">
             <UIcon name="mdi:server" />
           </div>
 
           <div class="service-content">
-            <h3 class="service-title">Backend Integration & APIs</h3>
+            <h3 class="service-title">API & Backend Integration</h3>
 
             <p class="service-description">
-              Designing and integrating secure, data-driven backend systems with Django
-              and REST APIs. Includes authentication, role-based access control, form
-              handling, and real-time features.
+              Implement secure communication between frontend applications and backend services, supporting authentication flows, data management, and structured state synchronization.
             </p>
           </div>
+
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-header-card">
+
           <div class="icon-circle red">
             <UIcon name="mdi:architecture" />
           </div>
 
           <div class="service-content">
-            <h3>System Architecture & Workflow Automation</h3>
-            <p>
-              Architecting scalable system structures and implementing best
-              practices for maintainable code. Automating workflows and
-              improving operational efficiency for reliable systems.
+            <h3 class="service-title">Workflow Automation Systems</h3>
+
+            <p class="service-description">
+              Build interface-driven automation platforms that simplify administrative operations such as application tracking, program management, and partner workflow coordination.
             </p>
           </div>
+
         </div>
       </div>
 
@@ -99,7 +100,7 @@
 <style scoped>
 
 .services-section {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
   font-family: system-ui, sans-serif;
@@ -240,7 +241,6 @@
   line-height: 1.5;
   text-align: start;
 }
-
 
 @keyframes fadeUp {
   to {

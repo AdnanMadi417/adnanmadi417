@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 interface Item {
   id: number
@@ -9,77 +9,87 @@ interface Item {
 const aboutItems = ref<Item[]>([
   {
     id: 1,
-    paragraph: "Currently pursuing a Master’s in Software Engineering with a focus on scalable and secure systems."
+    paragraph:
+        "Frontend Developer specializing in building modern web applications using React, Next.js, Vue.js, and Nuxt.js."
   },
   {
     id: 2,
-    paragraph: "Experienced in Vue.js, Nuxt.js, Python, and Django, building responsive interfaces and integrated systems."
+    paragraph:
+        "Experienced in developing responsive interfaces, admin dashboards, and multilingual platforms with backend API integration."
   },
   {
     id: 3,
-    paragraph: "Passionate about writing clean, maintainable code and building solutions that solve real-world problems."
+    paragraph:
+        "I am currently developing an agent-based software system designed to automate administrative workflows, including application tracking, status monitoring, university and program management, commissions, and partner administration."
   }
 ])
+
 </script>
 
 <template>
   <section class="journey-section" id="about">
 
-    <div class="edu-block">
-      <div class="left-panel">
-        <div class="tag">Education</div>
-        <h1 class="big-title">Academic<br>Journey</h1>
-        <div class="decorative-line"></div>
+    <div class="container">
+      <div class="edu-block">
+        <div class="left-panel">
+          <div class="tag">Education</div>
+          <h1 class="big-title">Academic<br>Journey</h1>
+          <div class="decorative-line"></div>
+        </div>
+
+        <div class="right-panel">
+
+          <div class="info-box">
+            <div class="top-row block">
+              <h2 class="uni-name">University of Malaya</h2>
+              <span class="year-pill">2026–Present</span>
+            </div>
+            <h3 class="program">Master of Software Engineering</h3>
+            <p class="details">
+              Currently pursuing a Master's degree in Software Engineering at the University of Malaya, focusing on modern
+              software architecture, frontend system design, and scalable web development.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <div class="top-row block">
+              <h2 class="uni-name">Albukhary International University</h2>
+              <span class="">2025</span>
+            </div>
+            <h3 class="program">Bachelor of Computer Science (Honours)</h3>
+            <p class="details">
+              Graduated with a Bachelor of Computer Science (Honours).
+              Built a strong foundation in software development and contributed to projects
+              such as a Hostel Management System to improve administrative efficiency.
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <div class="right-panel">
-
-        <div class="info-box">
-          <div class="top-row block">
-            <h2 class="uni-name">University of Malaya</h2>
-            <span class="year-pill">2026–Present</span>
+      <div class="about-block">
+        <div class="left-panel">
+          <div class="img-frame portrait">
+            <img src="/images/adnan%20photo%203%20.jpg" alt="Developer"/>
+            <div class="img-overlay"></div>
           </div>
-          <h3 class="program">Master of Software Engineering</h3>
-          <p class="details">
-            Currently pursuing a Master’s degree in Software Engineering, focusing on advanced system design,
-            scalable architectures, and software quality. The program strengthens my ability to build secure,
-            maintainable, and high-performance applications aligned with industry standards.
+        </div>
+
+        <div class="right-panel">
+          <h1 class="big-title">About<br>Me</h1>
+          <div class="decorative-line"></div>
+
+          <div class="story-grid">
+            <div v-for="item in aboutItems" :key="item.id" class="story-card">
+              <div class="card-number">{{ String(item.id).padStart(2, '0') }}</div>
+              <p class="story-text">{{ item.paragraph }}</p>
+            </div>
+          </div>
+
+          <p class="story-highlight">
+            My work focuses on building intelligent frontend platforms that simplify complex administrative processes and
+            improve operational efficiency through automation and well-designed user interfaces.
           </p>
-        </div>
-
-        <div class="info-box">
-          <div class="top-row block">
-            <h2 class="uni-name">Albukhary International University</h2>
-            <span class="">2025</span>
-          </div>
-          <h3 class="program">Bachelor of Computer Science (Honours)</h3>
-          <p class="details">
-            Graduated with a Bachelor of Computer Science (Honours).
-            Built a strong foundation in software development and contributed to projects
-            such as a Hostel Management System to improve administrative efficiency.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="about-block">
-      <div class="left-panel">
-        <div class="img-frame portrait">
-          <img src="/images/adnan%20photo%203%20.jpg" alt="Developer" />
-          <div class="img-overlay"></div>
-        </div>
-      </div>
-
-      <div class="right-panel">
-        <h1 class="big-title">About<br>Me</h1>
-        <div class="decorative-line"></div>
-
-        <div class="story-grid">
-          <div v-for="item in aboutItems" :key="item.id" class="story-card">
-            <div class="card-number">{{ String(item.id).padStart(2, '0') }}</div>
-            <p class="story-text">{{ item.paragraph }}</p>
-          </div>
         </div>
       </div>
     </div>
@@ -94,6 +104,11 @@ const aboutItems = ref<Item[]>([
   min-height: 100vh;
   padding: 0;
   overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .edu-block {
@@ -320,6 +335,19 @@ const aboutItems = ref<Item[]>([
   z-index: 1;
 }
 
+.story-highlight {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #2E4E43FF;
+  color: white;
+  line-height: 1.7;
+  transition: transform 0.3s ease;
+}
+
+.story-highlight:hover {
+  transform: translateY(-4px);
+}
+
 @media (min-width: 1024px) {
   .edu-block,
   .about-block {
@@ -338,9 +366,17 @@ const aboutItems = ref<Item[]>([
   }
 }
 
-.left-panel,
+.left-panel {
+  animation-delay: 0.1s;
+}
+
 .right-panel {
-  animation: slideIn 1s ease-out;
+  animation-delay: 0.3s;
+}
+
+.story-grid {
+  display: grid;
+  gap: 1.8rem;
 }
 
 @keyframes slideIn {

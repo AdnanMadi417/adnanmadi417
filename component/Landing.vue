@@ -31,18 +31,22 @@ onMounted(() => {
       <div class="content-wrapper">
 
         <h1 class="hero-title stagger-fade">
-          <span class="line">Transforming ideas into secure and scalable</span>
-          <span class="line highlight">digital experiences</span>
+          <span class="line">Building modern and scalable</span>
+          <span class="line highlight">frontend web experiences</span>
         </h1>
 
         <p class="hero-subtitle stagger-fade delay-2">
-          Hi, I'm <strong>Adnan Madi</strong>, a Software Engineer specializing in building
-          user-friendly, efficient websites that solve real problems.
+          Hi, I'm <strong>Adnan Madi</strong>, a Frontend Developer focused on building
+          fast, responsive, and user-friendly web applications using modern technologies.
+        </p>
+
+        <p class="tech-stack stagger-fade delay-2">
+          React • Next.js • Vue • Nuxt • TypeScript
         </p>
 
         <div class="cta-group stagger-fade delay-3">
           <button @click="showPopup = true" class="btn-primary">
-            Discover My Work
+            Explore My Work
             <span class="btn-shine"></span>
           </button>
         </div>
@@ -219,6 +223,21 @@ onMounted(() => {
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeIn 0.8s ease-out 0.7s forwards;
+}
+
+.tech-stack {
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.6s forwards;
+}
+
+.tech-stack {
+  display: inline-flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .btn-primary{

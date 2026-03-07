@@ -14,15 +14,21 @@ const links = [
   { link: "working-timeline", label: "Work Experience" },
 ];
 
-
 const isMobile = ref(false);
 
-onMounted(() => {
+const handleResize = () => {
   isMobile.value = window.innerWidth <= 1024;
-  window.addEventListener("resize", () => {
-    isMobile.value = window.innerWidth <= 1024;
-  });
+};
+
+function closeMobileMenu() {
+  isLinksVisible.value = false;
+}
+
+onMounted(() => {
+  handleResize();
+  window.addEventListener("resize", handleResize);
 });
+
 </script>
 
 <template>
@@ -41,7 +47,7 @@ onMounted(() => {
       <nav class="menu" v-if="!isMobile">
         <ul class="menu-links">
           <li v-for="link in links" :key="link.link">
-            <a :href="`#${link.link}`">{{ link.label }}</a>
+            <a :href="`#${link.link}`" @click="closeMobileMenu">{{ link.label }}</a>
           </li>
         </ul>
       </nav>
@@ -90,21 +96,34 @@ onMounted(() => {
 
 <style scoped>
 .header-section {
-  background: var(--body-bg-color);
   padding: 0.7rem 2rem;
-  border-bottom: 1px solid var(--card-bg-color);
   position: sticky;
   top: 0;
   z-index: 50;
-  height: 70px;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   max-width: 1200px;
   margin: auto;
+
+  padding: 14px 12px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.06),
+      inset 0 1px 1px rgba(255, 255, 255, 0.8);
+
+  transition: all 0.35s ease;
 }
 
 .logo-container {
@@ -130,7 +149,7 @@ onMounted(() => {
   color: var(--font-color);
   text-decoration: none;
   transition: color 0.3s ease;
-  padding-top: 6px;
+  padding-top: 26px;
 }
 
 .menu-links li a::before {

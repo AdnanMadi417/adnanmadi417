@@ -680,7 +680,7 @@ onMounted(() => {
     transform: scale(0.7);
   }
 }
-4rt6
+
 .project-nav {
   display: flex;
   justify-content: end;

@@ -196,7 +196,7 @@ onMounted(() => {
         <div class="info-list">
           <p class="info-item flex items-center gap-3">
             <UIcon name="mdi:account-check" class="icon"/>
-            <span>Available for Freelance</span>
+            <span>Open for Freelance Opportunities</span>
           </p>
 
           <p class="info-item flex items-center gap-3">
@@ -205,13 +205,8 @@ onMounted(() => {
           </p>
 
           <p class="info-item flex items-center gap-3">
-            <UIcon name="mdi:chart-box" class="icon"/>
-            <span>Product Manager</span>
-          </p>
-
-          <p class="info-item flex items-center gap-3">
             <UIcon name="mdi:map-marker" class="icon"/>
-            <span>Kuala Lumpur</span>
+            <span>Kuala Lumpur, Malaysia</span>
           </p>
         </div>
 

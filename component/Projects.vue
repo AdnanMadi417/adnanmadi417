@@ -6,26 +6,61 @@ const projects = [
     title: "Frontend Projects",
     items: [
       {
+        title: "Giving Fridays",
+        description: "Frontend Developer",
+        location: "Code & Canvas",
+        image: "/images/giving_Fridays.png",
+
+        descriptions: [
+          "Contributed to the development and maintenance of production frontend components across the platform using modern JavaScript frameworks and component-based architecture.",
+          "Updated and optimized UI modules including tab navigation systems, Campaigns management pages, and Recipients workflow components to improve usability and consistency.",
+          "Improved code reusability and maintainability by supporting shared UI component enhancements and frontend structure refinement.",
+        ],
+
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://givingfridays.app.givingfridays.com/en"
+          }
+        ]
+      },
+      {
         title: "IESCO Scholarship Application",
         description: "Frontend Developer",
-        location: " International Educational Scientific and Cultural Organization (IESCO)",
-        image: "./images/IESCO_Scholarship_Application.png",
+        location: "International Educational Scientific and Cultural Organization (IESCO)",
+        image: "/images/IESCO_Scholarship_Application.png",
+
         descriptions: [
-          " Developed a Scholarship Registration System that streamlined application processes, reducing submission time by 40% and decreasing application processing by 30%." +
-          " Designed and implemented user-friendly interfaces, resulting in a 25% increase in successful applicant registrations and improved the overall user experience for submitting documents"
+          "Designed and developed responsive scholarship application interfaces to streamline registration workflows and improve accessibility across devices.",
+          "Optimized application submission processes, reducing user completion time by approximately 40% and decreasing processing workload by 30%.",
+          "Implemented intuitive form layouts and validation-aware UI interactions that increased successful applicant submissions by 25%."
         ],
-        links: [{buttonText: "Live Demo", buttonLink: "https://application.iesco.my"}]
+
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://application.iesco.my"
+          }
+        ]
       },
       {
         title: "AIU Hostel Management System",
         description: "Frontend Developer",
         location: "Albukhary International University",
-        image: "./images/AIU_Hostel_Management_System.png",
+        image: "/images/AIU_Hostel_Management_System.png",
+
         descriptions: [
-          "Streamlined room allocation, maintenance requests, and billing, reducing manual tasks by 50%.",
-          "Optimized user interfaces for staff and residents, increasing satisfaction by 30%."
+          "Developed responsive dashboard and management interfaces supporting room allocation, billing workflow, and maintenance request handling.",
+          "Reduced manual administrative operations by 50% through interface automation and optimized data presentation.",
+          "Improved resident and staff system usability, contributing to a 30% increase in operational satisfaction metrics."
         ],
-        links: [{buttonText: "Live Demo", buttonLink: "https://www.aiuhms.pro/home"}]
+
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://www.aiuhms.pro/home"
+          }
+        ]
       }
     ]
   },
@@ -86,6 +121,33 @@ const projects = [
   }
 ];
 
+const currentProjectIndex = ref(0);
+
+const currentProject = computed(() => {
+  const category = currentCategory.value;
+
+  if (!category?.items?.length) return null;
+
+  return category.items[currentProjectIndex.value] ?? category.items[0];
+});
+
+function nextProject() {
+  if (!currentCategory.value?.items) return;
+
+  currentProjectIndex.value =
+      (currentProjectIndex.value + 1) %
+      currentCategory.value.items.length;
+}
+
+function previousProject() {
+  if (!currentCategory.value?.items) return;
+
+  currentProjectIndex.value =
+      (currentProjectIndex.value - 1 +
+          currentCategory.value.items.length) %
+      currentCategory.value.items.length;
+}
+
 const currentCategoryIndex = ref(0);
 const currentCategory = computed(() => projects[currentCategoryIndex.value]);
 const indicatorStyle = ref({left: '0px', width: '0px'});
@@ -113,96 +175,152 @@ onMounted(() => {
   <section class="projects-section" id="projects">
     <div class="header-container">
       <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">A selection of my recent work in frontend, backend, and full-stack development.</p>
     </div>
 
-    <div class="segmented-tabs">
-      <div class="tabs-wrapper">
-        <div
-            v-for="(category, index) in projects"
-            :key="index"
-            class="tab"
-            :class="{ active: index === currentCategoryIndex }"
-            @click="selectCategory(index)"
-        >
-          {{ category.title }}
+    <div class="tab-content">
+
+      <div class="tab-pane info-card space-y-4">
+
+        <div class="info-img-container">
+          <div class="info-img-main-container"></div>
+
+          <img
+              src="/images/adnan%20photo%203%20.jpg"
+              alt="Developer"
+              class="profile-avatar"
+          />
         </div>
-        <div class="indicator" :style="indicatorStyle"></div>
+
+        <h4 class="info-title">Adnan Madi</h4>
+
+        <div class="info-list">
+          <p class="info-item flex items-center gap-3">
+            <UIcon name="mdi:account-check" class="icon"/>
+            <span>Available for Freelance</span>
+          </p>
+
+          <p class="info-item flex items-center gap-3">
+            <UIcon name="mdi:code-tags" class="icon"/>
+            <span>Front End Developer</span>
+          </p>
+
+          <p class="info-item flex items-center gap-3">
+            <UIcon name="mdi:chart-box" class="icon"/>
+            <span>Product Manager</span>
+          </p>
+
+          <p class="info-item flex items-center gap-3">
+            <UIcon name="mdi:map-marker" class="icon"/>
+            <span>Kuala Lumpur</span>
+          </p>
+        </div>
+
+        <a
+            class="contact-btn mobile-contact"
+            href="https://wa.me/+601170064361"
+            target="_blank"
+        >
+          Contact Me
+        </a>
+
       </div>
-    </div>
 
-    <div class="projects-grid">
-      <div
-          v-for="(project, index) in currentCategory.items"
-          :key="index"
-          class="project-card"
-      >
+      <div class="projects-grid">
 
-        <div class="project-image-card">
-          <div class="project-image-container">
+        <div class="segmented-tabs">
+          <div class="tabs-wrapper">
+            <div
+                v-for="(category, index) in projects"
+                :key="index"
+                class="tab"
+                :class="{ active: index === currentCategoryIndex }"
+                @click="selectCategory(index)"
+            >
+              {{ category.title }}
+            </div>
+            <div class="indicator" :style="indicatorStyle"></div>
+          </div>
+        </div>
 
-            <img :src="project.image" :alt="project.title" class="project-image"/>
+        <div class="project-card modern-card" v-if="currentProject">
 
-            <div class="img-veil"></div>
-            <div class="img-shimmer"></div>
+          <div class="project-media">
+
+            <img
+                :src="currentProject.image"
+                :alt="currentProject.title"
+                class="project-media-image"
+            />
+
+            <div class="media-overlay"></div>
 
             <div class="featured-badge">
               <span class="badge-dot"></span>
-              Featured
-            </div>
-
-            <div class="image-overlay-button">
-              <div class="overlay-rule"></div>
-              <h3 class="overlay-title">{{ project.title }}</h3>
-              <span class="overlay-location">{{ project.location }}
-              </span>
+              Featured Project
             </div>
 
           </div>
+
+          <div class="project-body">
+
+            <div class="project-header">
+              <h3 class="project-title">
+                {{ currentProject.title }}
+              </h3>
+
+              <div class="project-meta">
+        <span class="location">
+          {{ currentProject.location }}
+        </span>
+
+                <span class="separator">•</span>
+
+                <span class="role">
+          {{ currentProject.description }}
+        </span>
+              </div>
+            </div>
+
+            <ul class="project-description-list">
+              <li v-for="(desc, i) in currentProject.descriptions" :key="i">
+                {{ desc }}
+              </li>
+            </ul>
+
+            <div class="project-links">
+              <a
+                  v-for="(link, i) in currentProject.links"
+                  :key="i"
+                  :href="link.buttonLink"
+                  target="_blank"
+                  class="project-link"
+              >
+                {{ link.buttonText }}
+              </a>
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <div class="project-meta">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span class="location">{{ project.location }}</span>
-              <span class="separator">•</span>
-              <span class="role">{{ project.description }}</span>
-            </div>
-          </div>
+        <div class="project-nav">
 
-          <ul class="project-descriptions">
-            <li v-for="(desc, i) in project.descriptions" :key="i">
-              <svg class="bullet-icon" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-              <span>{{ desc }}</span>
-            </li>
-          </ul>
+          <button @click="previousProject">
+            <UIcon name="mdi:arrow-left" class="icon"/>
+            Previous
+          </button>
 
-          <div class="project-links">
-            <a
-                v-for="(link, i) in project.links"
-                :key="i"
-                :href="link.buttonLink"
-                target="_blank"
-                class="project-link"
-            >
-              <span>{{ link.buttonText }}</span>
-              <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a>
-          </div>
+          <button @click="nextProject">
+            Next
+            <UIcon name="mdi:arrow-right" class="icon"/>
+          </button>
+
         </div>
+
       </div>
+
     </div>
+
   </section>
 </template>
 
@@ -225,36 +343,42 @@ onMounted(() => {
   margin: 0 0 0.5rem 0;
   color: var(--font-color);
   letter-spacing: -0.02em;
+  justify-content: start;
+  text-align: start;
 }
 
-.section-subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--font-light-color);
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.6;
+.tab-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-top: 2rem;
+}
+
+@media (max-width: 800px) {
+  .tab-content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .segmented-tabs {
   display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-  overflow-x: auto;
+  justify-content: start;
   padding: 0.5rem 0;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .tabs-wrapper {
   position: relative;
-  display: inline-flex;
   gap: 0.5rem;
-  background-color: var(--card-bg-color);
-  padding: 0.5rem;
-  border-radius: 999px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 0.4rem;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  width: max-content;
 }
 
 .tab {
-  padding: 0.75rem 1.5rem;
+  position: relative;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
   font-weight: 600;
   font-size: var(--font-size-base);
@@ -264,452 +388,286 @@ onMounted(() => {
   text-align: center;
   transition: var(--transition);
   white-space: nowrap;
-  position: relative;
+  flex-shrink: 0;
 }
 
 .tab:hover {
-  color: var(--font-color);
+  color: var(--accent-color);
 }
 
 .tab.active {
-  color: white;
+  color: var(--accent-color);
 }
 
-.indicator {
+.tab::after {
+  content: "";
   position: absolute;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  background-color: var(--accent-color);
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 12px;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.tab.active::after {
+  transform: scaleX(1);
+}
+
+.info-card {
+  padding: 1.6rem;
+
+  background: linear-gradient(
+      145deg,
+      rgba(255,255,255,0.9),
+      rgba(248,248,248,0.8)
+  );
+
+  border: 1px solid rgba(0,0,0,0.04);
+  border-radius: 18px;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+}
+
+.info-img-container {
+  position: relative;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.info-img-main-container {
+  width: 100%;
+  height: 80px;
+  background: var(--accent-color, #2E4E43);
+  border-radius: 14px;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease;
+}
+
+.profile-avatar {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.info-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--font-color, #2E4E43);
+  text-align: center;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.info-item {
+  padding: 0.125rem 0.25rem;
+  border-radius: 12px;
+  transition: background 0.25s ease;
+  cursor: default;
+}
+
+.info-item .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-color, #2E4E43);
+  flex-shrink: 0;
+}
+
+.contact-btn {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+
+  margin-top: 1.2rem;
+  padding: 0.65rem 1.2rem;
+
+  background-color: var(--accent-color, #2E4E43);
+  color: white;
+
   border-radius: 999px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: var(--accent-hover-color, #1f3b31);
+  transform: translateY(-2px);
 }
 
 .projects-grid {
   display: grid;
   gap: 2.5rem;
+  padding: 0 2rem;
   animation: fadeIn 0.6s ease-out 0.2s both;
 }
 
-.project-card {
+.modern-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 45% 55%;
   gap: 2.5rem;
-  border-radius: 20px;
-  padding: 2rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s ease;
+}
+
+.project-media {
   position: relative;
   overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 16/10;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-color), var(--accent-hover-color));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.project-image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  aspect-ratio: 16 / 10;
-  display: flex;
-  align-items: flex-end;
-  background-color: var(--card-bg-color, #111);
-  cursor: pointer;
-}
-
-.project-image {
+.project-media-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
 
-.project-image-container:hover .project-image {
+  filter: saturate(0.9) brightness(0.9);
   transform: scale(1.05);
+
+  transition: all 0.8s cubic-bezier(.25,.8,.25,1);
 }
 
-.image-overlay-button {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 1rem;
-  text-align: center;
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-
-.project-image-container:hover .image-overlay-button {
-  transform: translateY(0);
-}
-
-.overlay-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.3rem;
-}
-
-.overlay-location {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* Featured Badge */
-.featured-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: linear-gradient(135deg, #ff4d6d, #ff6a00);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.35rem 0.75rem;
-  border-radius: 8px;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.featured-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #ff4757;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  z-index: 2;
-}
-
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
-  transition: opacity 0.3s ease;
-}
-
-.featured-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: 0 4px 12px rgba(46, 78, 67, 0.3);
-  transform: translateY(-8px);
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.project-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.project-title {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  margin: 0;
-  color: var(--font-color);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-}
-
-.project-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--font-size-sm);
-  color: var(--font-light-color);
-  flex-wrap: wrap;
-}
-
-.icon {
-  width: 16px;
-  height: 16px;
-  color: var(--accent-color);
-  flex-shrink: 0;
-}
-
-.location {
-  font-weight: 600;
-  color: var(--font-color);
-}
-
-.separator {
-  opacity: 0.5;
-}
-
-.role {
-  color: var(--font-light-color);
-}
-
-.project-descriptions {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.project-descriptions li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  color: var(--secondary-color);
-  line-height: 1.6;
-  font-size: var(--font-size-base);
-  transition: color 0.2s ease;
-}
-
-.project-card:hover .project-descriptions li {
-  color: var(--font-color);
-}
-
-.bullet-icon {
-  width: 6px;
-  height: 6px;
-  min-width: 6px;
-  margin-top: 0.5rem;
-  color: var(--accent-color);
-}
-
-.project-links {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.25rem;
-  background-color: var(--accent-color);
-  color: white;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: var(--font-size-sm);
-  transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(46, 78, 67, 0.2);
-  position: relative;
-  overflow: hidden;
-}
-
-.project-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: var(--accent-hover-color);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.project-link:hover::before {
-  transform: translateY(0);
-}
-
-.project-link span,
-.project-link .link-icon {
-  position: relative;
-  z-index: 1;
-}
-
-.project-link:active {
-  transform: translateY(0);
-}
-
-.link-icon {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
-}
-
-.project-link:hover .link-icon {
-  transform: translate(2px, -2px);
-}
-
-.project-image-card {
-  font-family: 'Jost', sans-serif;
-}
-
-.project-image-container {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  display: flex;
-  align-items: flex-end;
-  background: #0d0c0b;
-  cursor: pointer;
-  border-radius: 2px;
-  outline: 1px solid rgba(196, 164, 102, 0.15);
-  outline-offset: -1px;
-}
-
-.project-image-container::before,
-.project-image-container::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  z-index: 5;
-  opacity: 0.35;
-  transition: width 0.55s ease, height 0.55s ease, opacity 0.55s ease;
-  pointer-events: none;
-}
-
-.project-image-container::before {
-  top: 15px;
-  left: 15px;
-  border-top: 3px solid #ffffff;
-  border-left: 3px solid #ffffff;
-}
-
-.project-image-container::after {
-  bottom: 15px;
-  right: 15px;
-  border-bottom: 3px solid #ffffff;
-  border-right: 3px solid #ffffff;
-}
-
-.project-image-container:hover::before,
-.project-image-container:hover::after {
-  width: 26px;
-  height: 26px;
-  opacity: 1;
-}
-
-.project-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: saturate(0.8) brightness(0.88);
-  transform: scale(1.07);
-  transform-origin: center center;
-  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-  filter 1s ease;
-}
-
-.project-image-container:hover .project-image {
+.project-media:hover .project-media-image {
   transform: scale(1);
   filter: saturate(1) brightness(1);
 }
 
-.img-veil {
+.media-overlay {
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
       to top,
-      rgba(5, 4, 3, 0.82) 0%,
-      rgba(5, 4, 3, 0.28) 42%,
-      transparent 68%
+      rgba(0,0,0,0.75),
+      rgba(0,0,0,0.15),
+      transparent
   );
-  z-index: 1;
-  pointer-events: none;
-  transition: opacity 0.7s ease;
-}
-
-.project-image-container:hover .img-veil {
-  opacity: 0.6;
-}
-
-.img-shimmer {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-      118deg,
-      transparent 0%,
-      transparent 36%,
-      rgba(255, 248, 210, 0.055) 50%,
-      transparent 64%,
-      transparent 100%
-  );
-  background-size: 240% 100%;
-  background-position: 240% center;
-  pointer-events: none;
-  transition: background-position 1s ease;
-}
-
-.project-image-container:hover .img-shimmer {
-  background-position: -60% center;
 }
 
 .featured-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  z-index: 5;
+  top: 16px;
+  left: 16px;
+
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 6px;
 
-  font-family: 'Jost', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  padding: 6px 12px;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(196, 164, 102, 0.75);
 
-  background: rgba(10, 9, 8, 0.7);
-  border: 1px solid rgba(196, 164, 102, 0.22);
-  padding: 0.22rem 0.6rem 0.22rem 0.45rem;
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.65);
+  color: white;
 
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
+  border-radius: 999px;
 
-.project-image-container:hover .featured-badge {
-  color: #ffffff;
-  border-color: rgba(196, 164, 102, 0.5);
+  backdrop-filter: blur(8px);
 }
 
 .badge-dot {
-  display: block;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #c4a466;
-  animation: pulse-dot 2.4s ease-in-out infinite;
+  background: var(--accent-color);
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.project-title {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  font-size: 0.9rem;
+  color: var(--font-light-color);
+}
+
+.project-description-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  padding-left: 1rem;
+}
+
+.project-description-list li {
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+
+
+.project-links {
+  margin-top: auto;
+}
+
+.project-link {
+  display: inline-block;
+
+  padding: 0.75rem 1.5rem;
+
+  border-radius: 999px;
+
+  background: var(--accent-color);
+  color: white;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: var(--accent-hover-color);
+  transform: translateY(-2px);
 }
 
 @keyframes pulse-dot {
@@ -722,80 +680,34 @@ onMounted(() => {
     transform: scale(0.7);
   }
 }
-
-/* ── OVERLAY PANEL ─────────────────────────────────── */
-.image-overlay-button {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-  padding: 1.4rem 1.6rem 1.5rem;
-
+4rt6
+.project-nav {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  background: transparent;
-  transform: translateY(102%);
-  transition: transform 0.58s cubic-bezier(0.76, 0, 0.24, 1);
+  justify-content: end;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eaeaea;
 }
 
-.project-image-container:hover .image-overlay-button {
-  transform: translateY(0);
-}
-
-.overlay-rule {
-  display: block;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #ffffff 0%, rgba(196, 164, 102, 0) 100%);
-  margin-bottom: 0.85rem;
-  transition: width 0.65s cubic-bezier(0.76, 0, 0.24, 1) 0.06s;
-}
-
-.project-image-container:hover .overlay-rule {
-  width: 100%;
-}
-
-.overlay-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
-  color: #f5f0e8;
-  letter-spacing: 0.03em;
-  line-height: 1.1;
-  margin: 0 0 0.35rem;
-
-  opacity: 0;
-  transform: translateY(9px);
-  transition: opacity 0.42s ease 0.22s, transform 0.42s ease 0.22s;
-}
-
-.project-image-container:hover .overlay-title {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.overlay-location {
+.project-nav button {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-family: 'Jost', sans-serif;
-  font-weight: 200;
-  font-size: 0.67rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #ffffff;
+  gap: 0.4rem;
 
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.4s ease 0.31s, transform 0.4s ease 0.31s;
+  padding: 0.4rem 0.6rem;
+
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 999px;
+
+  background: transparent;
+
+  transition: all 0.25s ease;
 }
 
-.project-image-container:hover .overlay-location {
-  opacity: 1;
-  transform: translateY(0);
+.project-nav button:hover {
+  outline: 2px solid rgba(46, 78, 67, 0.25);
+  outline-offset: 2px;
 }
 
 @keyframes fadeInUp {

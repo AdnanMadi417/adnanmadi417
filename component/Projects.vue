@@ -12,9 +12,9 @@ const projects = [
         image: "/images/giving_Fridays.png",
 
         descriptions: [
-          "Contributed to the development and maintenance of production frontend components across the platform using modern JavaScript frameworks and component-based architecture.",
-          "Updated and optimized UI modules including tab navigation systems, Campaigns management pages, and Recipients workflow components to improve usability and consistency.",
-          "Improved code reusability and maintainability by supporting shared UI component enhancements and frontend structure refinement.",
+          "Updated and maintained several frontend pages and their components across the platform.",
+          "Improved UI elements including tab navigation, Campaigns page components, and Recipients page components to enhance usability and interface consistency.",
+          "Refined existing components to improve code organization and maintainability."
         ],
 
         links: [

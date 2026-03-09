@@ -11,7 +11,7 @@ const steps = [
   {
     title: 'Front End Developer (Freelance)',
     company: 'Code & Canvas',
-    date: 'Sep 2025 – Mar 2026',
+    date: 'Oct 2025 – Mar 2026',
     description: `Designed and delivered modern, responsive user interfaces by translating UI/UX designs into clean front-end components. Partnered with clients to improve usability, visual consistency, and overall digital experience.`
   },
   {

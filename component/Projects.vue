@@ -196,7 +196,7 @@ onMounted(() => {
         <div class="info-list">
           <p class="info-item flex items-center gap-3">
             <UIcon name="mdi:account-check" class="icon"/>
-            <span>Open for Freelance Opportunities</span>
+            <span>Available for Freelance & Full time</span>
           </p>
 
           <p class="info-item flex items-center gap-3">

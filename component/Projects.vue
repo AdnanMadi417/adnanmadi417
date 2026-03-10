@@ -6,25 +6,6 @@ const projects = [
     title: "Frontend Projects",
     items: [
       {
-        title: "Giving Fridays",
-        description: "Frontend Developer",
-        location: "Code & Canvas",
-        image: "/images/giving_Fridays.png",
-
-        descriptions: [
-          "Updated and maintained several frontend pages and their components across the platform.",
-          "Improved UI elements including tab navigation, Campaigns page components, and Recipients page components to enhance usability and interface consistency.",
-          "Refined existing components to improve code organization and maintainability."
-        ],
-
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://givingfridays.app.givingfridays.com/en"
-          }
-        ]
-      },
-      {
         title: "IESCO Scholarship Application",
         description: "Frontend Developer",
         location: "International Educational Scientific and Cultural Organization (IESCO)",

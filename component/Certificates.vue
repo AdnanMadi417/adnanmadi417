@@ -7,28 +7,28 @@ const certificates = [
     title: "Front-End Development",
     date: "2024",
     description: "An introductory course on front-end development concepts, focusing on building responsive and interactive web applications.",
-    from: "Corsesara"
+    from: "Coursera"
   },
   {
     icon: "mdi:language-javascript",
     title: "JavaScript Programming",
     date: "2023",
     description: "An in-depth course on JavaScript, covering syntax, core concepts, and best practices for creating dynamic web pages.",
-    from: "Corsesara"
+    from: "Coursera"
   },
   {
     icon: "mdi:language-html5",
     title: "HTML Programming",
     date: "2023",
     description: "This course covers HTML fundamentals, enabling students to structure web content effectively and create accessible web pages.",
-    from: "Corsesara"
+    from: "Coursera"
   },
   {
     icon: "mdi:code-braces",
     title: "Programming Fundamentals",
     date: "2022",
     description: "An introductory course to core programming concepts, algorithms, and problem-solving skills applicable across various languages.",
-    from: "Corsesara"
+    from: "Coursera"
   },
 ];
 
@@ -50,29 +50,31 @@ function prevPage() {
 
 <template>
   <div class="certificate" id="certificate">
-    <h1>Certifications</h1>
+    <h1 data-aos="fade-up">Certifications</h1>
     <div class="container">
-      <div class="card fade-in" v-for="certificate in visibleCertificates" :key="certificate.title">
+      <div
+        class="card"
+        v-for="(certificate, i) in visibleCertificates"
+        :key="certificate.title"
+        data-aos="fade-up"
+        :data-aos-delay="i * 100"
+      >
         <h2>
           <span>
             <UIcon :name="certificate.icon"/>
           </span>
           {{ certificate.title }}
         </h2>
-        <h4>{{ certificate.date }}</h4>
+        <h4>{{ certificate.from }} · {{ certificate.date }}</h4>
         <p>{{ certificate.description }}</p>
       </div>
     </div>
-    <div class="certificate-control-buttons">
+    <div class="certificate-control-buttons" v-if="certificates.length > itemsPerPage">
       <button @click="prevPage">
-        <UIcon
-            name="mdi-arrow-left-circle"
-        />
+        <UIcon name="mdi-arrow-left-circle" />
       </button>
       <button @click="nextPage">
-        <UIcon
-            name="mdi-arrow-right-circle"
-        />
+        <UIcon name="mdi-arrow-right-circle" />
       </button>
     </div>
   </div>
@@ -181,20 +183,6 @@ function prevPage() {
   cursor: not-allowed;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.card {
-  animation: fadeInUp 0.6s ease forwards;
-}
 
 
 </style>

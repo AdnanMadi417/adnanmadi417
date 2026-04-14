@@ -31,13 +31,13 @@ const aboutItems = ref<Item[]>([
 
     <div class="container">
       <div class="edu-block">
-        <div class="left-panel">
+        <div class="left-panel" data-aos="fade-right">
           <div class="tag">Education</div>
           <h1 class="big-title">Academic<br>Journey</h1>
           <div class="decorative-line"></div>
         </div>
 
-        <div class="right-panel">
+        <div class="right-panel" data-aos="fade-left">
 
           <div class="info-box">
             <div class="top-row block">
@@ -68,14 +68,14 @@ const aboutItems = ref<Item[]>([
       </div>
 
       <div class="about-block">
-        <div class="left-panel">
+        <div class="left-panel" data-aos="fade-right">
           <div class="img-frame portrait">
             <img src="/images/adnan%20photo%203%20.jpg" alt="Developer"/>
             <div class="img-overlay"></div>
           </div>
         </div>
 
-        <div class="right-panel">
+        <div class="right-panel" data-aos="fade-left">
           <h1 class="big-title">About<br>Me</h1>
           <div class="decorative-line"></div>
 

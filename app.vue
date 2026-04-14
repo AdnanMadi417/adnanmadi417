@@ -4,6 +4,10 @@
 
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
 
   --header-bg-color: #f0f0f0;
@@ -30,6 +34,7 @@
   --transition: all 0.2s ease-in-out;
 
 }
+
 </style>
 
 <script setup>

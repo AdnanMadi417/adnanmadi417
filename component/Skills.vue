@@ -28,14 +28,14 @@ const skills = [
   <section class="skills-section">
 
     <div class="container">
-      <div class="header-container">
+      <div class="header-container" data-aos="fade-up">
         <h2 class="section-title">Technical Skills</h2>
         <p class="section-subtitle">
           Building modern, responsive, and high-performance frontend interfaces using contemporary web technologies, design systems, and component-based development.
         </p>
       </div>
 
-      <div class="ticker-wrap">
+      <div class="ticker-wrap" data-aos="fade-up" data-aos-delay="150">
         <div class="ticker ticker--fwd">
           <div class="ticker__inner">
 
@@ -43,7 +43,7 @@ const skills = [
               <div
                   class="skill-card"
                   v-for="(skill, i) in [...skills, ...skills]"
-                  :key="skill.title"
+                  :key="`${skill.title}-${i}`"
                   :style="{  '--c': skill.color, '--skill-color': skill.color }"
               >
                 <div class="skill-icon">
@@ -71,7 +71,6 @@ const skills = [
 .header-container {
   text-align: center;
   margin-bottom: 3rem;
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .section-title {

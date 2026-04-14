@@ -28,11 +28,11 @@ const contactInfo = [
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer" data-aos="fade-up">
     <div class="footer-container">
 
       <p class="copyright">
-        © 2025 <a href="https://adnanmadi417.vercel.app" target="_self">Adnan Madi</a>.
+        © 2026 <a href="https://adnanmadi417.vercel.app" target="_self">Adnan Madi</a>.
         All rights reserved.
       </p>
 

@@ -1,6 +1,4 @@
 <script setup>
-import {ref, onMounted, onUnmounted} from 'vue';
-
 const steps = [
   {
     title: 'Front End Developer',
@@ -28,38 +26,12 @@ const steps = [
     description: `Spearheaded the development of a Scholarship Registration System that streamlined application workflows, reducing submission time by 40% and processing time by 30%. Designed intuitive interfaces that increased successful applicant registrations by 25%.`
   }
 ];
-
-const timelineItems = ref([]);
-const visibleItems = ref(steps.map(() => false));
-
-const checkVisibility = () => {
-  if (!timelineItems.value.length) return;
-  timelineItems.value.forEach((item, index) => {
-    if (!item) return;
-    const rect = item.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    if (rect.top < windowHeight * 0.85) {
-      setTimeout(() => {
-        visibleItems.value[index] = true;
-      }, index * 200);
-    }
-  });
-};
-
-onMounted(() => {
-  setTimeout(checkVisibility, 100);
-  window.addEventListener('scroll', checkVisibility);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', checkVisibility);
-});
 </script>
 
 <template>
   <section class="timeline-cover" id="working-timeline">
     <div class="timeline-container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <div class="header-eyebrow">Experience</div>
         <h2 class="section-title">
           My Professional Journey
@@ -74,8 +46,8 @@ onUnmounted(() => {
         <li v-for="(step, index) in steps" :key="index">
           <div
               class="content"
-              :class="{ hidden: !visibleItems[index] }"
-              ref="timelineItems"
+              :data-aos="index % 2 === 0 ? 'fade-left' : 'fade-right'"
+              :data-aos-delay="index * 100"
           >
             <div class="content-header">
               <div class="date-badge">{{ step.date }}</div>
@@ -215,12 +187,6 @@ onUnmounted(() => {
   padding: 20px;
   width: 45%;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  opacity: 1;
-
-}
-
-.timeline ul li .content.hidden {
-  opacity: 0;
 }
 
 .timeline ul li:nth-child(odd) .content {
@@ -337,12 +303,6 @@ onUnmounted(() => {
 
   .timeline ul li .content p {
     font-size: var(--font-size-sm);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
   }
 }
 

@@ -5,7 +5,7 @@
 
   <div class="services-section" id="services">
 
-    <div class="services-intro">
+    <div class="services-intro" data-aos="fade-up">
 
       <div class="subheader">
         <h3 class="services-title">Services</h3>
@@ -18,75 +18,59 @@
 
     <div class="services-container">
 
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-header-card">
-
           <div class="icon-circle blue">
             <UIcon name="mdi:palette" />
           </div>
-
           <div class="service-content">
             <h3 class="service-title">Interface Engineering</h3>
-
             <p class="service-description">
               Transform design concepts into production-quality interfaces with attention to accessibility, responsiveness, and interaction polish using modern frontend frameworks.
             </p>
           </div>
-
         </div>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
         <div class="service-header-card">
-
           <div class="icon-circle green">
             <UIcon name="mdi:code-braces" />
           </div>
-
           <div class="service-content">
             <h3 class="service-title">Frontend Platform Development</h3>
-
             <p class="service-description">
               Develop scalable web platforms including dashboards, administrative systems, and content-driven applications using component-based architecture and TypeScript-enabled frameworks.
             </p>
           </div>
-
         </div>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
         <div class="service-header-card">
-
           <div class="icon-circle purple">
             <UIcon name="mdi:server" />
           </div>
-
           <div class="service-content">
             <h3 class="service-title">API & Backend Integration</h3>
-
             <p class="service-description">
               Implement secure communication between frontend applications and backend services, supporting authentication flows, data management, and structured state synchronization.
             </p>
           </div>
-
         </div>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
         <div class="service-header-card">
-
           <div class="icon-circle red">
             <UIcon name="mdi:architecture" />
           </div>
-
           <div class="service-content">
             <h3 class="service-title">Workflow Automation Systems</h3>
-
             <p class="service-description">
               Build interface-driven automation platforms that simplify administrative operations such as application tracking, program management, and partner workflow coordination.
             </p>
           </div>
-
         </div>
       </div>
 
@@ -108,15 +92,6 @@
   padding: 1.5rem;
 }
 
-.services-title{
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--secondary-color);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Helvetica, Arial, sans-serif;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-
 .subheader {
   display: flex;
   align-items: center;
@@ -131,30 +106,6 @@
   font-weight: 700;
   color: #2E4E43FF;
   letter-spacing: -0.02em;
-}
-
-.icon-wrapper {
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #2E4E43FF 0%, #1C352DFF 100%);
-  border-radius: 16px;
-  color: #ffffff;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-}
-
-.icon-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  background: linear-gradient(135deg, #2E4E43FF 0%, #1C352DFF 100%);
-  border-radius: 20px;
-  opacity: 0.1;
-  filter: blur(12px);
-  z-index: -1;
 }
 
 .services-intro {
@@ -198,9 +149,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s forwards;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
@@ -242,11 +190,5 @@
   text-align: start;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 </style>

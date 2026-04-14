@@ -1,10 +1,30 @@
 <script setup lang="ts">
-import {ref, computed, nextTick, onMounted} from 'vue';
+import {ref, computed} from 'vue';
 
 const projects = [
   {
     title: "Frontend Projects",
     items: [
+      {
+        title: "IKA EDU Platform",
+        description: "Frontend Developer & Product Manager",
+        location: "Freelance Project",
+        image: "/images/IKA_EDU.png",
+
+        descriptions: [
+          "Developed and implemented an educational platform using Next.js and React, improving program accessibility and user engagement by 40%.",
+          "Designed and built training program interfaces with filtering and detailed course views, reducing user search time by 35%.",
+          "Created personal and business registration systems, increasing successful registrations by 30%.",
+          "Implemented a certification verification feature, improving trust and reducing manual verification effort by 50%."
+        ],
+
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "https://ika-edu.com/"
+          }
+        ]
+      },
       {
         title: "IESCO Scholarship Application",
         description: "Frontend Developer",
@@ -131,36 +151,22 @@ function previousProject() {
 
 const currentCategoryIndex = ref(0);
 const currentCategory = computed(() => projects[currentCategoryIndex.value]);
-const indicatorStyle = ref({left: '0px', width: '0px'});
 
 function selectCategory(index: number) {
   currentCategoryIndex.value = index;
-  nextTick(updateIndicator);
+  currentProjectIndex.value = 0;
 }
-
-function updateIndicator() {
-  const tabs = document.querySelectorAll('.tab');
-  const activeTab = tabs[currentCategoryIndex.value] as HTMLElement;
-  if (activeTab) {
-    indicatorStyle.value = {left: activeTab.offsetLeft + 'px', width: activeTab.offsetWidth + 'px'};
-  }
-}
-
-onMounted(() => {
-  updateIndicator();
-  window.addEventListener('resize', updateIndicator);
-});
 </script>
 
 <template>
   <section class="projects-section" id="projects">
-    <div class="header-container">
+    <div class="header-container" data-aos="fade-up">
       <h2 class="section-title">Featured Projects</h2>
     </div>
 
     <div class="tab-content">
 
-      <div class="tab-pane info-card space-y-4">
+      <div class="tab-pane info-card space-y-4" data-aos="fade-right">
 
         <div class="info-img-container">
           <div class="info-img-main-container"></div>
@@ -177,7 +183,7 @@ onMounted(() => {
         <div class="info-list">
           <p class="info-item flex items-center gap-3">
             <UIcon name="mdi:account-check" class="icon"/>
-            <span>Available for Freelance & Full time</span>
+            <span>Available for Freelance </span>
           </p>
 
           <p class="info-item flex items-center gap-3">
@@ -201,7 +207,7 @@ onMounted(() => {
 
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-grid" data-aos="fade-left">
 
         <div class="segmented-tabs">
           <div class="tabs-wrapper">
@@ -214,7 +220,6 @@ onMounted(() => {
             >
               {{ category.title }}
             </div>
-            <div class="indicator" :style="indicatorStyle"></div>
           </div>
         </div>
 
@@ -264,15 +269,16 @@ onMounted(() => {
             </ul>
 
             <div class="project-links">
-              <a
-                  v-for="(link, i) in currentProject.links"
-                  :key="i"
-                  :href="link.buttonLink"
-                  target="_blank"
-                  class="project-link"
-              >
-                {{ link.buttonText }}
-              </a>
+              <template v-for="(link, i) in currentProject.links" :key="i">
+                <a
+                    v-if="link.buttonLink"
+                    :href="link.buttonLink"
+                    target="_blank"
+                    class="project-link"
+                >
+                  {{ link.buttonText }}
+                </a>
+              </template>
             </div>
 
           </div>
@@ -281,12 +287,16 @@ onMounted(() => {
 
         <div class="project-nav">
 
-          <button @click="previousProject">
+          <button @click="previousProject" :disabled="currentCategory.items.length <= 1">
             <UIcon name="mdi:arrow-left" class="icon"/>
             Previous
           </button>
 
-          <button @click="nextProject">
+          <span class="project-count">
+            {{ currentProjectIndex + 1 }} / {{ currentCategory.items.length }}
+          </span>
+
+          <button @click="nextProject" :disabled="currentCategory.items.length <= 1">
             Next
             <UIcon name="mdi:arrow-right" class="icon"/>
           </button>
@@ -310,7 +320,6 @@ onMounted(() => {
 .header-container {
   text-align: center;
   margin-bottom: 3rem;
-  animation: fadeInUp 0.6s ease-out;
 }
 
 .section-title {
@@ -503,7 +512,6 @@ onMounted(() => {
   display: grid;
   gap: 2.5rem;
   padding: 0 2rem;
-  animation: fadeIn 0.6s ease-out 0.2s both;
 }
 
 .modern-card {
@@ -660,9 +668,17 @@ onMounted(() => {
 .project-nav {
   display: flex;
   justify-content: end;
+  align-items: center;
   gap: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #eaeaea;
+}
+
+.project-count {
+  font-size: var(--font-size-sm);
+  color: var(--font-light-color);
+  min-width: 40px;
+  text-align: center;
 }
 
 .project-nav button {
@@ -681,9 +697,14 @@ onMounted(() => {
   transition: all 0.25s ease;
 }
 
-.project-nav button:hover {
+.project-nav button:hover:not(:disabled) {
   outline: 2px solid rgba(46, 78, 67, 0.25);
   outline-offset: 2px;
+}
+
+.project-nav button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 @keyframes fadeInUp {

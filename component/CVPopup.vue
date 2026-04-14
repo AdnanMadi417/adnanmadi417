@@ -9,11 +9,13 @@
 </template>
 
 <script setup>
-import { ref, defineProps, watch } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
   show: Boolean,
 });
+
+const emit = defineEmits(['update:show']);
 
 const isVisible = ref(props.show);
 

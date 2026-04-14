@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const isLinksVisible = ref(false);
 
@@ -10,6 +10,7 @@ const links = [
   { link: "landing", label: "Home" },
   { link: "about", label: "About Me" },
   { link: "skills", label: "Technical Skills" },
+  { link: "services", label: "Services" },
   { link: "projects", label: "Projects" },
   { link: "working-timeline", label: "Work Experience" },
 ];
@@ -27,6 +28,10 @@ function closeMobileMenu() {
 onMounted(() => {
   handleResize();
   window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
 });
 
 </script>
@@ -100,6 +105,12 @@ onMounted(() => {
   position: sticky;
   top: 0;
   z-index: 50;
+  animation: headerSlideDown 0.5s ease-out both;
+}
+
+@keyframes headerSlideDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .container {

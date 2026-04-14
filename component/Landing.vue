@@ -1,22 +1,21 @@
 <script setup lang="ts">
-import {ref, onMounted} from 'vue';
+import {ref, onMounted, onUnmounted} from 'vue';
 import CVPopup from "~/component/CVPopup.vue";
 
 const showPopup = ref(false);
 const isMobile = ref(false);
-const isScrolled = ref(false);
+
+const checkMobileSize = () => {
+  isMobile.value = window.innerWidth <= 1200;
+};
 
 onMounted(() => {
-  const checkMobileSize = () => {
-    isMobile.value = window.innerWidth <= 1200;
-  };
-
   checkMobileSize();
   window.addEventListener('resize', checkMobileSize);
+});
 
-  window.addEventListener("scroll", () => {
-    isScrolled.value = window.scrollY > 50;
-  });
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobileSize);
 });
 </script>
 

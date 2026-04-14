@@ -22,8 +22,3 @@ import Services from "~/component/Services.vue";
   <Footer/>
 </template>
 
-<style scoped>
-html {
-  scroll-behavior: smooth;
-}
-</style>

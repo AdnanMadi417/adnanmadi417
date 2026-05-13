@@ -41,18 +41,6 @@ const aboutItems = ref<Item[]>([
 
           <div class="info-box">
             <div class="top-row block">
-              <h2 class="uni-name">University of Malaya</h2>
-              <span class="year-pill">2026–Present</span>
-            </div>
-            <h3 class="program">Master of Software Engineering</h3>
-            <p class="details">
-              Currently pursuing a Master's degree in Software Engineering at the University of Malaya, focusing on modern
-              software architecture, frontend system design, and scalable web development.
-            </p>
-          </div>
-
-          <div class="info-box">
-            <div class="top-row block">
               <h2 class="uni-name">Albukhary International University</h2>
               <span class="">2025</span>
             </div>

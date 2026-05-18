@@ -3,6 +3,7 @@ const steps = [
   {
     title: 'Front End Developer',
     company: 'Unibexs',
+    companyUrl: 'https://www.unibexs.com/',
     date: 'Sep 2025 – Present',
     description: `Developing high-performance, scalable front-end applications with a strong focus on user experience. Collaborating with cross-functional teams to implement design systems, optimize responsiveness, and integrate seamlessly with back-end services, ensuring reliable and polished applications.`
   },
@@ -52,7 +53,12 @@ const steps = [
             <div class="content-header">
               <div class="date-badge">{{ step.date }}</div>
               <h3>{{ step.title }}</h3>
-              <h4>{{ step.company }}</h4>
+              <h4>
+                <a v-if="step.companyUrl" :href="step.companyUrl" target="_blank" class="company-link">
+                  {{ step.company }}
+                </a>
+                <span v-else>{{ step.company }}</span>
+              </h4>
             </div>
             <div class="content-body">
               <p>{{ step.description }}</p>
@@ -229,6 +235,17 @@ const steps = [
   color: var(--font-light-color);
   margin-bottom: 0;
   line-height: 1.4;
+}
+
+.company-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.company-link:hover {
+  color: var(--accent-hover-color);
+  text-decoration: underline;
 }
 
 .content-body {

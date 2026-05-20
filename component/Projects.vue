@@ -7,15 +7,18 @@ const projects = [
     items: [
       {
         title: "IKA EDU Platform",
-        description: "Frontend Developer & Product Manager",
+        description: "Product Manager & Frontend Developer",
         location: "Freelance Project",
         image: "/images/IKA_EDU.png",
 
         descriptions: [
-          "Developed and implemented an educational platform using Next.js and React, improving program accessibility and user engagement by 40%.",
-          "Designed and built training program interfaces with filtering and detailed course views, reducing user search time by 35%.",
-          "Created personal and business registration systems, increasing successful registrations by 30%.",
-          "Implemented a certification verification feature, improving trust and reducing manual verification effort by 50%."
+          "Digitized a fully manual training academy from the ground up — IKA had no website, no digital system, and managed all programs, certificates, and client communication manually before this project.",
+          "Developed a public training catalog with dynamic filtering across 20+ specialized fields, replacing phone and email inquiries and giving IKA their first-ever online presence, improving program accessibility by 60%.",
+          "Built a multi-role management dashboard (Admin & Account Manager) to handle programs, trainers, locations, and registrations, reducing manual administrative workload by 50%.",
+          "Implemented a digital certificate issuance and real-time verification system, eliminating paper-based management and reducing manual verification effort by 70%.",
+          "Developed an automated PDF quotation generator, replacing manually prepared proposals and reducing proposal preparation time by 80%.",
+          "Integrated secure cloud file storage via DigitalOcean Spaces for certificates, program materials, and media, eliminating local file management overhead.",
+          "Delivered a fully responsive, production-grade platform using React, TypeScript, Tailwind CSS, and Framer Motion, deployed on Vercel."
         ],
 
         links: [

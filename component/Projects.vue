@@ -17,8 +17,6 @@ const projects = [
           "Built a multi-role management dashboard (Admin & Account Manager) to handle programs, trainers, locations, and registrations, reducing manual administrative workload by 50%.",
           "Implemented a digital certificate issuance and real-time verification system, eliminating paper-based management and reducing manual verification effort by 70%.",
           "Developed an automated PDF quotation generator, replacing manually prepared proposals and reducing proposal preparation time by 80%.",
-          "Integrated secure cloud file storage via DigitalOcean Spaces for certificates, program materials, and media, eliminating local file management overhead.",
-          "Delivered a fully responsive, production-grade platform using React, TypeScript, Tailwind CSS, and Framer Motion, deployed on Vercel."
         ],
 
         links: [

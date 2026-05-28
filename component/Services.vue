@@ -20,7 +20,7 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-header-card">
-          <div class="icon-circle blue">
+          <div class="icon-circle">
             <UIcon name="mdi:palette" />
           </div>
           <div class="service-content">
@@ -34,7 +34,7 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="100">
         <div class="service-header-card">
-          <div class="icon-circle green">
+          <div class="icon-circle">
             <UIcon name="mdi:code-braces" />
           </div>
           <div class="service-content">
@@ -48,7 +48,7 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="200">
         <div class="service-header-card">
-          <div class="icon-circle purple">
+          <div class="icon-circle">
             <UIcon name="mdi:server" />
           </div>
           <div class="service-content">
@@ -62,7 +62,7 @@
 
       <div class="service-card" data-aos="fade-up" data-aos-delay="300">
         <div class="service-header-card">
-          <div class="icon-circle red">
+          <div class="icon-circle">
             <UIcon name="mdi:architecture" />
           </div>
           <div class="service-content">
@@ -82,113 +82,101 @@
 
 
 <style scoped>
-
 .services-section {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  font-family: system-ui, sans-serif;
-  display: block;
-  padding: 1.5rem;
+  padding: 5rem 2rem;
 }
 
 .subheader {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 1rem;
-  position: relative;
+  margin-bottom: 0.75rem;
 }
 
 .services-title {
-  font-size: 2rem;
+  font-size: var(--font-size-h1);
   font-weight: 700;
-  color: #2E4E43FF;
+  color: var(--font-color);
   letter-spacing: -0.02em;
 }
 
 .services-intro {
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-}
-
-.services-intro h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 1rem;
+  max-width: 580px;
+  margin: 0 auto 3rem auto;
 }
 
 .services-intro p {
-  font-size: 1rem;
-  color: #4b5563;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
+  font-size: var(--font-size-base);
+  color: var(--font-light-color);
+  line-height: 1.7;
 }
 
 .services-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 1.25rem;
   margin: 0 auto;
   max-width: 1000px;
 }
 
 @media (max-width: 768px) {
-  .services-container {
-    grid-template-columns: 1fr;
-  }
+  .services-section { padding: 3rem 1rem; }
+  .services-container { grid-template-columns: 1fr; }
 }
 
 .service-card {
-  backdrop-filter: blur(12px);
-  border-radius: 1rem;
-  padding: 1.5rem;
+  background: var(--body-bg-color);
+  border: 1px solid var(--card-bg-color);
+  border-radius: 16px;
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-align: left;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 28px rgba(46, 78, 67, 0.1);
+  transform: translateY(-4px);
 }
 
 .service-header-card {
   display: flex;
-  gap: 32px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  width: 100%;
 }
 
 .icon-circle {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9999px;
-  margin-bottom: 0;
-  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(46, 78, 67, 0.1);
+  color: var(--accent-color);
+  font-size: 1.4rem;
 }
 
-.icon-circle.blue { background-color: #DBEAFE; color: #3B82F6; }
-.icon-circle.green { background-color: #DCFCE7; color: #22C55E; }
-.icon-circle.purple { background-color: #EDE9FE; color: #8B5CF6; }
-.icon-circle.red { background-color: #FEE2E2; color: #EF4444; }
-
 .service-card h3 {
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: #111827;
-  text-align: start;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--font-color);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .service-card p {
-  font-size: 0.95rem;
-  color: #4b5563;
-  line-height: 1.5;
-  text-align: start;
+  font-size: var(--font-size-sm);
+  color: var(--font-light-color);
+  line-height: 1.65;
 }
-
-
 </style>

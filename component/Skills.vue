@@ -16,7 +16,10 @@ const skills = [
   { title: "Bootstrap", icon: "simple-icons:bootstrap", color: "#7952B3", year: "Framework" },
   { title: "Figma", icon: "simple-icons:figma", color: "#F24E1E", year: "Design" },
 
-  // Integration / Supporting Tech (Optional but acceptable for frontend profile)
+  // Testing
+  { title: "Playwright", icon: "simple-icons:playwright", color: "#2EAD33", year: "Testing" },
+
+  // Integration / Supporting Tech
   { title: "API", icon: "mdi:api", color: "#0096FF", year: "Integration" },
   { title: "WordPress", icon: "simple-icons:wordpress", color: "#21B3EB", year: "CMS" },
   { title: "Django", icon: "simple-icons:django", color: "#41B883", year: "Backend" }

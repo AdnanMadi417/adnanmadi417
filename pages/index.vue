@@ -15,10 +15,16 @@ import Services from "~/component/Services.vue";
   <Header/>
   <Landing/>
   <About/>
-  <Skills/>
+  <div class="bg-alt"><Skills/></div>
   <Services/>
-  <Projects/>
+  <div class="bg-alt"><Projects/></div>
   <TimeLineWorkingExperience/>
   <Footer/>
 </template>
+
+<style>
+.bg-alt {
+  background: var(--section-bg-color);
+}
+</style>
 

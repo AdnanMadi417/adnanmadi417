@@ -102,7 +102,6 @@ const aboutItems = ref<Item[]>([
 .edu-block {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 100vh;
   background: linear-gradient(135deg, #2E4E43FF 0%, #1C352DFF 100%);
   position: relative;
 }
@@ -121,7 +120,6 @@ const aboutItems = ref<Item[]>([
 .about-block {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 100vh;
   background: #ffffff;
   position: relative;
 }

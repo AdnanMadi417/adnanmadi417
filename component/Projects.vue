@@ -17,6 +17,9 @@ const projects = [
           "Built a multi-role management dashboard (Admin & Account Manager) to handle programs, trainers, locations, and registrations, reducing manual administrative workload by 50%.",
           "Implemented a digital certificate issuance and real-time verification system, eliminating paper-based management and reducing manual verification effort by 70%.",
           "Developed an automated PDF quotation generator, replacing manually prepared proposals and reducing proposal preparation time by 80%.",
+          "Designed a contracted programs module for custom organizational training requests, streamlining client onboarding from manual communication to a structured digital workflow.",
+          "Integrated secure cloud file storage via DigitalOcean Spaces for certificates, program materials, and media, eliminating local file management overhead.",
+          "Delivered a production-grade platform using React, TypeScript, Tailwind CSS, and Framer Motion, with end-to-end test coverage via Playwright, deployed on Vercel.",
         ],
 
         links: [
@@ -161,151 +164,75 @@ function selectCategory(index: number) {
 
 <template>
   <section class="projects-section" id="projects">
+
     <div class="header-container" data-aos="fade-up">
       <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A selection of work I've built and shipped</p>
     </div>
 
-    <div class="tab-content">
-
-      <div class="tab-pane info-card space-y-4" data-aos="fade-right">
-
-        <div class="info-img-container">
-          <div class="info-img-main-container"></div>
-
-          <img
-              src="/images/adnan%20photo%203%20.jpg"
-              alt="Developer"
-              class="profile-avatar"
-          />
-        </div>
-
-        <h4 class="info-title">Adnan Madi</h4>
-
-        <div class="info-list">
-          <p class="info-item flex items-center gap-3">
-            <UIcon name="mdi:account-check" class="icon"/>
-            <span>Available for Freelance </span>
-          </p>
-
-          <p class="info-item flex items-center gap-3">
-            <UIcon name="mdi:code-tags" class="icon"/>
-            <span>Front End Developer</span>
-          </p>
-
-          <p class="info-item flex items-center gap-3">
-            <UIcon name="mdi:map-marker" class="icon"/>
-            <span>Kuala Lumpur, Malaysia</span>
-          </p>
-        </div>
-
-        <a
-            class="contact-btn mobile-contact"
-            href="https://wa.me/+601170064361"
-            target="_blank"
+    <div class="segmented-tabs" data-aos="fade-up" data-aos-delay="100">
+      <div class="tabs-wrapper">
+        <div
+            v-for="(category, index) in projects"
+            :key="index"
+            class="tab"
+            :class="{ active: index === currentCategoryIndex }"
+            @click="selectCategory(index)"
         >
-          Contact Me
-        </a>
+          {{ category.title }}
+        </div>
+      </div>
+    </div>
 
+    <div class="modern-card" v-if="currentProject" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="project-media">
+        <img :src="currentProject.image" :alt="currentProject.title" class="project-media-image"/>
+        <div class="media-overlay"></div>
+        <div class="featured-badge">
+          <span class="badge-dot"></span>
+          Featured Project
+        </div>
       </div>
 
-      <div class="projects-grid" data-aos="fade-left">
+      <div class="project-body">
 
-        <div class="segmented-tabs">
-          <div class="tabs-wrapper">
-            <div
-                v-for="(category, index) in projects"
-                :key="index"
-                class="tab"
-                :class="{ active: index === currentCategoryIndex }"
-                @click="selectCategory(index)"
-            >
-              {{ category.title }}
-            </div>
+        <div class="project-header">
+          <h3 class="project-title">{{ currentProject.title }}</h3>
+          <div class="project-meta">
+            <span>{{ currentProject.location }}</span>
+            <span class="separator">•</span>
+            <span>{{ currentProject.description }}</span>
           </div>
         </div>
 
-        <div class="project-card modern-card" v-if="currentProject">
+        <ul class="project-description-list">
+          <li v-for="(desc, i) in currentProject.descriptions" :key="i">{{ desc }}</li>
+        </ul>
 
-          <div class="project-media">
-
-            <img
-                :src="currentProject.image"
-                :alt="currentProject.title"
-                class="project-media-image"
-            />
-
-            <div class="media-overlay"></div>
-
-            <div class="featured-badge">
-              <span class="badge-dot"></span>
-              Featured Project
-            </div>
-
+        <div class="project-footer">
+          <div class="project-links">
+            <template v-for="(link, i) in currentProject.links" :key="i">
+              <a v-if="link.buttonLink" :href="link.buttonLink" target="_blank" class="project-link">
+                {{ link.buttonText }}
+              </a>
+            </template>
           </div>
 
-          <div class="project-body">
-
-            <div class="project-header">
-              <h3 class="project-title">
-                {{ currentProject.title }}
-              </h3>
-
-              <div class="project-meta">
-        <span class="location">
-          {{ currentProject.location }}
-        </span>
-
-                <span class="separator">•</span>
-
-                <span class="role">
-          {{ currentProject.description }}
-        </span>
-              </div>
-            </div>
-
-            <ul class="project-description-list">
-              <li v-for="(desc, i) in currentProject.descriptions" :key="i">
-                {{ desc }}
-              </li>
-            </ul>
-
-            <div class="project-links">
-              <template v-for="(link, i) in currentProject.links" :key="i">
-                <a
-                    v-if="link.buttonLink"
-                    :href="link.buttonLink"
-                    target="_blank"
-                    class="project-link"
-                >
-                  {{ link.buttonText }}
-                </a>
-              </template>
-            </div>
-
+          <div class="project-nav">
+            <button @click="previousProject" :disabled="currentCategory.items.length <= 1">
+              <UIcon name="mdi:arrow-left" class="icon"/>
+              Previous
+            </button>
+            <span class="project-count">{{ currentProjectIndex + 1 }} / {{ currentCategory.items.length }}</span>
+            <button @click="nextProject" :disabled="currentCategory.items.length <= 1">
+              Next
+              <UIcon name="mdi:arrow-right" class="icon"/>
+            </button>
           </div>
-
-        </div>
-
-        <div class="project-nav">
-
-          <button @click="previousProject" :disabled="currentCategory.items.length <= 1">
-            <UIcon name="mdi:arrow-left" class="icon"/>
-            Previous
-          </button>
-
-          <span class="project-count">
-            {{ currentProjectIndex + 1 }} / {{ currentCategory.items.length }}
-          </span>
-
-          <button @click="nextProject" :disabled="currentCategory.items.length <= 1">
-            Next
-            <UIcon name="mdi:arrow-right" class="icon"/>
-          </button>
-
         </div>
 
       </div>
-
     </div>
 
   </section>
@@ -314,52 +241,43 @@ function selectCategory(index: number) {
 <style scoped>
 .projects-section {
   padding: 5rem 2rem;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: auto;
 }
 
+/* ── Header ── */
 .header-container {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 }
 
 .section-title {
   font-size: var(--font-size-h1);
   font-weight: 700;
-  margin: 0 0 0.5rem 0;
   color: var(--font-color);
   letter-spacing: -0.02em;
-  justify-content: start;
-  text-align: start;
+  margin: 0 0 0.5rem;
 }
 
-.tab-content {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  margin-top: 2rem;
+.section-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--font-light-color);
 }
 
-@media (max-width: 800px) {
-  .tab-content {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ── Category tabs ── */
 .segmented-tabs {
   display: flex;
-  justify-content: start;
-  padding: 0.5rem 0;
-  width: 100%;
+  justify-content: center;
   overflow-x: auto;
+  padding-bottom: 0.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .tabs-wrapper {
-  position: relative;
-  gap: 0.5rem;
-  padding: 0.4rem;
-  border-bottom: 1px solid #eaeaea;
   display: flex;
-  width: max-content;
+  gap: 0.25rem;
+  border-bottom: 2px solid var(--card-bg-color);
+  padding-bottom: 0;
 }
 
 .tab {
@@ -369,174 +287,52 @@ function selectCategory(index: number) {
   font-weight: 600;
   font-size: var(--font-size-base);
   color: var(--font-light-color);
-  z-index: 2;
-  border-radius: 999px;
-  text-align: center;
-  transition: var(--transition);
+  transition: color 0.25s ease;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
-.tab:hover {
-  color: var(--accent-color);
-}
-
-.tab.active {
-  color: var(--accent-color);
-}
+.tab:hover { color: var(--accent-color); }
+.tab.active { color: var(--accent-color); }
 
 .tab::after {
   content: "";
   position: absolute;
-  bottom: -6px;
+  bottom: -2px;
   left: 0;
   width: 100%;
-  height: 3px;
-  border-radius: 12px;
+  height: 2px;
   background: var(--accent-color);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.35s ease;
+  transition: transform 0.3s ease;
 }
 
-.tab.active::after {
-  transform: scaleX(1);
-}
+.tab.active::after { transform: scaleX(1); }
 
-.info-card {
-  padding: 1.6rem;
-
-  background: linear-gradient(
-      145deg,
-      rgba(255,255,255,0.9),
-      rgba(248,248,248,0.8)
-  );
-
-  border: 1px solid rgba(0,0,0,0.04);
-  border-radius: 18px;
-
-  backdrop-filter: blur(12px);
-
-  transition:
-      transform 0.35s ease,
-      box-shadow 0.35s ease;
-}
-
-.info-img-container {
-  position: relative;
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
-
-.info-img-main-container {
-  width: 100%;
-  height: 80px;
-  background: var(--accent-color, #2E4E43);
-  border-radius: 14px;
-}
-
-.profile-avatar {
-  width: 80px;
-  height: 80px;
-
-  object-fit: cover;
-
-  border-radius: 50%;
-  border: 3px solid #ffffff;
-
-  position: absolute;
-  left: 50%;
-  bottom: -40px;
-  transform: translateX(-50%);
-  background: white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  transition: transform 0.35s ease;
-}
-
-.profile-avatar {
-  transform: translateX(-50%) scale(1.05);
-}
-
-.info-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  color: var(--font-color, #2E4E43);
-  text-align: center;
-}
-
-.info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.info-item {
-  padding: 0.125rem 0.25rem;
-  border-radius: 12px;
-  transition: background 0.25s ease;
-  cursor: default;
-}
-
-.info-item .icon {
-  width: 18px;
-  height: 18px;
-  color: var(--accent-color, #2E4E43);
-  flex-shrink: 0;
-}
-
-.contact-btn {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-
-  margin-top: 1.2rem;
-  padding: 0.65rem 1.2rem;
-
-  background-color: var(--accent-color, #2E4E43);
-  color: white;
-
-  border-radius: 999px;
-
-  font-weight: 600;
-  text-decoration: none;
-
-  transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: var(--accent-hover-color, #1f3b31);
-  transform: translateY(-2px);
-}
-
-.projects-grid {
-  display: grid;
-  gap: 2.5rem;
-  padding: 0 2rem;
-}
-
+/* ── Project card ── */
 .modern-card {
   display: grid;
-  grid-template-columns: 45% 55%;
-  gap: 2.5rem;
-  transition: all 0.35s ease;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  height: 460px;
+  background: var(--body-bg-color);
+  border: 1px solid var(--card-bg-color);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 
 .project-media {
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
-  aspect-ratio: 16/10;
 }
 
 .project-media-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  filter: saturate(0.9) brightness(0.9);
-  transform: scale(1.05);
-
+  filter: saturate(0.9) brightness(0.92);
+  transform: scale(1.04);
   transition: all 0.8s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -548,35 +344,23 @@ function selectCategory(index: number) {
 .media-overlay {
   position: absolute;
   inset: 0;
-
-  background: linear-gradient(
-      to top,
-      rgba(0,0,0,0.75),
-      rgba(0,0,0,0.15),
-      transparent
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 60%);
 }
 
 .featured-badge {
   position: absolute;
   top: 16px;
   left: 16px;
-
   display: inline-flex;
   align-items: center;
   gap: 6px;
-
-  padding: 6px 12px;
-
+  padding: 5px 12px;
   font-size: 0.65rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.55);
   color: white;
-
   border-radius: 999px;
-
   backdrop-filter: blur(8px);
 }
 
@@ -589,64 +373,75 @@ function selectCategory(index: number) {
 }
 
 @keyframes pulse {
-  50% {
-    opacity: 0.4;
-    transform: scale(0.7);
-  }
+  50% { opacity: 0.4; transform: scale(0.7); }
 }
 
+/* ── Project body ── */
 .project-body {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.2rem;
+  padding: 2rem 2rem 2rem 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 .project-title {
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--font-color);
 }
 
 .project-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-
-  font-size: 0.9rem;
+  gap: 0.4rem;
+  font-size: 0.85rem;
   color: var(--font-light-color);
 }
+
+.separator { opacity: 0.4; }
 
 .project-description-list {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-
+  gap: 0.55rem;
   padding-left: 1rem;
+  overflow-y: auto;
+  max-height: 220px;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
 }
 
 .project-description-list li {
-  line-height: 1.6;
+  font-size: var(--font-size-sm);
+  line-height: 1.65;
   color: var(--secondary-color);
 }
 
-
-.project-links {
+/* ── Footer row: link + nav ── */
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--card-bg-color);
   margin-top: auto;
 }
 
 .project-link {
   display: inline-block;
-
-  padding: 0.75rem 1.5rem;
-
+  padding: 0.6rem 1.4rem;
   border-radius: 999px;
-
   background: var(--accent-color);
   color: white;
-
+  font-size: var(--font-size-sm);
   font-weight: 600;
   text-decoration: none;
-
   transition: all 0.3s ease;
 }
 
@@ -655,140 +450,61 @@ function selectCategory(index: number) {
   transform: translateY(-2px);
 }
 
-@keyframes pulse-dot {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(0.7);
-  }
-}
-
 .project-nav {
   display: flex;
-  justify-content: end;
   align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eaeaea;
+  gap: 0.75rem;
 }
 
 .project-count {
   font-size: var(--font-size-sm);
   color: var(--font-light-color);
-  min-width: 40px;
+  min-width: 36px;
   text-align: center;
 }
 
 .project-nav button {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-
-  padding: 0.4rem 0.6rem;
-
+  gap: 0.3rem;
+  padding: 0.35rem 0.8rem;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
   border-radius: 999px;
-
   background: transparent;
-
+  font-size: var(--font-size-sm);
+  cursor: pointer;
   transition: all 0.25s ease;
 }
 
 .project-nav button:hover:not(:disabled) {
-  outline: 2px solid rgba(46, 78, 67, 0.25);
-  outline-offset: 2px;
+  background: var(--accent-color);
+  color: white;
 }
 
 .project-nav button:disabled {
-  opacity: 0.35;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 1024px) {
-  .project-card {
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .modern-card {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    height: auto;
   }
-
-  .project-image-container {
-    aspect-ratio: 16 / 9;
+  .project-media {
+    min-height: 220px;
+  }
+  .project-body {
+    padding: 1.5rem;
+    height: auto;
   }
 }
 
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 3rem 1rem;
-  }
-
-  .section-title {
-    font-size: var(--font-size-xl);
-  }
-
-  .section-subtitle {
-    font-size: var(--font-size-md);
-  }
-
-  .header-container {
-    margin-bottom: 2rem;
-  }
-
-  .segmented-tabs {
-    margin-bottom: 2rem;
-  }
-
-  .tabs-wrapper {
-    gap: 0.25rem;
-    padding: 0.4rem;
-  }
-
-  .tab {
-    padding: 0.6rem 1rem;
-    font-size: var(--font-size-sm);
-  }
-
-  .projects-grid {
-    gap: 2rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .project-title {
-    font-size: var(--font-size-lg);
-  }
-
-  .project-links {
-    gap: 0.5rem;
-  }
-
-  .project-link {
-    padding: 0.6rem 1.1rem;
-  }
+@media (max-width: 600px) {
+  .projects-section { padding: 3rem 1rem; }
+  .project-description-list { max-height: 180px; }
+  .project-footer { flex-direction: column; align-items: flex-start; }
 }
 </style>

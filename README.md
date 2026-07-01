@@ -1,75 +1,40 @@
-# Nuxt Minimal Starter
+# Adnan Madi — Frontend Developer
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Building fast, responsive, and user-friendly web applications using modern technologies.
 
-## Setup
+📍 Open to remote opportunities · UAE · Saudi Arabia · Germany · Italy  
+🌐 [adnanmadi417.vercel.app](https://adnanmadi417.vercel.app)  
+💼 [LinkedIn](https://linkedin.com/in/adnan-madi417) · [Email](mailto:adnanmadi417@gmail.com)
 
-Make sure to install dependencies:
+---
 
-```bash
-# npm
-npm install
+## Tech Stack
 
-# pnpm
-pnpm install
+**Frontend**
+React · Vue.js · Next.js · Nuxt.js · TypeScript · JavaScript · Tailwind CSS · SASS · Bootstrap
 
-# yarn
-yarn install
+**Tools & Others**
+Figma · Django · REST APIs · WordPress · Playwright · Git
 
-# bun
-bun install
-```
+---
 
-## Development Server
+## Featured Project
 
-Start the development server on `http://localhost:3000`:
+### IKA EDU Platform
+A comprehensive training academy platform with a public catalog, multi-role dashboards (admin, account manager, public), digital certificate issuance, automated quotation generation, and cloud storage integration.  
+**Stack:** React · TypeScript · Tailwind CSS
 
-```bash
-# npm
-npm run dev
+---
 
-# pnpm
-pnpm dev
+## Experience
 
-# yarn
-yarn dev
+- **Frontend Developer** — Unibexs *(Sep 2025 – Present)*
+- **Frontend Developer (Freelance)** — Code & Canvas *(Oct 2025 – Mar 2026)*
+- **Web Development Intern** — Commerce Dot Com *(Mar 2025 – Aug 2025)*
+- **Frontend Developer** — IESCO *(Apr 2024 – Aug 2024)*
 
-# bun
-bun run dev
-```
+---
 
-## Production
+## Education
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+BSc Computer Science (Honours) — Albukhary International University *(2025)*

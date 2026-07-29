@@ -1,6 +1,6 @@
-# Adnan Madi — Frontend Developer
+# Adnan Madi — Software Engineer
 
-Building fast, responsive, and user-friendly web applications using modern technologies.
+Building fast, scalable, and reliable applications across the full stack.
 
 📍 Open to remote opportunities · UAE · Saudi Arabia · Germany · Italy  
 🌐 [adnanmadi417.vercel.app](https://adnanmadi417.vercel.app)  
@@ -11,10 +11,13 @@ Building fast, responsive, and user-friendly web applications using modern techn
 ## Tech Stack
 
 **Frontend**
-React · Vue.js · Next.js · Nuxt.js · TypeScript · JavaScript · Tailwind CSS · SASS · Bootstrap
+React · Next.js · Vue.js · Nuxt.js · TypeScript · JavaScript · Tailwind CSS · SASS · Bootstrap
+
+**Backend**
+Node.js · Laravel · Django · MySQL · REST APIs
 
 **Tools & Others**
-Figma · Django · REST APIs · WordPress · Playwright · Git
+Figma · WordPress · Playwright · Git
 
 ---
 

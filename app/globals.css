@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "aos/dist/aos.css";
+@config "../tailwind.config.js";
+
+/*
+ * Tailwind's @config compatibility layer generates utility classes (bg-blue-600,
+ * text-ink, etc.) from tailwind.config.js, but — unlike the native @theme
+ * directive — it does not expose those values as real CSS custom properties.
+ * Several components need raw var(--color-*) access (gradients, box-shadows,
+ * border colors), so the same values are mirrored here. Keep in sync with the
+ * `colors` block in tailwind.config.js.
+ */
+:root {
+  --color-ink: #1d1d1f;
+  --color-muted: #6e6e73;
+  --color-section: #f5f5f7;
+  --color-card: #eeeef1;
+  --color-blue-600: #0348d1;
+  --color-blue-800: #023292;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/*
+ * Shared keyframes, referenced from components via Tailwind's arbitrary
+ * `animate-[name_duration_easing_...]` utility instead of per-component
+ * CSS module files.
+ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes header-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mesh-move {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes typing {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes badge-pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}

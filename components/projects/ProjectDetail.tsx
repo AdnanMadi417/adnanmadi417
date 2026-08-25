@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import type { ProjectItem } from "@/constants/projects";
 import { ROUTES } from "@/constants/routes";
-import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/buttons/Button";
 
 interface ProjectDetailProps {
   project: ProjectItem;
@@ -65,7 +65,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
             link.buttonLink ? (
               <Button
                 key={link.buttonText}
-                variant="solid"
+                variant="primary"
                 href={link.buttonLink}
                 target="_blank"
                 rel="noreferrer"

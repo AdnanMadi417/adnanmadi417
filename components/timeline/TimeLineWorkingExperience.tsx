@@ -1,4 +1,5 @@
 import { EXPERIENCE } from "@/constants/experience";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export default function TimeLineWorkingExperience() {
   return (
@@ -7,20 +8,12 @@ export default function TimeLineWorkingExperience() {
       className="relative mx-auto w-full max-w-6xl px-5 py-[120px] max-md:py-20 max-[480px]:px-4 max-[480px]:py-15"
     >
       <div className="relative z-2">
-        <div
-          data-aos="fade-up"
-          className="mx-auto mb-[50px] max-w-3xl text-center max-md:mb-20"
-        >
-          <div className="mb-4 text-base font-semibold tracking-[0.8px] text-blue-600 uppercase">
-            Experience
-          </div>
-          <h2 className="mb-6 text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-bold tracking-[-0.02em] text-ink max-md:text-[2.5rem] max-[480px]:text-[2rem]">
-            My Professional Journey
-          </h2>
-          <p className="mx-auto mb-0 max-w-xl text-lg leading-normal font-normal text-muted">
-            Building exceptional digital experiences that drive meaningful
-            impact
-          </p>
+        <div className="mx-auto mb-[50px] max-w-3xl max-md:mb-20">
+          <SectionHeading
+            eyebrow="Experience"
+            headline="My Professional Journey"
+            subtext="Building exceptional digital experiences that drive meaningful impact"
+          />
         </div>
       </div>
       <div className="relative z-2">

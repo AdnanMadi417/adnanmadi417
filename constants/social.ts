@@ -5,6 +5,8 @@ export interface ContactInfo {
   displayText: string;
 }
 
+export const WHATSAPP_LINK = "https://wa.me/+601170064361";
+
 export const SOCIAL_LINKS: ContactInfo[] = [
   {
     platformName: "LinkedIn",
@@ -27,7 +29,7 @@ export const SOCIAL_LINKS: ContactInfo[] = [
   {
     platformName: "Phone",
     platformIcon: "mdi:phone",
-    platformAddress: "https://wa.me/+601170064361",
+    platformAddress: WHATSAPP_LINK,
     displayText: "WhatsApp",
   },
 ];

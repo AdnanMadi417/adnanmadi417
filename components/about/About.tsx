@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ABOUT_ITEMS } from "@/constants/about";
-import Badge from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 
 export default function About() {
   return (

@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Inter', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
       },
       fontSize: {
         xs: ['0.75rem', { lineHeight: '1rem' }],
@@ -275,19 +275,6 @@ module.exports = {
         800: '#166534',
         900: '#14532d',
         950: '#052e16',
-      },
-      blue: {
-        50: '#f1f8fe',
-        100: '#e2f0fc',
-        200: '#bfe0f8',
-        300: '#87c8f2',
-        400: '#47abe9',
-        500: '#1f91d8',
-        600: '#1173b8',
-        700: '#0f5c95',
-        800: '#114e7b',
-        900: '#144266',
-        950: '#0d2a44',
       },
       neutral: {
         50: '#fafafa',

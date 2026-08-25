@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ProjectItem } from "@/constants/projects";
 import { ROUTES } from "@/constants/routes";
-import Badge from "@/components/ui/Badge";
+import { Badge } from "@/components/ui/Badge";
 
 interface ProjectCardProps {
   project: ProjectItem;

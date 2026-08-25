@@ -2,6 +2,7 @@
 
 import { PROJECTS } from "@/constants/projects";
 import { useProjectCategoryFilter } from "@/hooks/useProjectCategoryFilter";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import CategoryFilterTabs from "./CategoryFilterTabs";
 import ProjectsGrid from "./ProjectsGrid";
 
@@ -11,14 +12,12 @@ export default function ProjectsBrowser() {
 
   return (
     <section className="mx-auto max-w-6xl px-8 py-20 max-[600px]:px-4 max-[600px]:py-12">
-      <div className="mb-10 text-center" data-aos="fade-up">
-        <h2 className="mb-2 text-4xl font-bold tracking-tight text-ink">
-          Projects
-        </h2>
-        <p className="text-base text-muted">
-          A selection of frontend, full-stack, backend, WordPress, and Figma
-          projects I&apos;ve built and shipped
-        </p>
+      <div className="mb-10">
+        <SectionHeading
+          eyebrow="Portfolio"
+          headline="Projects"
+          subtext="A selection of frontend, full-stack, backend, WordPress, and Figma projects I've built and shipped"
+        />
       </div>
 
       <div data-aos="fade-up" data-aos-delay="100">

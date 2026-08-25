@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { SOCIAL_LINKS } from "@/constants/social";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/buttons/Button";
 
 export default function Footer() {
   return (

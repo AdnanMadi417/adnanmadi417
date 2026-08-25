@@ -1,19 +1,17 @@
 import { Icon } from "@iconify/react";
 import { SKILLS } from "@/constants/skills";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export default function Skills() {
   return (
-    <section className="overflow-hidden px-4 py-24">
+    <section id="skills" className="overflow-hidden px-4 py-24">
       <div className="mx-auto max-w-350">
-        <div className="mb-12 text-center" data-aos="fade-up">
-          <h2 className="mb-2 text-4xl font-bold tracking-tight text-ink">
-            Technical Skills
-          </h2>
-          <p className="mx-auto max-w-162.5 text-lg leading-relaxed text-muted">
-            Building modern, responsive, and high-performance applications —
-            from frontend interfaces to backend services and databases —
-            using contemporary technologies and scalable architecture.
-          </p>
+        <div className="mb-12">
+          <SectionHeading
+            eyebrow="Expertise"
+            headline="Technical Skills"
+            subtext="Building modern, responsive, and high-performance applications — from frontend interfaces to backend services and databases — using contemporary technologies and scalable architecture."
+          />
         </div>
 
         <div

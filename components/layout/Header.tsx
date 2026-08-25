@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDisclosure } from "@/hooks/useDisclosure";
 import { NAV_ITEMS, ROUTES } from "@/constants/routes";
-import Button from "@/components/ui/Button";
+import { WHATSAPP_LINK } from "@/constants/social";
+import { Button } from "@/components/ui/buttons/Button";
 import NavList from "./NavList";
 
 export default function Header() {
@@ -34,7 +35,7 @@ export default function Header() {
         <div className="contact-btn-box hidden lg:block">
           <Button
             variant="primary"
-            href="https://wa.me/+601170064361"
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-1.5 text-base"
@@ -59,7 +60,7 @@ export default function Header() {
           <div className="mt-2 border-t border-card pt-4">
             <Button
               variant="ghost"
-              href="https://wa.me/+601170064361"
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
             >

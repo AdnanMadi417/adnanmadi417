@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import { SERVICES } from "@/constants/services";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export default function Services() {
   return (
@@ -7,17 +8,12 @@ export default function Services() {
       className="mx-auto max-w-6xl px-8 py-20 text-center max-[768px]:px-4 max-[768px]:py-12"
       id="services"
     >
-      <div className="mx-auto mb-12 max-w-[580px]" data-aos="fade-up">
-        <div className="mb-3 flex items-center justify-center">
-          <h3 className="text-4xl font-bold tracking-tight text-ink">
-            Services
-          </h3>
-        </div>
-        <p className="text-base leading-[1.7] text-muted">
-          I provide end-to-end web development services focused on
-          performance, security, and user experience. My work combines clean
-          design with scalable engineering to deliver real-world impact.
-        </p>
+      <div className="mx-auto mb-12 max-w-[580px]">
+        <SectionHeading
+          eyebrow="What I Offer"
+          headline="Services"
+          subtext="I provide end-to-end web development services focused on performance, security, and user experience. My work combines clean design with scalable engineering to deliver real-world impact."
+        />
       </div>
 
       <div className="mx-auto grid max-w-[1000px] grid-cols-2 gap-5 max-[768px]:grid-cols-1">

@@ -65,6 +65,7 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
         location:
           "International Educational Scientific and Cultural Organization (IESCO)",
         image: "/assets/imgs/IESCO_Scholarship_Application.png",
+        featured: true,
 
         descriptions: [
           "Designed and developed responsive scholarship application interfaces to streamline registration workflows and improve accessibility across devices.",
@@ -102,26 +103,20 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
     ],
   },
   {
-    title: "Full Stack",
+    title: "Full Stack Projects",
     items: [
       {
         title: "Investment Management System",
         description: "Full Stack Developer",
         location: "COMMERCE DOT COM",
         image: "/assets/imgs/Investment_Management_System.png",
-        featured: true,
         descriptions: [
           "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%.",
           "Designed interactive dashboards displaying total transactions, account balances, share allocations, registration payments, member statuses, expected profits, and investment completion.",
           "Created member-specific sub-dashboards for personalized financial tracking.",
         ],
-        links: [{ buttonText: "Live Demo", buttonLink: "" }],
+        links: [],
       },
-    ],
-  },
-  {
-    title: "Backend Projects",
-    items: [
       {
         title: "Al Awda Mosque Website",
         description: "Backend Developer",
@@ -146,11 +141,6 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
           },
         ],
       },
-    ],
-  },
-  {
-    title: "WordPress Projects",
-    items: [
       {
         title: "Masjid Albukhary KL Website",
         description: "WordPress Developer",
@@ -165,27 +155,6 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
           {
             buttonText: "Live Demo",
             buttonLink: "https://masjidalbukharykl.com/",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Figma Projects",
-    items: [
-      {
-        title: "Education Foundation system",
-        description: "Figma Project",
-        location: "Side Project",
-        image: "/assets/imgs/education-foundation.png",
-        descriptions: [
-          "Secure student dashboards, project/course browsing, admin controls, clean interfaces.",
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink:
-              "https://www.figma.com/design/i0mDibQ5WTUyLj8yQ6LFfo/education-Foundation?node-id=0-1&t=pnTVP2WdnFcr6fWs-1",
           },
         ],
       },

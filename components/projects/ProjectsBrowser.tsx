@@ -16,7 +16,7 @@ export default function ProjectsBrowser() {
         <SectionHeading
           eyebrow="Portfolio"
           headline="Projects"
-          subtext="A selection of frontend, full-stack, backend, WordPress, and Figma projects I've built and shipped"
+          subtext="A selection of frontend and full-stack projects I've built and shipped"
         />
       </div>
 

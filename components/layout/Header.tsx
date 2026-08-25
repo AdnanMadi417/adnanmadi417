@@ -22,7 +22,6 @@ export default function Header() {
               alt="Adnan Madi logo"
               width={150}
               height={50}
-              className="h-12.5 w-auto"
               priority
             />
           </Link>

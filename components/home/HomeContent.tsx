@@ -1,5 +1,6 @@
 import Landing from "@/components/landing/Landing";
 import About from "@/components/about/About";
+import Approach from "@/components/approach/Approach";
 import Skills from "@/components/skills/Skills";
 import Services from "@/components/services/Services";
 import FeaturedProjects from "@/components/projects/FeaturedProjects";
@@ -10,6 +11,7 @@ export default function HomeContent() {
     <>
       <Landing />
       <About />
+      <Approach />
       <div className="bg-section">
         <Skills />
       </div>

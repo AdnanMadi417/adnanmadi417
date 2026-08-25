@@ -165,23 +165,6 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
           },
         ],
       },
-      {
-        title: "Masjid Albukhary KL Website",
-        description: "WordPress Developer",
-        location: "COMMERCE DOT COM (CDC)",
-        image: "/assets/imgs/masjid_website.png",
-        descriptions: [
-          "Developed the official website for Masjid Albukhary KL using WordPress, focusing on responsive design and community engagement.",
-          "Built essential pages, including Home, About, Contact Us, Services, Facilities, and Gallery, with multi-language support.",
-          "Integrated multimedia content through a Gallery page with YouTube video support.",
-        ],
-        links: [
-          {
-            buttonText: "Live Demo",
-            buttonLink: "https://masjidalbukharykl.com/",
-          },
-        ],
-      },
     ],
   },
 ];

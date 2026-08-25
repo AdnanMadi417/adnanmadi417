@@ -5,6 +5,7 @@ import Skills from "@/components/skills/Skills";
 import Services from "@/components/services/Services";
 import FeaturedProjects from "@/components/projects/FeaturedProjects";
 import TimeLineWorkingExperience from "@/components/timeline/TimeLineWorkingExperience";
+import Faq from "@/components/faq/Faq";
 
 export default function HomeContent() {
   return (
@@ -12,14 +13,11 @@ export default function HomeContent() {
       <Landing />
       <About />
       <Approach />
-      <div className="bg-section">
-        <Skills />
-      </div>
+      <Skills />
       <Services />
-      <div className="bg-section">
-        <FeaturedProjects />
-      </div>
+      <FeaturedProjects />
       <TimeLineWorkingExperience />
+      <Faq />
     </>
   );
 }

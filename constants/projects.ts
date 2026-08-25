@@ -155,14 +155,6 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
             buttonText: "Live Demo",
             buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/",
           },
-          {
-            buttonText: "Frontend GitHub",
-            buttonLink: "https://github.com/masjid-albukhary/masjid-frontend.git",
-          },
-          {
-            buttonText: "Backend GitHub",
-            buttonLink: "https://github.com/masjid-albukhary/masjid-backend.git",
-          },
         ],
       },
     ],

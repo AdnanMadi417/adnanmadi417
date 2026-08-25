@@ -35,6 +35,31 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
     title: "Frontend Projects",
     items: [
       {
+        title: "Confidential Client Project — Partner Management Platform",
+        description: "Full-time · Frontend Developer",
+        location: "Unibexs",
+        image: "/assets/imgs/unibexs-dashboard.avif",
+        featured: true,
+
+        descriptions: [
+          "Joined an existing multi-role platform connecting business partners, applicants, and internal staff, and took ownership of both new feature delivery and a full security hardening pass across the codebase.",
+          "Built and maintained 5 distinct role-based portals (Admin, Partner, Account Manager, Reviewer, Data Entry) sharing a common component library, letting each role work from a tailored view without duplicating logic.",
+          "Led a security remediation effort that resolved 10+ vulnerabilities, including a stored-XSS hole in rich-text rendering, an authentication bypass where route access trusted a client-editable cookie instead of a verified session, two account-enumeration leaks on public OTP endpoints, and a data-integrity bug that let a stale admin edit silently overwrite another admin's concurrent changes.",
+          "Redacted PII and auth tokens from observability trace data before export, closing a leak that exposed live credentials to anyone with dashboard access.",
+          "Designed self-service onboarding flows — partner registration, team-member invitations, and staff invitations — each with OTP verification and document upload, replacing what had been manual, staff-mediated account creation.",
+          "Diagnosed and fixed a broken production deployment pipeline caused by a dependency lockfile mismatch, restoring CI for the whole team.",
+          "Maintained a 20+ test Playwright E2E suite covering registration, authentication, and invitation flows, catching regressions before they reached production.",
+          "Built with Next.js, React, TypeScript, Tailwind CSS, Playwright, and OpenTelemetry.",
+        ],
+
+        links: [
+          {
+            buttonText: "Live Demo",
+            buttonLink: "http://app.unibexs.com/",
+          },
+        ],
+      },
+      {
         title: "IKA EDU Platform",
         description: "Product Manager & Frontend Developer",
         location: "Freelance Project",
@@ -65,7 +90,6 @@ const PROJECT_CATEGORIES_INPUT: ProjectCategoryInput[] = [
         location:
           "International Educational Scientific and Cultural Organization (IESCO)",
         image: "/assets/imgs/IESCO_Scholarship_Application.png",
-        featured: true,
 
         descriptions: [
           "Designed and developed responsive scholarship application interfaces to streamline registration workflows and improve accessibility across devices.",

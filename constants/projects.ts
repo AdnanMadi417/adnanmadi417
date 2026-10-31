@@ -10,12 +10,12 @@ export interface ProjectSection {
 
 export interface ProjectItem {
   slug: string;
-  category: string;
   title: string;
   description: string;
   location: string;
   image: string;
   summary: string;
+  outcome?: string;
   tags: string[];
   descriptions: string[];
   sections?: ProjectSection[];
@@ -33,11 +33,9 @@ function slugify(title: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-// Ordered latest to oldest.
 const PROJECTS_INPUT: ProjectItemInput[] = [
   {
     title: "Recycling Hub — Waste Management Platform",
-    category: "Full Stack Projects",
     description: "Full-Stack Software Engineer",
     location: "Recycling Hub",
     image: "/assets/imgs/Recycling_Hub.png",
@@ -54,6 +52,16 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
 
     descriptions: [],
 
+    // Sections still to write (hidden until filled in):
+    // - The Problem: how pickups, quotes, and records were handled before
+    //   this platform, and what was slow, manual, or error-prone about it.
+    // - My Role: team size, who you worked with, and anything you owned
+    //   beyond the code.
+    // - Architecture & Stack: what the internal platform UI is built with,
+    //   how it shares data with the website, which flows the Playwright
+    //   suite covers, hosting/deployment, auth, and integrations.
+    // - Key Challenges, Results (only outcomes you can back up), and
+    //   What I'd Do Differently.
     sections: [
       {
         heading: "Overview",
@@ -63,43 +71,17 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
         ],
       },
       {
-        heading: "The Problem",
-        paragraphs: [
-          "[TODO: How did Recycling Hub handle pickups, quotes, and records before this platform, and what was slow, manual, or error-prone about it?]",
-        ],
-      },
-      {
         heading: "My Role",
         paragraphs: [
           "Full-stack software engineer, responsible for the platform end to end: the Django REST Framework API and PostgreSQL data model, the Next.js frontend, and the Playwright regression suite.",
-          "[TODO: Team size, who you worked with, and anything you owned beyond the code (e.g. requirements, deployment, client communication).]",
         ],
       },
       {
         heading: "Architecture & Stack",
         paragraphs: [
           "Backend: Django REST Framework API on PostgreSQL.",
-          "Frontend: Next.js and TypeScript for the public website. [TODO: Confirm what the internal platform UI is built with and how it shares data with the website.]",
-          "Testing: Playwright regression suite covering [TODO: which flows].",
-          "[TODO: Hosting and deployment setup, authentication, and any third-party integrations.]",
-        ],
-      },
-      {
-        heading: "Key Challenges",
-        paragraphs: [
-          "[TODO: Two or three hard problems you solved, what made them hard, and how you approached them.]",
-        ],
-      },
-      {
-        heading: "Results",
-        paragraphs: [
-          "[TODO: Outcomes you can back up, such as pickups or quotes handled through the platform, manual work removed, or regressions caught by the test suite.]",
-        ],
-      },
-      {
-        heading: "What I'd Do Differently",
-        paragraphs: [
-          "[TODO: An honest reflection on what you'd change with hindsight.]",
+          "Frontend: Next.js and TypeScript for the public website.",
+          "Testing: Playwright regression suite.",
         ],
       },
     ],
@@ -112,43 +94,13 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
     ],
   },
   {
-    title: "Palestinian Forum Malaysia Website",
-    category: "Engineering Projects",
-    description: "Product Manager & Frontend Developer",
-    location: "Palestinian Forum Malaysia (PFM)",
-    image: "/assets/imgs/PFMY_Website.png",
-    featured: true,
-    summary:
-      "Bilingual community platform for Palestinian Forum Malaysia, with projects, events, news, and beneficiary and membership sign-up.",
-    tags: [
-      "React",
-      "[TODO]",
-    ],
-
-    descriptions: [
-      "Led the product and built the frontend for the official platform of Palestinian Forum Malaysia, a community organization uniting Palestinians and supporters across Malaysia through advocacy and humanitarian aid.",
-      "Defined the product scope and roadmap, translating the organization's community, advocacy, and aid work into a structured site covering projects, events, news, and blogs.",
-      "Built bilingual English and Arabic support, including right-to-left layouts for Arabic readers.",
-      "Developed beneficiary registration, sign-in, and online membership application flows, moving community sign-ups from manual handling to a digital process.",
-      "Built project and event listings split by status (active, completed, upcoming, past), plus a newsletter subscription for campaign updates and urgent appeals.",
-    ],
-
-    links: [
-      {
-        buttonText: "Live Demo",
-        buttonLink: "https://www.pfmy.org/",
-      },
-    ],
-  },
-  {
     title: "Unibexs — Partner Management Platform",
-    category: "Engineering Projects",
     description: "Full-time · Software Engineer",
     location: "Unibexs",
     image: "/assets/imgs/unibexs-dashboard.avif",
     featured: true,
     summary:
-      "Multi-role partner management platform with five role-based portals connecting business partners, applicants, and staff.",
+      "Multi-role partner management platform for a SaaS product, with role-based portals for different user types.",
     tags: [
       "Next.js",
       "React",
@@ -177,8 +129,7 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
   },
   {
     title: "IKA EDU Platform",
-    category: "Engineering Projects",
-    description: "Product Manager & Frontend Developer",
+    description: "Product & Engineering Lead",
     location: "Freelance Project",
     image: "/assets/imgs/IKA_EDU.png",
     featured: true,
@@ -212,16 +163,17 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
   },
   {
     title: "IESCO Scholarship Application",
-    category: "Engineering Projects",
     description: "Frontend Developer",
     location:
       "International Educational Scientific and Cultural Organization (IESCO)",
     image: "/assets/imgs/IESCO_Scholarship_Application.png",
     summary:
-      "Online scholarship application portal with guided, validated registration forms.",
+      "Online scholarship application portal with guided, validated registration — cut submission time by 40% and processing time by 30%, with 25% more successful registrations.",
+    outcome: "40% faster submissions",
     tags: [
       "Vue.js",
-      "[TODO]",
+      "JavaScript",
+      "Bootstrap",
     ],
 
     descriptions: [
@@ -237,16 +189,40 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
       },
     ],
   },
+  {
+    title: "Palestinian Forum Malaysia Website",
+    description: "Product Manager & Frontend Developer",
+    location: "Palestinian Forum Malaysia (PFM)",
+    image: "/assets/imgs/PFMY_Website.png",
+    featured: true,
+    summary:
+      "Bilingual community platform for Palestinian Forum Malaysia, with projects, events, news, and beneficiary and membership sign-up.",
+    tags: [
+      "React",
+      "TypeScript",
+    ],
+
+    descriptions: [
+      "Led the product and built the frontend for the official platform of Palestinian Forum Malaysia, a community organization uniting Palestinians and supporters across Malaysia through advocacy and humanitarian aid.",
+      "Defined the product scope and roadmap, translating the organization's community, advocacy, and aid work into a structured site covering projects, events, news, and blogs.",
+      "Built bilingual English and Arabic support, including right-to-left layouts for Arabic readers.",
+      "Developed beneficiary registration, sign-in, and online membership application flows, moving community sign-ups from manual handling to a digital process.",
+      "Built project and event listings split by status (active, completed, upcoming, past), plus a newsletter subscription for campaign updates and urgent appeals.",
+    ],
+
+    links: [
+      {
+        buttonText: "Live Demo",
+        buttonLink: "https://www.pfmy.org/",
+      },
+    ],
+  },
 ];
 
 export const PROJECTS: ProjectItem[] = PROJECTS_INPUT.map((item) => ({
   ...item,
   slug: slugify(item.title),
 }));
-
-export const PROJECT_CATEGORY_NAMES: string[] = [
-  ...new Set(PROJECTS.map((p) => p.category)),
-];
 
 export function getAllProjectSlugs(): string[] {
   return PROJECTS.map((p) => p.slug);

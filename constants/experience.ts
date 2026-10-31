@@ -12,14 +12,14 @@ export const EXPERIENCE: ExperienceStep[] = [
     title: "Software Engineer",
     company: "Unibexs",
     companyUrl: "https://www.unibexs.com/",
-    date: "[TODO: Start Month Year] – Present",
+    date: "2026 – Present",
     description: `Working on Unibexs' SaaS product across the full stack — building features end to end, from API and data model to UI, and turning product requirements into reliable, maintainable software.`,
   },
   {
     title: "Front End Developer",
     company: "Unibexs",
     companyUrl: "https://www.unibexs.com/",
-    date: "Sep 2025 – [TODO: End Month Year]",
+    date: "Sep 2025 – 2026",
     description: `Developing high-performance, scalable front-end applications with a strong focus on user experience. Collaborating with cross-functional teams to implement design systems, optimize responsiveness, and integrate seamlessly with back-end services, ensuring reliable and polished applications.`,
   },
   {

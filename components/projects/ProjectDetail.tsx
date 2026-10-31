@@ -38,10 +38,6 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
         )}
       </div>
 
-      <Badge variant="pill" className="mb-4">
-        {project.category}
-      </Badge>
-
       <h1 className="text-[clamp(1.8rem,3vw,2.5rem)] font-bold tracking-tight text-ink">
         {project.title}
       </h1>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ProjectItem } from "@/constants/projects";
 import { ROUTES } from "@/constants/routes";
-import { Badge } from "@/components/ui/Badge";
 
 interface ProjectCardProps {
   project: ProjectItem;
@@ -22,9 +21,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <Badge variant="pill" className="absolute top-3 left-3">
-          {project.category}
-        </Badge>
       </div>
 
       <div className="flex flex-col gap-1.5 p-6">
@@ -37,6 +33,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="mt-1.5 text-sm leading-[1.6] text-ink">
           {project.summary}
         </p>
+        {project.outcome && (
+          <p className="mt-1 text-xs font-semibold tracking-wide text-blue-600">
+            {project.outcome}
+          </p>
+        )}
         {project.tags.length > 0 && (
           <ul className="mt-3 flex flex-wrap gap-1.5">
             {project.tags.map((tag) => (

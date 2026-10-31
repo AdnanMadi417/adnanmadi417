@@ -4,7 +4,7 @@ import ProjectsView from "@/views/ProjectsView";
 export const metadata: Metadata = {
   title: "Projects — Adnan Madi",
   description:
-    "A selection of frontend, full-stack, backend, WordPress, and Figma projects I've built and shipped.",
+    "Web products I've built and shipped end to end, from API and data model to UI.",
 };
 
 export default function ProjectsPage() {

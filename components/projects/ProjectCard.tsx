@@ -34,6 +34,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="text-sm text-muted">
           {project.location} • {project.description}
         </p>
+        <p className="mt-1.5 text-sm leading-[1.6] text-ink">
+          {project.summary}
+        </p>
+        {project.tags.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-1.5">
+            {project.tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-full border border-card px-2.5 py-1 text-xs font-medium text-muted"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </Link>
   );

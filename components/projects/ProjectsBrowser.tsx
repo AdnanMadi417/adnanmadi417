@@ -15,7 +15,7 @@ export default function ProjectsBrowser() {
       <PageHero
         eyebrow="Portfolio"
         headline="Projects"
-        description="A selection of frontend and full-stack projects I've built and shipped"
+        description="Web products I've built and shipped end to end"
       />
 
       <section className="mx-auto max-w-6xl px-8 py-20 max-[600px]:px-4 max-[600px]:py-12">

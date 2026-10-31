@@ -7,7 +7,7 @@ export const ABOUT_ITEMS: AboutItem[] = [
   {
     id: 1,
     paragraph:
-      "Software Engineer specializing in building full-stack web applications using React, Next.js, Node.js, and Laravel.",
+      "Software Engineer building full-stack web applications with TypeScript, React, Next.js and Django.",
   },
   {
     id: 2,
@@ -17,6 +17,6 @@ export const ABOUT_ITEMS: AboutItem[] = [
   {
     id: 3,
     paragraph:
-      "I am currently developing an agent-based software system designed to automate administrative workflows, including application tracking, status monitoring, university and program management, commissions, and partner administration.",
+      "I'm currently building workflow automation features for a SaaS product, simplifying complex administrative processes.",
   },
 ];

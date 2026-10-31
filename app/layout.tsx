@@ -17,10 +17,22 @@ const montserrat = Montserrat({
   weight: ["600", "700", "800"],
 });
 
+const SITE_TITLE =
+  "Adnan Madi — Software Engineer | Building web products end to end";
+const SITE_DESCRIPTION =
+  "Software Engineer building web products end to end with TypeScript, React, Next.js and Django.";
+
 export const metadata: Metadata = {
-  title: "Adnan Madi — Software Engineer",
-  description:
-    "Software engineer building fast, scalable, and reliable applications across the full stack with React, Next.js, Node.js, and Laravel.",
+  metadataBase: new URL("https://adnanmadi417.vercel.app"),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    siteName: "Adnan Madi",
+    type: "website",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },

@@ -18,7 +18,7 @@ const WhatsAppFloat = () => (
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
+      aria-label="Chat with me on WhatsApp"
       className="relative flex size-14 items-center justify-center overflow-hidden rounded-full text-white shadow-lg transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2"
       style={{ backgroundColor: '#25D366' } as React.CSSProperties}
     >
@@ -32,7 +32,7 @@ const WhatsAppFloat = () => (
 
     {/* Tooltip — outside the overflow-hidden anchor so it can overflow upward */}
     <span className="pointer-events-none absolute bottom-full right-0 mb-2 w-max max-w-55 rounded-lg bg-neutral-950 px-3 py-2 text-xs leading-snug text-white opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100">
-      Chat with us on WhatsApp
+      Chat with me on WhatsApp
     </span>
   </div>
 );

@@ -10,7 +10,7 @@ interface CVPreviewModalProps {
 export default function CVPreviewModal({ open, onClose }: CVPreviewModalProps) {
   return (
     <Modal open={open} onClose={onClose}>
-      <iframe src="/Adnan%20CV.pdf" width="100%" height="500px"></iframe>
+      <iframe src="/adnan_madi_cv.pdf" width="100%" height="500px"></iframe>
     </Modal>
   );
 }

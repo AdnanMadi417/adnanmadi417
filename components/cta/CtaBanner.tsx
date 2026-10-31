@@ -1,5 +1,5 @@
 import { ROUTES } from "@/constants/routes";
-import { WHATSAPP_LINK } from "@/constants/social";
+import { EMAIL_LINK, WHATSAPP_LINK } from "@/constants/social";
 import { Button } from "@/components/ui/buttons/Button";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -20,6 +20,9 @@ export default function CtaBanner() {
           </Button>
           <Button href={WHATSAPP_LINK} variant="secondary">
             Message Me on WhatsApp
+          </Button>
+          <Button href={EMAIL_LINK} variant="secondary">
+            Email Me
           </Button>
         </div>
       </FadeIn>

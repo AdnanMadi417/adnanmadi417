@@ -6,6 +6,8 @@ export interface ContactInfo {
 }
 
 export const WHATSAPP_LINK = "https://wa.me/+601170064361";
+export const EMAIL = "adnanmadi417@gmail.com";
+export const EMAIL_LINK = `mailto:${EMAIL}`;
 
 export const SOCIAL_LINKS: ContactInfo[] = [
   {
@@ -23,7 +25,7 @@ export const SOCIAL_LINKS: ContactInfo[] = [
   {
     platformName: "Email",
     platformIcon: "mdi:email",
-    platformAddress: "mailto:adnanmadi417@gmail.com",
+    platformAddress: EMAIL_LINK,
     displayText: "Email",
   },
   {

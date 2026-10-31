@@ -51,13 +51,30 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
         <span>{project.description}</span>
       </p>
 
-      <ul className="mb-10 flex flex-col gap-3">
-        {project.descriptions.map((desc, i) => (
-          <li key={i} className="list-disc pl-4 text-base leading-[1.65] text-ink">
-            {desc}
-          </li>
-        ))}
-      </ul>
+      {project.descriptions.length > 0 && (
+        <ul className="mb-10 flex flex-col gap-3">
+          {project.descriptions.map((desc, i) => (
+            <li key={i} className="list-disc pl-4 text-base leading-[1.65] text-ink">
+              {desc}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {project.sections?.map((section) => (
+        <div key={section.heading} className="mb-10">
+          <h2 className="mb-3 text-xl font-bold tracking-tight text-ink">
+            {section.heading}
+          </h2>
+          <div className="flex flex-col gap-3">
+            {section.paragraphs.map((paragraph, i) => (
+              <p key={i} className="text-base leading-[1.65] text-ink">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+      ))}
 
       {project.links.length > 0 && (
         <div className="flex flex-wrap gap-3 border-t border-card pt-6">

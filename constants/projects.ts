@@ -3,6 +3,11 @@ export interface ProjectLink {
   buttonLink: string;
 }
 
+export interface ProjectSection {
+  heading: string;
+  paragraphs: string[];
+}
+
 export interface ProjectItem {
   slug: string;
   category: string;
@@ -10,7 +15,10 @@ export interface ProjectItem {
   description: string;
   location: string;
   image: string;
+  summary: string;
+  tags: string[];
   descriptions: string[];
+  sections?: ProjectSection[];
   links: ProjectLink[];
   featured?: boolean;
 }
@@ -28,18 +36,72 @@ function slugify(title: string): string {
 // Ordered latest to oldest.
 const PROJECTS_INPUT: ProjectItemInput[] = [
   {
-    title: "Recycling Hub — E-Waste Collection Platform",
+    title: "Recycling Hub — Waste Management Platform",
     category: "Full Stack Projects",
-    description: "Lead Developer",
+    description: "Full-Stack Software Engineer",
     location: "Recycling Hub",
     image: "/assets/imgs/Recycling_Hub.png",
     featured: true,
+    summary:
+      "Full-stack waste-management platform and public website, built with Django REST Framework and Next.js, backed by a Playwright regression suite.",
+    tags: [
+      "Django REST Framework",
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Playwright",
+    ],
 
-    descriptions: [
-      "Lead developer on both the public website and the system behind it for Recycling Hub, a DOE-registered e-waste collector serving households and businesses across the Klang Valley, Malaysia.",
-      "Built separate customer journeys for individuals (free doorstep pickup booking) and businesses (bulk collection quotes for offices, warehouses, and factories).",
-      "Developed lead capture through pickup booking, bulk quote requests, and a callback form with individual/business segmentation and international phone input.",
-      "Delivered a bilingual English and Bahasa Malaysia experience with WhatsApp integration for direct customer contact.",
+    descriptions: [],
+
+    sections: [
+      {
+        heading: "Overview",
+        paragraphs: [
+          "Recycling Hub is a DOE-registered e-waste collector serving households and businesses across the Klang Valley, Malaysia. I built both the waste-management platform and the public website, using Django REST Framework and Next.js.",
+          "The website takes free doorstep pickup bookings from individuals, bulk collection quote requests from offices, warehouses, and factories, and callback requests, in English and Bahasa Malaysia.",
+        ],
+      },
+      {
+        heading: "The Problem",
+        paragraphs: [
+          "[TODO: How did Recycling Hub handle pickups, quotes, and records before this platform, and what was slow, manual, or error-prone about it?]",
+        ],
+      },
+      {
+        heading: "My Role",
+        paragraphs: [
+          "Full-stack software engineer, responsible for the platform end to end: the Django REST Framework API and PostgreSQL data model, the Next.js frontend, and the Playwright regression suite.",
+          "[TODO: Team size, who you worked with, and anything you owned beyond the code (e.g. requirements, deployment, client communication).]",
+        ],
+      },
+      {
+        heading: "Architecture & Stack",
+        paragraphs: [
+          "Backend: Django REST Framework API on PostgreSQL.",
+          "Frontend: Next.js and TypeScript for the public website. [TODO: Confirm what the internal platform UI is built with and how it shares data with the website.]",
+          "Testing: Playwright regression suite covering [TODO: which flows].",
+          "[TODO: Hosting and deployment setup, authentication, and any third-party integrations.]",
+        ],
+      },
+      {
+        heading: "Key Challenges",
+        paragraphs: [
+          "[TODO: Two or three hard problems you solved, what made them hard, and how you approached them.]",
+        ],
+      },
+      {
+        heading: "Results",
+        paragraphs: [
+          "[TODO: Outcomes you can back up, such as pickups or quotes handled through the platform, manual work removed, or regressions caught by the test suite.]",
+        ],
+      },
+      {
+        heading: "What I'd Do Differently",
+        paragraphs: [
+          "[TODO: An honest reflection on what you'd change with hindsight.]",
+        ],
+      },
     ],
 
     links: [
@@ -51,11 +113,17 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
   },
   {
     title: "Palestinian Forum Malaysia Website",
-    category: "Frontend Projects",
+    category: "Engineering Projects",
     description: "Product Manager & Frontend Developer",
     location: "Palestinian Forum Malaysia (PFM)",
     image: "/assets/imgs/PFMY_Website.png",
     featured: true,
+    summary:
+      "Bilingual community platform for Palestinian Forum Malaysia, with projects, events, news, and beneficiary and membership sign-up.",
+    tags: [
+      "React",
+      "[TODO]",
+    ],
 
     descriptions: [
       "Led the product and built the frontend for the official platform of Palestinian Forum Malaysia, a community organization uniting Palestinians and supporters across Malaysia through advocacy and humanitarian aid.",
@@ -73,12 +141,21 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
     ],
   },
   {
-    title: "Confidential Client Project — Partner Management Platform",
-    category: "Frontend Projects",
-    description: "Full-time · Frontend Developer",
+    title: "Unibexs — Partner Management Platform",
+    category: "Engineering Projects",
+    description: "Full-time · Software Engineer",
     location: "Unibexs",
     image: "/assets/imgs/unibexs-dashboard.avif",
     featured: true,
+    summary:
+      "Multi-role partner management platform with five role-based portals connecting business partners, applicants, and staff.",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Playwright",
+    ],
 
     descriptions: [
       "Joined an existing multi-role platform connecting business partners, applicants, and internal staff, and took ownership of both new feature delivery and a full security hardening pass across the codebase.",
@@ -100,11 +177,20 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
   },
   {
     title: "IKA EDU Platform",
-    category: "Frontend Projects",
+    category: "Engineering Projects",
     description: "Product Manager & Frontend Developer",
     location: "Freelance Project",
     image: "/assets/imgs/IKA_EDU.png",
     featured: true,
+    summary:
+      "Training academy platform with a public program catalog, admin dashboard, and digital certificate verification.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Playwright",
+      "DigitalOcean",
+    ],
 
     descriptions: [
       "Digitized a fully manual training academy from the ground up — IKA had no website, no digital system, and managed all programs, certificates, and client communication manually before this project.",
@@ -130,6 +216,9 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
     description: "Full Stack Developer",
     location: "COMMERCE DOT COM",
     image: "/assets/imgs/Investment_Management_System.png",
+    summary:
+      "Dashboard system for tracking member investments, share transactions, and registration payments.",
+    tags: [],
     descriptions: [
       "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%.",
       "Designed interactive dashboards displaying total transactions, account balances, share allocations, registration payments, member statuses, expected profits, and investment completion.",
@@ -139,11 +228,16 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
   },
   {
     title: "AIU Hostel Management System",
-    category: "Frontend Projects",
+    category: "Engineering Projects",
     description: "Frontend Developer",
     location: "Albukhary International University",
     image: "/assets/imgs/AIU_Hostel_Management_System.png",
     featured: true,
+    summary:
+      "Hostel management system for room allocation, billing, and maintenance requests.",
+    tags: [
+      "[TODO]",
+    ],
 
     descriptions: [
       "Developed responsive dashboard and management interfaces supporting room allocation, billing workflow, and maintenance request handling.",
@@ -160,11 +254,17 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
   },
   {
     title: "IESCO Scholarship Application",
-    category: "Frontend Projects",
+    category: "Engineering Projects",
     description: "Frontend Developer",
     location:
       "International Educational Scientific and Cultural Organization (IESCO)",
     image: "/assets/imgs/IESCO_Scholarship_Application.png",
+    summary:
+      "Online scholarship application portal with guided, validated registration forms.",
+    tags: [
+      "Vue.js",
+      "[TODO]",
+    ],
 
     descriptions: [
       "Designed and developed responsive scholarship application interfaces to streamline registration workflows and improve accessibility across devices.",
@@ -185,6 +285,9 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
     description: "Backend Developer",
     location: "Side Project",
     image: "/assets/imgs/masjid_website.png",
+    summary:
+      "Community website for Al Awda Mosque with live prayer times, multi-language content, and a video gallery.",
+    tags: ["Nuxt.js"],
     descriptions: [
       "Built official website for Al Awda Mosque focusing on responsive design and community engagement.",
       "Integrated dynamic prayer times, multi-language support, and video gallery.",

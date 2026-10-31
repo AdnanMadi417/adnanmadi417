@@ -211,48 +211,6 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
     ],
   },
   {
-    title: "Investment Management System",
-    category: "Full Stack Projects",
-    description: "Full Stack Developer",
-    location: "COMMERCE DOT COM",
-    image: "/assets/imgs/Investment_Management_System.png",
-    summary:
-      "Dashboard system for tracking member investments, share transactions, and registration payments.",
-    tags: [],
-    descriptions: [
-      "Developed and implemented an Investment Management System to track member investments, share transactions, and registration payments, reducing manual administrative tasks by 60%.",
-      "Designed interactive dashboards displaying total transactions, account balances, share allocations, registration payments, member statuses, expected profits, and investment completion.",
-      "Created member-specific sub-dashboards for personalized financial tracking.",
-    ],
-    links: [],
-  },
-  {
-    title: "AIU Hostel Management System",
-    category: "Engineering Projects",
-    description: "Frontend Developer",
-    location: "Albukhary International University",
-    image: "/assets/imgs/AIU_Hostel_Management_System.png",
-    featured: true,
-    summary:
-      "Hostel management system for room allocation, billing, and maintenance requests.",
-    tags: [
-      "[TODO]",
-    ],
-
-    descriptions: [
-      "Developed responsive dashboard and management interfaces supporting room allocation, billing workflow, and maintenance request handling.",
-      "Reduced manual administrative operations by 50% through interface automation and optimized data presentation.",
-      "Improved resident and staff system usability, contributing to a 30% increase in operational satisfaction metrics.",
-    ],
-
-    links: [
-      {
-        buttonText: "Live Demo",
-        buttonLink: "https://www.aiuhms.pro/home",
-      },
-    ],
-  },
-  {
     title: "IESCO Scholarship Application",
     category: "Engineering Projects",
     description: "Frontend Developer",
@@ -276,26 +234,6 @@ const PROJECTS_INPUT: ProjectItemInput[] = [
       {
         buttonText: "Live Demo",
         buttonLink: "https://applications.iesco.my/?_gl=1*n14rfl*_ga*NDMzNDQ4MzAwLjE3ODUxNTY0NjI.*_ga_0Q2KKETZ36*czE3ODc2MzI0MjMkbzQkZzAkdDE3ODc2MzI0MzAkajUzJGwwJGgxNTA5MzQxMzM.#apply",
-      },
-    ],
-  },
-  {
-    title: "Al Awda Mosque Website",
-    category: "Full Stack Projects",
-    description: "Backend Developer",
-    location: "Side Project",
-    image: "/assets/imgs/masjid_website.png",
-    summary:
-      "Community website for Al Awda Mosque with live prayer times, multi-language content, and a video gallery.",
-    tags: ["Nuxt.js"],
-    descriptions: [
-      "Built official website for Al Awda Mosque focusing on responsive design and community engagement.",
-      "Integrated dynamic prayer times, multi-language support, and video gallery.",
-    ],
-    links: [
-      {
-        buttonText: "Live Demo",
-        buttonLink: "https://masjid-albukhary.github.io/masjid-frontend/",
       },
     ],
   },
